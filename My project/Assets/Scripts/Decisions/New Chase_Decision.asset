@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba46bd97aa0fa384caf2331c73baaa36, type: 3}
   m_Name: New Chase_Decision
   m_EditorClassIdentifier: 
+  mindistance: 8
