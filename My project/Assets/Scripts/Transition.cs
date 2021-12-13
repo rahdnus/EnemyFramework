@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class Transition 
 {
-    public Decision decision;
+   public Decision decision;
     public State truestate;
     public State falsestate;
 
