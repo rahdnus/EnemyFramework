@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName ="State",menuName ="PlugAI/State")]
 public class State : ScriptableObject
 {
+    public string guid;
     public Action[] actions;
     public Transition[] transitions;
 
