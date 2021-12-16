@@ -30,6 +30,8 @@ public class StateTreeEditor : EditorWindow
         root.styleSheets.Add(styleSheet);
 
         treeView=root.Q<StateTreeView>();
+
+        OnSelectionChange();
     }
     private void OnSelectionChange()
     {

@@ -5,5 +5,7 @@ using UnityEngine;
 
 public abstract class Action : ScriptableObject
 {
+   public Vector2 position;
+   public string guid;
    public abstract void Act(StateController controller);
 }
