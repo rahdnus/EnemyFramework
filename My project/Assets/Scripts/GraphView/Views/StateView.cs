@@ -5,7 +5,7 @@ public class StateView : Node
     public State state;
      public Port A_input;
     public Port T_input;
-    public Port output;
+    public Port ouput;
    public StateView(State state)
    {
        this.state=state;
@@ -27,8 +27,9 @@ public class StateView : Node
    }
     private void CreateOutputPorts()
    {
-        output = InstantiatePort(Orientation.Horizontal, Direction.Output, Port.Capacity.Multi, typeof(bool));
-        outputContainer.Add(output);
+        ouput = InstantiatePort(Orientation.Horizontal, Direction.Output, Port.Capacity.Multi, typeof(bool));
+        ouput.portName="This State";
+        outputContainer.Add(ouput);
 
     }
    public override void SetPosition(UnityEngine.Rect newPos)
