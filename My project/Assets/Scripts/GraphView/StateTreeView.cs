@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEditor;
 using UnityEngine.UIElements;
 using UnityEditor.Experimental.GraphView;
 using System.Linq;
@@ -20,10 +21,19 @@ public class StateTreeView : GraphView
     }
     public override void BuildContextualMenu(ContextualMenuPopulateEvent evt)
     {
-        evt.menu.AppendAction("State", (a) => createState(typeof(State)));
-        evt.menu.AppendAction("Transition", (a) => createTranstion(typeof(Transition)));
-        evt.menu.AppendAction("ChaseAction",(b)=>createAction(typeof(ChaseAction)));
-        evt.menu.AppendAction("Chase_Decision",(d)=>createDecision(typeof(Chase_Decision)));
+        evt.menu.AppendAction("State", (a) => createObject(typeof(State)));
+        evt.menu.AppendAction("Transition", (a) => createObject(typeof(Transition)));
+
+        evt.menu.AppendSeparator("---ACTIONS----");    
+        TypeCache.TypeCollection actiontypes= TypeCache.GetTypesDerivedFrom<Action>();
+        actiontypes.ToList().ForEach((t)=>evt.menu.AppendAction(t.Name,(b)=>createObject(t)));
+
+        evt.menu.AppendSeparator("---DECISIONS---");
+        TypeCache.TypeCollection decisiontypes= TypeCache.GetTypesDerivedFrom<Decision>();
+        decisiontypes.ToList().ForEach((t)=>evt.menu.AppendAction(t.Name,(b)=>createObject(t)));
+           
+
+
     }
     public void PopulateView(StateTree tree)
     {
@@ -37,7 +47,7 @@ public class StateTreeView : GraphView
         tree.transitions.ForEach(t=>CreateTransitionView(t));
         tree.decisions.ForEach(d=>CreateDecisionView(d));
 
-        //-------------------------------------------------EDGE-POPULATE---------------------------------------------------------------//
+       #region populate_edge
        tree.states.ForEach(s=>
        {
            StateView stateView=GetNodeByGuid(s.guid)as StateView;
@@ -94,6 +104,7 @@ public class StateTreeView : GraphView
             
        }
        );
+       #endregion
     
     }
     private GraphViewChange GraphViewChanged(GraphViewChange graphViewChange)
@@ -102,6 +113,7 @@ public class StateTreeView : GraphView
         {
             foreach(Edge edge in graphViewChange.edgesToCreate)
             {
+                #region create_edge
                     if(edge.output.node.GetType()==typeof(ActionView) && edge.input.node.GetType()==typeof(StateView))
                     {
                         StateView stateView=edge.input.node as StateView;
@@ -130,6 +142,7 @@ public class StateTreeView : GraphView
                         else
                             transitionview.transition.falsestate=stateView.state;
                     }
+                #endregion
                     
             }
         }
@@ -137,6 +150,7 @@ public class StateTreeView : GraphView
         {
             foreach(GraphElement elem in graphViewChange.elementsToRemove)
             {
+                #region remove_SO_data
                 if(elem.GetType()==typeof(StateView))
                 {
                    StateView view=elem as StateView;
@@ -157,7 +171,9 @@ public class StateTreeView : GraphView
                    DecisionView view=elem as DecisionView;
                     tree.RemoveDecision(view.decision);
                 }
-                
+                #endregion
+  
+                #region remove_edge
                 if(elem.GetType()==typeof(Edge))
                 {
                     Edge edge=elem as Edge;
@@ -183,6 +199,7 @@ public class StateTreeView : GraphView
                         transitionView.transition.decision=null;
                     } 
                 }
+                #endregion
                 
             }
         }
@@ -191,29 +208,35 @@ public class StateTreeView : GraphView
     }
     public override List<Port> GetCompatiblePorts(Port startPort, NodeAdapter nodeAdapter)
     {
-       // return base.GetCompatiblePorts(startPort, nodeAdapter);
        return ports.ToList().Where(endport=>endport.direction!=startPort.direction).ToList();
     }
-    void createState(System.Type type)
+
+    void createObject(System.Type type)
     {
-        State state = tree.CreateState();
-        CreateStateView(state);
+        #region create SO(type)
+        if(type==typeof(State))
+        {
+            State state = tree.CreateState();
+            CreateStateView(state);
+        }
+        else if(type==typeof(Transition))
+        {
+            Transition transition=tree.CreateTransition(type);
+            CreateTransitionView(transition);
+        }
+        else if(type.BaseType==typeof(Decision))
+        {
+            Decision decision=tree.CreateDecision(type);
+            CreateDecisionView(decision);
+        }
+         else if(type.BaseType==typeof(Action))
+        {
+            Action action=tree.CreateAction(type);
+            CreateActionView(action);
+        }
+        #endregion
     }
-    void createAction(System.Type type)
-    {
-        Action action=tree.CreateAction(type);
-        CreateActionView(action);
-    }
-     void createTranstion(System.Type type)
-    {
-      Transition transition=tree.CreateTransition(type);
-      CreateTransitionView(transition);
-    }
-    void createDecision(System.Type type)
-    {
-      Decision decision=tree.CreateDecision(type);
-      CreateDecisionView(decision);
-    }
+    #region Create View
     void CreateStateView(State state)
     {
         StateView stateview = new StateView(state);
@@ -234,4 +257,28 @@ public class StateTreeView : GraphView
        DecisionView decisionView=new DecisionView(decision);
        AddElement(decisionView);
     }
+    #endregion
+   
+   
+    // void createState(System.Type type)
+    // {
+    //     State state = tree.CreateState();
+    //     CreateStateView(state);
+    // }
+    // void createAction(System.Type type)
+    // {
+    //     Action action=tree.CreateAction(type);
+        
+    //     CreateActionView(action);
+    // }
+    //  void createTranstion(System.Type type)
+    // {
+    //   Transition transition=tree.CreateTransition(type);
+    //   CreateTransitionView(transition);
+    // }
+    // void createDecision(System.Type type)
+    // {
+    //   Decision decision=tree.CreateDecision(type);
+    //   CreateDecisionView(decision);
+    // }
 }

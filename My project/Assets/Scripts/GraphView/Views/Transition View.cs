@@ -27,7 +27,7 @@ public class TransitionView : Node
         ST_input.portName="True";
         SF_input = InstantiatePort(Orientation.Horizontal, Direction.Input, Port.Capacity.Single, typeof(bool));
         SF_input.portName="False";
-
+        
         inputContainer.Add(D_input);
         inputContainer.Add(ST_input);
         inputContainer.Add(SF_input);

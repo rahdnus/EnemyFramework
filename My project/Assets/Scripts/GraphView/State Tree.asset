@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-4570230226855997658
+--- !u!114 &-7266506578879115070
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9,12 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba46bd97aa0fa384caf2331c73baaa36, type: 3}
-  m_Name: decision
+  m_Script: {fileID: 11500000, guid: c4a1b84205961124b9df03b52208981a, type: 3}
+  m_Name: ChaseAction
   m_EditorClassIdentifier: 
-  position: {x: 25.300016, y: 24.000011}
-  guid: f32706d39845f064b921eeb8002f35de
-  mindistance: 10
+  position: {x: -139.62383, y: -201.5755}
+  guid: cdf8bfd45c9959f439a4418a342b7a33
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30,13 +29,47 @@ MonoBehaviour:
   states:
   - {fileID: 6358732443617982850}
   - {fileID: 7980904130369178373}
-  - {fileID: 3900803259733274565}
+  - {fileID: 2937664642163119433}
+  - {fileID: 6330770020133412429}
+  - {fileID: 6699221971614537463}
   actions:
   - {fileID: 3286371084184289219}
+  - {fileID: 7315889744253305423}
+  - {fileID: -7266506578879115070}
   transitions:
   - {fileID: 5247320503194302567}
   decisions:
-  - {fileID: -4570230226855997658}
+  - {fileID: 2352050281134209195}
+--- !u!114 &2352050281134209195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed4bffbfb5707f24c8cbefdecd7543cb, type: 3}
+  m_Name: Observe_Decision
+  m_EditorClassIdentifier: 
+  position: {x: 40.00003, y: -96.71038}
+  guid: 3ebc0cc4a07e43d42bc2aad5fef029c6
+--- !u!114 &2937664642163119433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ecbc42c532aa2940a15535c82bb8c2c, type: 3}
+  m_Name: State
+  m_EditorClassIdentifier: 
+  position: {x: -97.647675, y: 41.536385}
+  guid: 63c8375dfef4902429d2c7bc04b1e41c
+  actions: []
+  transitions: []
 --- !u!114 &3286371084184289219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51,22 +84,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   position: {x: -409.66928, y: 184.85289}
   guid: 2153c051872692f4398346f2df2a8ad8
---- !u!114 &3900803259733274565
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ecbc42c532aa2940a15535c82bb8c2c, type: 3}
-  m_Name: State
-  m_EditorClassIdentifier: 
-  position: {x: -104.14996, y: 244.00002}
-  guid: fc5e7623edccc054e85647138505c524
-  actions: []
-  transitions: []
 --- !u!114 &5247320503194302567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79,11 +96,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4e03ddf7c3d9354e98969b1c6b8a5d4, type: 3}
   m_Name: transition
   m_EditorClassIdentifier: 
-  position: {x: 219.20001, y: 75.999985}
+  position: {x: 191.63997, y: 59.195007}
   guid: dcad8383836e29b43a5e6ab7221429ee
-  decision: {fileID: -4570230226855997658}
+  decision: {fileID: 2352050281134209195}
   truestate: {fileID: 6358732443617982850}
-  falsestate: {fileID: 3900803259733274565}
+  falsestate: {fileID: 2937664642163119433}
+--- !u!114 &6330770020133412429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ecbc42c532aa2940a15535c82bb8c2c, type: 3}
+  m_Name: State
+  m_EditorClassIdentifier: 
+  position: {x: 119.93004, y: -340.52856}
+  guid: 4a5c0158fa21a38409d96fb6cde51f9b
+  actions: []
+  transitions: []
 --- !u!114 &6358732443617982850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101,6 +134,36 @@ MonoBehaviour:
   actions:
   - {fileID: 3286371084184289219}
   transitions: []
+--- !u!114 &6699221971614537463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ecbc42c532aa2940a15535c82bb8c2c, type: 3}
+  m_Name: State
+  m_EditorClassIdentifier: 
+  position: {x: -316.57013, y: -85.70132}
+  guid: 952792b8a9125c349baa4803e6323daa
+  actions: []
+  transitions: []
+--- !u!114 &7315889744253305423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4a1b84205961124b9df03b52208981a, type: 3}
+  m_Name: ChaseAction
+  m_EditorClassIdentifier: 
+  position: {x: 233.60004, y: -82.87044}
+  guid: 26d673b9a1e393f49a4ce8458e325ac5
 --- !u!114 &7980904130369178373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,6 +178,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   position: {x: 403.2, y: 14.639999}
   guid: 5b1ae0b1dd3c2dd4ca5e005647edf0df
-  actions: []
+  actions:
+  - {fileID: 7315889744253305423}
   transitions:
+  - {fileID: 5247320503194302567}
   - {fileID: 5247320503194302567}

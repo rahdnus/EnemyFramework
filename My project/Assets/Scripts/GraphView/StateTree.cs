@@ -9,7 +9,7 @@ public class StateTree : ScriptableObject
    public List<Action> actions=new List<Action>();
    
    public List<Transition> transitions=new List<Transition>();
-      public List<Decision> decisions=new List<Decision>();
+    public List<Decision> decisions=new List<Decision>();
 
 
    public State CreateState()
@@ -45,7 +45,7 @@ public class StateTree : ScriptableObject
     public Decision CreateDecision(System.Type type)
    {
        Decision decision=CreateInstance(type) as Decision;
-       decision.name="decision";
+       decision.name=type.Name;
        decision.guid=GUID.Generate().ToString();
        decisions.Add(decision);
        AssetDatabase.AddObjectToAsset(decision,this);
