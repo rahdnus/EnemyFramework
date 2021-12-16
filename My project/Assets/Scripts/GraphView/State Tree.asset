@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba46bd97aa0fa384caf2331c73baaa36, type: 3}
   m_Name: decision
   m_EditorClassIdentifier: 
-  position: {x: 0, y: 0}
+  position: {x: 25.300016, y: 24.000011}
   guid: f32706d39845f064b921eeb8002f35de
   mindistance: 10
 --- !u!114 &11400000
@@ -32,28 +32,11 @@ MonoBehaviour:
   - {fileID: 7980904130369178373}
   - {fileID: 3900803259733274565}
   actions:
-  - {fileID: 6055128315818885727}
   - {fileID: 3286371084184289219}
-  - {fileID: 2536688025423694509}
   transitions:
   - {fileID: 5247320503194302567}
-  - {fileID: 8740996010954469522}
   decisions:
   - {fileID: -4570230226855997658}
---- !u!114 &2536688025423694509
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4a1b84205961124b9df03b52208981a, type: 3}
-  m_Name: ChaseAction
-  m_EditorClassIdentifier: 
-  position: {x: 92.96799, y: 129.6}
-  guid: 942c57dde7f34084f888ed73de8981f5
 --- !u!114 &3286371084184289219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,7 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4a1b84205961124b9df03b52208981a, type: 3}
   m_Name: ChaseAction
   m_EditorClassIdentifier: 
-  position: {x: -11.615997, y: 231.99998}
+  position: {x: -409.66928, y: 184.85289}
   guid: 2153c051872692f4398346f2df2a8ad8
 --- !u!114 &3900803259733274565
 MonoBehaviour:
@@ -80,7 +63,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ecbc42c532aa2940a15535c82bb8c2c, type: 3}
   m_Name: State
   m_EditorClassIdentifier: 
-  position: {x: 361.2, y: 170.8}
+  position: {x: -104.14996, y: 244.00002}
   guid: fc5e7623edccc054e85647138505c524
   actions: []
   transitions: []
@@ -98,23 +81,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   position: {x: 219.20001, y: 75.999985}
   guid: dcad8383836e29b43a5e6ab7221429ee
-  decision: {fileID: 0}
-  truestate: {fileID: 0}
-  falsestate: {fileID: 0}
---- !u!114 &6055128315818885727
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4a1b84205961124b9df03b52208981a, type: 3}
-  m_Name: ChaseAction
-  m_EditorClassIdentifier: 
-  position: {x: 152.6, y: 296.6888}
-  guid: df3bd2bfe41f853429b7ba4656a70747
+  decision: {fileID: -4570230226855997658}
+  truestate: {fileID: 6358732443617982850}
+  falsestate: {fileID: 3900803259733274565}
 --- !u!114 &6358732443617982850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,9 +96,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ecbc42c532aa2940a15535c82bb8c2c, type: 3}
   m_Name: hello
   m_EditorClassIdentifier: 
-  position: {x: 171, y: -38.6}
+  position: {x: -222.54156, y: 151.7456}
   guid: 0696b1e2f1635644bb552d761592e221
-  actions: []
+  actions:
+  - {fileID: 3286371084184289219}
   transitions: []
 --- !u!114 &7980904130369178373
 MonoBehaviour:
@@ -148,20 +118,3 @@ MonoBehaviour:
   actions: []
   transitions:
   - {fileID: 5247320503194302567}
---- !u!114 &8740996010954469522
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4e03ddf7c3d9354e98969b1c6b8a5d4, type: 3}
-  m_Name: transition
-  m_EditorClassIdentifier: 
-  position: {x: 54.799988, y: -348.4}
-  guid: be580cd5df58fa045a42346d46886777
-  decision: {fileID: 0}
-  truestate: {fileID: 0}
-  falsestate: {fileID: 0}

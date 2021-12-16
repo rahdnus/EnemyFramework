@@ -30,6 +30,7 @@ public class TransitionView : Node
 
         inputContainer.Add(D_input);
         inputContainer.Add(ST_input);
+        inputContainer.Add(SF_input);
     }
      private void CreateOutputPorts()
    {
