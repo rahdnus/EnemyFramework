@@ -24,6 +24,7 @@ public class State : ScriptableObject
     {
         for(int i=0;i<actions.Count;i++)
         {
+             Debug.Log("acting");
             actions[i].Act(controller);
         }
     }

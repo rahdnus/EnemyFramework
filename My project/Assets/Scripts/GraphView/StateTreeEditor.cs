@@ -36,7 +36,7 @@ public class StateTreeEditor : EditorWindow
     private void OnSelectionChange()
     {
         StateTree tree=Selection.activeObject as StateTree;
-        if(tree)
+        if(tree && AssetDatabase.CanOpenForEdit(tree))
         {
             treeView.PopulateView(tree);
         }

@@ -38,6 +38,7 @@ public class StateTreeView : GraphView
     public void PopulateView(StateTree tree)
     {
         this.tree = tree;
+       
         graphViewChanged -= GraphViewChanged;
         DeleteElements(graphElements);
         graphViewChanged += GraphViewChanged;
@@ -48,9 +49,11 @@ public class StateTreeView : GraphView
         tree.decisions.ForEach(d=>CreateDecisionView(d));
 
        #region populate_edge
+       if(tree.states!=null)
        tree.states.ForEach(s=>
        {
            StateView stateView=GetNodeByGuid(s.guid)as StateView;
+           if(s.actions!=null)
            s.actions.ForEach(a=>
            {
                ActionView actionView=GetNodeByGuid(a.guid) as ActionView;
@@ -59,9 +62,11 @@ public class StateTreeView : GraphView
            });
        });
 
+        if(tree.states!=null)
         tree.states.ForEach(s=>
        {
            StateView stateView=GetNodeByGuid(s.guid)as StateView;
+           if(s.transitions!=null)
            s.transitions.ForEach(a=>
            {
                TransitionView transitionView=GetNodeByGuid(a.guid) as TransitionView;
@@ -70,6 +75,7 @@ public class StateTreeView : GraphView
            });
        });
 
+        if(tree.transitions!=null)
        tree.transitions.ForEach(t=>
        {
            TransitionView transitionView=GetNodeByGuid(t.guid) as TransitionView;
@@ -83,6 +89,7 @@ public class StateTreeView : GraphView
            }
            
        });
+       if(tree.transitions!=null)
        tree.transitions.ForEach(t=>
        {
             TransitionView transitionView=GetNodeByGuid(t.guid) as TransitionView;
@@ -193,11 +200,23 @@ public class StateTreeView : GraphView
                     } 
                      if(edge.output.node.GetType()==typeof(DecisionView) && edge.input.node.GetType()==typeof(TransitionView))
                     {
-                        DecisionView decisionView=edge.output.node as DecisionView;
                         TransitionView transitionView=edge.input.node as TransitionView;
                         Debug.Log("Decision Removed");
                         transitionView.transition.decision=null;
                     } 
+                    if(edge.output.node.GetType()==typeof(StateView) && edge.input.node.GetType()==typeof(TransitionView))
+                    {
+                        TransitionView transitionView=edge.input.node as TransitionView;
+                         Debug.Log("Edge Removed");
+                        if(edge.input.portName=="True")
+                        {
+                           transitionView.transition.truestate=null;
+                        }
+                        else if(edge.input.portName=="False")
+                        {
+                           transitionView.transition.falsestate=null;
+                        }
+                    }
                 }
                 #endregion
                 

@@ -1,6 +1,7 @@
 using UnityEditor;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor.Callbacks;
 
 [CreateAssetMenu(menuName ="StateTree")]
 public class StateTree : ScriptableObject
@@ -10,12 +11,11 @@ public class StateTree : ScriptableObject
    
    public List<Transition> transitions=new List<Transition>();
     public List<Decision> decisions=new List<Decision>();
-
-
+    
    public State CreateState()
    {
        State state=CreateInstance<State>();
-       state.name="State";
+       state.name="State"+Random.Range(0,3).ToString();
        state.guid=GUID.Generate().ToString();
         states.Add(state);
        AssetDatabase.AddObjectToAsset(state,this);

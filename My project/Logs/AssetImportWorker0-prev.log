@@ -15,11 +15,11 @@ D:/Unity/Projects/EnemyFramework/My project
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-49916
+64249
 Successfully changed project path to: D:/Unity/Projects/EnemyFramework/My project
 D:/Unity/Projects/EnemyFramework/My project
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 46.48 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 47.68 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.24f1 (79c78de19888)
 [Subsystems] Discovering subsystems at path D:/Unity/2020.3.24f1/Editor/Data/Resources/UnitySubsystems
@@ -35,45 +35,45 @@ Initialize mono
 Mono path[0] = 'D:/Unity/2020.3.24f1/Editor/Data/Managed'
 Mono path[1] = 'D:/Unity/2020.3.24f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'D:/Unity/2020.3.24f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56244
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56588
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/Unity/2020.3.24f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.000981 seconds.
+Registered in 0.001057 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 45.87 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 49.30 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.551 seconds
+- Completed reload, in  0.556 seconds
 Domain Reload Profiling:
-	ReloadAssembly (551ms)
-		BeginReloadAssembly (49ms)
+	ReloadAssembly (556ms)
+		BeginReloadAssembly (48ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (437ms)
-			LoadAssemblies (48ms)
+		EndReloadAssembly (445ms)
+			LoadAssemblies (47ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (154ms)
+			SetupTypeCache (142ms)
 			ReleaseScriptCaches (0ms)
 			RebuildScriptCaches (31ms)
-			SetupLoadedEditorAssemblies (165ms)
+			SetupLoadedEditorAssemblies (188ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (4ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (46ms)
-				BeforeProcessingInitializeOnLoad (12ms)
-				ProcessInitializeOnLoadAttributes (77ms)
-				ProcessInitializeOnLoadMethodAttributes (26ms)
+				RefreshPlugins (49ms)
+				BeforeProcessingInitializeOnLoad (14ms)
+				ProcessInitializeOnLoadAttributes (93ms)
+				ProcessInitializeOnLoadMethodAttributes (27ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.003349 seconds.
+Registered in 0.003712 seconds.
 ASSEMBLY OVERRIDES: * override found for Unity assembly UnityEngine.UIElementsModule.dll (override path Library/ScriptAssemblies/UnityEngine.UIElementsModule.dll)
 ASSEMBLY OVERRIDES: * override found for Unity assembly UnityEditor.UIElementsModule.dll (override path Library/ScriptAssemblies/UnityEditor.UIElementsModule.dll)
 Begin MonoManager ReloadAssembly
@@ -81,36 +81,36 @@ ASSEMBLY OVERRIDES: * override found for Unity assembly UnityEngine.UIElementsMo
 ASSEMBLY OVERRIDES: * override found for Unity assembly UnityEditor.UIElementsModule.dll (override path Library/ScriptAssemblies/UnityEditor.UIElementsModule.dll)
 Symbol file LoadedFromMemory is not a mono symbol file
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 47.74 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 51.02 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 ASSEMBLY OVERRIDES: * override found for Unity assembly UnityEngine.UIElementsModule.dll (override path Library/ScriptAssemblies/UnityEngine.UIElementsModule.dll)
 ASSEMBLY OVERRIDES: * override found for Unity assembly UnityEditor.UIElementsModule.dll (override path Library/ScriptAssemblies/UnityEditor.UIElementsModule.dll)
 ASSEMBLY OVERRIDES: * override found for Unity assembly UnityEngine.UIElementsModule.dll (override path Library/ScriptAssemblies/UnityEngine.UIElementsModule.dll)
 ASSEMBLY OVERRIDES: * override found for Unity assembly UnityEditor.UIElementsModule.dll (override path Library/ScriptAssemblies/UnityEditor.UIElementsModule.dll)
 Mono: successfully reloaded assembly
-- Completed reload, in  1.051 seconds
+- Completed reload, in  1.059 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1052ms)
-		BeginReloadAssembly (138ms)
+	ReloadAssembly (1060ms)
+		BeginReloadAssembly (130ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (4ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (18ms)
-		EndReloadAssembly (859ms)
-			LoadAssemblies (86ms)
+			CreateAndSetChildDomain (17ms)
+		EndReloadAssembly (876ms)
+			LoadAssemblies (84ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (275ms)
-			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (44ms)
-			SetupLoadedEditorAssemblies (349ms)
+			SetupTypeCache (283ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (48ms)
+			SetupLoadedEditorAssemblies (355ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (3ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (48ms)
-				BeforeProcessingInitializeOnLoad (68ms)
-				ProcessInitializeOnLoadAttributes (184ms)
-				ProcessInitializeOnLoadMethodAttributes (44ms)
+				RefreshPlugins (51ms)
+				BeforeProcessingInitializeOnLoad (71ms)
+				ProcessInitializeOnLoadAttributes (185ms)
+				ProcessInitializeOnLoadMethodAttributes (41ms)
 				AfterProcessingInitializeOnLoad (2ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
@@ -118,15 +118,15 @@ Domain Reload Profiling:
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.10 seconds
-Refreshing native plugins compatible for Editor in 0.50 ms, found 2 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.21 seconds
+Refreshing native plugins compatible for Editor in 0.75 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 2275 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 95.9 MB.
+System memory in use before: 96.0 MB.
 System memory in use after: 96.0 MB.
 
 Unloading 110 unused Assets to reduce memory usage. Loaded Objects now: 2617.
-Total: 4.139700 ms (FindLiveObjects: 0.208600 ms CreateObjectMapping: 0.070100 ms MarkObjects: 3.429700 ms  DeleteObjects: 0.430200 ms)
+Total: 3.374500 ms (FindLiveObjects: 0.195100 ms CreateObjectMapping: 0.088700 ms MarkObjects: 2.652400 ms  DeleteObjects: 0.437300 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -140,15 +140,63 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  path: Assets/Scripts/GraphView/State Tree.asset
-  artifactKey: Guid(7ec08693cc19a1c43bbeca1c4ec93ff3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/GraphView/State Tree.asset using Guid(7ec08693cc19a1c43bbeca1c4ec93ff3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ebc864c6241911b9e928147e392ab698') in 0.057061 seconds 
-  Import took 0.106043 seconds .
+  path: Assets/Scripts/GraphView/StateTreeEditor.cs
+  artifactKey: Guid(920f0ff2772b4de40b86c7e65b8e435f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/GraphView/StateTreeEditor.cs using Guid(920f0ff2772b4de40b86c7e65b8e435f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4520492268bbd3d9ade11db478e45e84') in 0.046220 seconds 
+  Import took 0.081010 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 169.713106 seconds.
+  path: Assets/Scripts/GraphView/NewUXMLTemplate.uxml
+  artifactKey: Guid(112d757a2ef0c1442877ed8f621fa563) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/GraphView/NewUXMLTemplate.uxml using Guid(112d757a2ef0c1442877ed8f621fa563) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0351483f74cf3e79934b5e580cec548b') in 0.104481 seconds 
+  Import took 0.135158 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 68.202357 seconds.
+  path: Assets/Scripts/GraphView/StateView.uxml
+  artifactKey: Guid(112d757a2ef0c1442877ed8f621fa563) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/GraphView/StateView.uxml using Guid(112d757a2ef0c1442877ed8f621fa563) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '96ed14b6698f45cd58b4481c433eead1') in 0.013532 seconds 
+  Import took 0.039215 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.873502 seconds.
+  path: Assets/Scripts/GraphView/StateViewUXML.uxml
+  artifactKey: Guid(112d757a2ef0c1442877ed8f621fa563) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/GraphView/StateViewUXML.uxml using Guid(112d757a2ef0c1442877ed8f621fa563) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '187a5afce78c0a479e0ff5e0575e3afa') in 0.011949 seconds 
+  Import took 0.033310 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 40.803086 seconds.
+  path: Assets/Scripts/GraphView/NewUSSFile.uss
+  artifactKey: Guid(84423c2511a849f43b4433ded50711aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/GraphView/NewUSSFile.uss using Guid(84423c2511a849f43b4433ded50711aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a845912f32e88142ee5160c38c247a53') in 0.011572 seconds 
+  Import took 0.031209 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 57.176834 seconds.
+  path: Assets/Scripts/GraphView/StateView.uxml
+  artifactKey: Guid(ad605333d95eb484aa0345bf0f73a592) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/GraphView/StateView.uxml using Guid(ad605333d95eb484aa0345bf0f73a592) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b54f09918f7e423c7919b1c84c09b72') in 0.006038 seconds 
+  Import took 0.028631 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 23.705114 seconds.
+  path: Assets/Scripts/GraphView/StateView.uxml
+  artifactKey: Guid(ad605333d95eb484aa0345bf0f73a592) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/GraphView/StateView.uxml using Guid(ad605333d95eb484aa0345bf0f73a592) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd239c5db5f3c0892e8299b8429192f0a') in 0.004728 seconds 
+  Import took 0.033310 seconds .
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.003234 seconds.
+Registered in 0.054127 seconds.
 ASSEMBLY OVERRIDES: * override found for Unity assembly UnityEngine.UIElementsModule.dll (override path Library/ScriptAssemblies/UnityEngine.UIElementsModule.dll)
 ASSEMBLY OVERRIDES: * override found for Unity assembly UnityEditor.UIElementsModule.dll (override path Library/ScriptAssemblies/UnityEditor.UIElementsModule.dll)
 ASSEMBLY OVERRIDES: * override found for Unity assembly UnityEngine.UIElementsModule.dll (override path Library/ScriptAssemblies/UnityEngine.UIElementsModule.dll)
@@ -158,183 +206,49 @@ ASSEMBLY OVERRIDES: * override found for Unity assembly UnityEngine.UIElementsMo
 ASSEMBLY OVERRIDES: * override found for Unity assembly UnityEditor.UIElementsModule.dll (override path Library/ScriptAssemblies/UnityEditor.UIElementsModule.dll)
 Symbol file LoadedFromMemory is not a mono symbol file
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.50 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.68 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 ASSEMBLY OVERRIDES: * override found for Unity assembly UnityEngine.UIElementsModule.dll (override path Library/ScriptAssemblies/UnityEngine.UIElementsModule.dll)
 ASSEMBLY OVERRIDES: * override found for Unity assembly UnityEditor.UIElementsModule.dll (override path Library/ScriptAssemblies/UnityEditor.UIElementsModule.dll)
 ASSEMBLY OVERRIDES: * override found for Unity assembly UnityEngine.UIElementsModule.dll (override path Library/ScriptAssemblies/UnityEngine.UIElementsModule.dll)
 ASSEMBLY OVERRIDES: * override found for Unity assembly UnityEditor.UIElementsModule.dll (override path Library/ScriptAssemblies/UnityEditor.UIElementsModule.dll)
 Mono: successfully reloaded assembly
-- Completed reload, in  0.947 seconds
+- Completed reload, in  7.711 seconds
 Domain Reload Profiling:
-	ReloadAssembly (947ms)
-		BeginReloadAssembly (106ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (29ms)
-		EndReloadAssembly (790ms)
-			LoadAssemblies (78ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (288ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (39ms)
-			SetupLoadedEditorAssemblies (295ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (4ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (76ms)
-				ProcessInitializeOnLoadAttributes (173ms)
-				ProcessInitializeOnLoadMethodAttributes (39ms)
-				AfterProcessingInitializeOnLoad (2ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (6ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.54 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2258 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 94.8 MB.
-System memory in use after: 94.9 MB.
-
-Unloading 105 unused Assets to reduce memory usage. Loaded Objects now: 2619.
-Total: 3.540700 ms (FindLiveObjects: 0.212800 ms CreateObjectMapping: 0.099000 ms MarkObjects: 2.777500 ms  DeleteObjects: 0.450600 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.003562 seconds.
-ASSEMBLY OVERRIDES: * override found for Unity assembly UnityEngine.UIElementsModule.dll (override path Library/ScriptAssemblies/UnityEngine.UIElementsModule.dll)
-ASSEMBLY OVERRIDES: * override found for Unity assembly UnityEditor.UIElementsModule.dll (override path Library/ScriptAssemblies/UnityEditor.UIElementsModule.dll)
-ASSEMBLY OVERRIDES: * override found for Unity assembly UnityEngine.UIElementsModule.dll (override path Library/ScriptAssemblies/UnityEngine.UIElementsModule.dll)
-ASSEMBLY OVERRIDES: * override found for Unity assembly UnityEditor.UIElementsModule.dll (override path Library/ScriptAssemblies/UnityEditor.UIElementsModule.dll)
-Begin MonoManager ReloadAssembly
-ASSEMBLY OVERRIDES: * override found for Unity assembly UnityEngine.UIElementsModule.dll (override path Library/ScriptAssemblies/UnityEngine.UIElementsModule.dll)
-ASSEMBLY OVERRIDES: * override found for Unity assembly UnityEditor.UIElementsModule.dll (override path Library/ScriptAssemblies/UnityEditor.UIElementsModule.dll)
-Symbol file LoadedFromMemory is not a mono symbol file
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.51 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-ASSEMBLY OVERRIDES: * override found for Unity assembly UnityEngine.UIElementsModule.dll (override path Library/ScriptAssemblies/UnityEngine.UIElementsModule.dll)
-ASSEMBLY OVERRIDES: * override found for Unity assembly UnityEditor.UIElementsModule.dll (override path Library/ScriptAssemblies/UnityEditor.UIElementsModule.dll)
-ASSEMBLY OVERRIDES: * override found for Unity assembly UnityEngine.UIElementsModule.dll (override path Library/ScriptAssemblies/UnityEngine.UIElementsModule.dll)
-ASSEMBLY OVERRIDES: * override found for Unity assembly UnityEditor.UIElementsModule.dll (override path Library/ScriptAssemblies/UnityEditor.UIElementsModule.dll)
-Mono: successfully reloaded assembly
-- Completed reload, in  0.969 seconds
-Domain Reload Profiling:
-	ReloadAssembly (969ms)
-		BeginReloadAssembly (120ms)
+	ReloadAssembly (7712ms)
+		BeginReloadAssembly (109ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (4ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (36ms)
-		EndReloadAssembly (791ms)
-			LoadAssemblies (94ms)
+			CreateAndSetChildDomain (37ms)
+		EndReloadAssembly (7531ms)
+			LoadAssemblies (613ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (290ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (41ms)
-			SetupLoadedEditorAssemblies (291ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (4ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (72ms)
-				ProcessInitializeOnLoadAttributes (171ms)
-				ProcessInitializeOnLoadMethodAttributes (40ms)
-				AfterProcessingInitializeOnLoad (2ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (6ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.53 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2258 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 94.9 MB.
-System memory in use after: 94.9 MB.
-
-Unloading 105 unused Assets to reduce memory usage. Loaded Objects now: 2621.
-Total: 3.594100 ms (FindLiveObjects: 0.201300 ms CreateObjectMapping: 0.067600 ms MarkObjects: 2.921800 ms  DeleteObjects: 0.402600 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.003339 seconds.
-ASSEMBLY OVERRIDES: * override found for Unity assembly UnityEngine.UIElementsModule.dll (override path Library/ScriptAssemblies/UnityEngine.UIElementsModule.dll)
-ASSEMBLY OVERRIDES: * override found for Unity assembly UnityEditor.UIElementsModule.dll (override path Library/ScriptAssemblies/UnityEditor.UIElementsModule.dll)
-ASSEMBLY OVERRIDES: * override found for Unity assembly UnityEngine.UIElementsModule.dll (override path Library/ScriptAssemblies/UnityEngine.UIElementsModule.dll)
-ASSEMBLY OVERRIDES: * override found for Unity assembly UnityEditor.UIElementsModule.dll (override path Library/ScriptAssemblies/UnityEditor.UIElementsModule.dll)
-Begin MonoManager ReloadAssembly
-ASSEMBLY OVERRIDES: * override found for Unity assembly UnityEngine.UIElementsModule.dll (override path Library/ScriptAssemblies/UnityEngine.UIElementsModule.dll)
-ASSEMBLY OVERRIDES: * override found for Unity assembly UnityEditor.UIElementsModule.dll (override path Library/ScriptAssemblies/UnityEditor.UIElementsModule.dll)
-Symbol file LoadedFromMemory is not a mono symbol file
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.55 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-ASSEMBLY OVERRIDES: * override found for Unity assembly UnityEngine.UIElementsModule.dll (override path Library/ScriptAssemblies/UnityEngine.UIElementsModule.dll)
-ASSEMBLY OVERRIDES: * override found for Unity assembly UnityEditor.UIElementsModule.dll (override path Library/ScriptAssemblies/UnityEditor.UIElementsModule.dll)
-ASSEMBLY OVERRIDES: * override found for Unity assembly UnityEngine.UIElementsModule.dll (override path Library/ScriptAssemblies/UnityEngine.UIElementsModule.dll)
-ASSEMBLY OVERRIDES: * override found for Unity assembly UnityEditor.UIElementsModule.dll (override path Library/ScriptAssemblies/UnityEditor.UIElementsModule.dll)
-Mono: successfully reloaded assembly
-- Completed reload, in  1.071 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1071ms)
-		BeginReloadAssembly (107ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (4ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (29ms)
-		EndReloadAssembly (907ms)
-			LoadAssemblies (99ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (343ms)
+			SetupTypeCache (358ms)
 			ReleaseScriptCaches (1ms)
 			RebuildScriptCaches (43ms)
-			SetupLoadedEditorAssemblies (329ms)
+			SetupLoadedEditorAssemblies (6406ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (4ms)
-				SetLoadedEditorAssemblies (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (1ms)
 				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (83ms)
-				ProcessInitializeOnLoadAttributes (195ms)
-				ProcessInitializeOnLoadMethodAttributes (43ms)
-				AfterProcessingInitializeOnLoad (2ms)
+				BeforeProcessingInitializeOnLoad (85ms)
+				ProcessInitializeOnLoadAttributes (210ms)
+				ProcessInitializeOnLoadMethodAttributes (6101ms)
+				AfterProcessingInitializeOnLoad (3ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (8ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.55 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 1.03 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 2258 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 94.9 MB.
 System memory in use after: 95.0 MB.
 
-Unloading 105 unused Assets to reduce memory usage. Loaded Objects now: 2623.
-Total: 5.102600 ms (FindLiveObjects: 0.311700 ms CreateObjectMapping: 0.242000 ms MarkObjects: 4.117500 ms  DeleteObjects: 0.429000 ms)
+Unloading 105 unused Assets to reduce memory usage. Loaded Objects now: 2619.
+Total: 4.371300 ms (FindLiveObjects: 0.211800 ms CreateObjectMapping: 0.092200 ms MarkObjects: 3.217800 ms  DeleteObjects: 0.847900 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -348,109 +262,162 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 213.050447 seconds.
-  path: Assets/Scripts/GraphView/State Tree.asset
-  artifactKey: Guid(7ec08693cc19a1c43bbeca1c4ec93ff3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/GraphView/State Tree.asset using Guid(7ec08693cc19a1c43bbeca1c4ec93ff3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b8af7a54d20c1a04f967874b8475ea5a') in 0.023070 seconds 
-  Import took 0.039700 seconds .
+  Time since last request: 201.239303 seconds.
+  path: Assets/Scripts/GraphView/StateViewStyle.uss
+  artifactKey: Guid(e73a3e80f735cb14ba1bced6dcc80213) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/GraphView/StateViewStyle.uss using Guid(e73a3e80f735cb14ba1bced6dcc80213) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8e248a63993cf001c47fa4d323c91cdd') in 0.026262 seconds 
+  Import took 0.083445 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 2.920896 seconds.
-  path: Assets/Scripts/GraphView/State Tree.asset
-  artifactKey: Guid(7ec08693cc19a1c43bbeca1c4ec93ff3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/GraphView/State Tree.asset using Guid(7ec08693cc19a1c43bbeca1c4ec93ff3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3071774edfcc939cedcc50b49f99442e') in 0.004261 seconds 
-  Import took 0.034108 seconds .
+  Time since last request: 130.649885 seconds.
+  path: Assets/Scripts/GraphView/StateView.uxml
+  artifactKey: Guid(ad605333d95eb484aa0345bf0f73a592) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/GraphView/StateView.uxml using Guid(ad605333d95eb484aa0345bf0f73a592) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '56442cd8adad6c64e95db11e70b62378') in 0.014345 seconds 
+  Import took 0.042849 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 42.864944 seconds.
-  path: Assets/Scripts/GraphView/StateTreeView.cs
-  artifactKey: Guid(a13b0a4b0c1470643b8bb65a6916770b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/GraphView/StateTreeView.cs using Guid(a13b0a4b0c1470643b8bb65a6916770b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e5a7f523d1a0748d1d028d698b6bd19') in 0.015621 seconds 
-  Import took 0.032705 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.003346 seconds.
-ASSEMBLY OVERRIDES: * override found for Unity assembly UnityEngine.UIElementsModule.dll (override path Library/ScriptAssemblies/UnityEngine.UIElementsModule.dll)
-ASSEMBLY OVERRIDES: * override found for Unity assembly UnityEditor.UIElementsModule.dll (override path Library/ScriptAssemblies/UnityEditor.UIElementsModule.dll)
-ASSEMBLY OVERRIDES: * override found for Unity assembly UnityEngine.UIElementsModule.dll (override path Library/ScriptAssemblies/UnityEngine.UIElementsModule.dll)
-ASSEMBLY OVERRIDES: * override found for Unity assembly UnityEditor.UIElementsModule.dll (override path Library/ScriptAssemblies/UnityEditor.UIElementsModule.dll)
-Begin MonoManager ReloadAssembly
-ASSEMBLY OVERRIDES: * override found for Unity assembly UnityEngine.UIElementsModule.dll (override path Library/ScriptAssemblies/UnityEngine.UIElementsModule.dll)
-ASSEMBLY OVERRIDES: * override found for Unity assembly UnityEditor.UIElementsModule.dll (override path Library/ScriptAssemblies/UnityEditor.UIElementsModule.dll)
-Symbol file LoadedFromMemory is not a mono symbol file
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.55 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-ASSEMBLY OVERRIDES: * override found for Unity assembly UnityEngine.UIElementsModule.dll (override path Library/ScriptAssemblies/UnityEngine.UIElementsModule.dll)
-ASSEMBLY OVERRIDES: * override found for Unity assembly UnityEditor.UIElementsModule.dll (override path Library/ScriptAssemblies/UnityEditor.UIElementsModule.dll)
-ASSEMBLY OVERRIDES: * override found for Unity assembly UnityEngine.UIElementsModule.dll (override path Library/ScriptAssemblies/UnityEngine.UIElementsModule.dll)
-ASSEMBLY OVERRIDES: * override found for Unity assembly UnityEditor.UIElementsModule.dll (override path Library/ScriptAssemblies/UnityEditor.UIElementsModule.dll)
-Mono: successfully reloaded assembly
-- Completed reload, in  0.950 seconds
-Domain Reload Profiling:
-	ReloadAssembly (951ms)
-		BeginReloadAssembly (103ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (4ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (31ms)
-		EndReloadAssembly (786ms)
-			LoadAssemblies (76ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (273ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (38ms)
-			SetupLoadedEditorAssemblies (301ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (4ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (75ms)
-				ProcessInitializeOnLoadAttributes (180ms)
-				ProcessInitializeOnLoadMethodAttributes (40ms)
-				AfterProcessingInitializeOnLoad (2ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (7ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.57 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2258 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 95.0 MB.
-System memory in use after: 95.1 MB.
-
-Unloading 105 unused Assets to reduce memory usage. Loaded Objects now: 2625.
-Total: 4.183700 ms (FindLiveObjects: 0.207900 ms CreateObjectMapping: 0.092200 ms MarkObjects: 3.219400 ms  DeleteObjects: 0.662600 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 407.258425 seconds.
-  path: Assets/Scripts/GraphView/State Tree.asset
-  artifactKey: Guid(7ec08693cc19a1c43bbeca1c4ec93ff3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/GraphView/State Tree.asset using Guid(7ec08693cc19a1c43bbeca1c4ec93ff3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '57e38bbb2f15679722dba3f8949facd4') in 0.019164 seconds 
-  Import took 0.045275 seconds .
+  Time since last request: 0.000320 seconds.
+  path: Assets/Scripts/GraphView/StateViewStyle.uss
+  artifactKey: Guid(e73a3e80f735cb14ba1bced6dcc80213) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/GraphView/StateViewStyle.uss using Guid(e73a3e80f735cb14ba1bced6dcc80213) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c5a41b34a9173e9dc294d5df41d5bf5') in 0.010729 seconds 
+  Import took 0.037237 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 3.701400 seconds.
-  path: Assets/Scripts/GraphView/State Tree.asset
-  artifactKey: Guid(7ec08693cc19a1c43bbeca1c4ec93ff3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/GraphView/State Tree.asset using Guid(7ec08693cc19a1c43bbeca1c4ec93ff3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '440d497724ebbe04bebd0fa61017c0bc') in 0.003137 seconds 
-  Import took 0.027608 seconds .
+  Time since last request: 54.087253 seconds.
+  path: Assets/Scripts/GraphView/StateView.uxml
+  artifactKey: Guid(ad605333d95eb484aa0345bf0f73a592) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/GraphView/StateView.uxml using Guid(ad605333d95eb484aa0345bf0f73a592) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a7ffb98019da0bc917d9762c158c0e85') in 0.003427 seconds 
+  Import took 0.056825 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 17.491463 seconds.
+  path: Assets/Scripts/GraphView/StateView.uxml
+  artifactKey: Guid(ad605333d95eb484aa0345bf0f73a592) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/GraphView/StateView.uxml using Guid(ad605333d95eb484aa0345bf0f73a592) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b8cbc8f060be0062ad2a65ae6c32c414') in 0.004550 seconds 
+  Import took 0.029200 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000313 seconds.
+  path: Assets/Scripts/GraphView/StateViewStyle.uss
+  artifactKey: Guid(e73a3e80f735cb14ba1bced6dcc80213) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/GraphView/StateViewStyle.uss using Guid(e73a3e80f735cb14ba1bced6dcc80213) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9006eaed291171f897cf6597a988a863') in 0.003435 seconds 
+  Import took 0.116431 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 69.345494 seconds.
+  path: Assets/Scripts/GraphView/StateView.uxml
+  artifactKey: Guid(ad605333d95eb484aa0345bf0f73a592) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/GraphView/StateView.uxml using Guid(ad605333d95eb484aa0345bf0f73a592) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '53bc8c75ac4c5e8d48c0234bb56f563c') in 0.004161 seconds 
+  Import took 0.019931 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000302 seconds.
+  path: Assets/Scripts/GraphView/StateViewStyle.uss
+  artifactKey: Guid(e73a3e80f735cb14ba1bced6dcc80213) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/GraphView/StateViewStyle.uss using Guid(e73a3e80f735cb14ba1bced6dcc80213) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb76472f8903f76dd9aff723676d6da3') in 0.003355 seconds 
+  Import took 0.029694 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 75.855319 seconds.
+  path: Assets/Scripts/GraphView/StateView.uxml
+  artifactKey: Guid(ad605333d95eb484aa0345bf0f73a592) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/GraphView/StateView.uxml using Guid(ad605333d95eb484aa0345bf0f73a592) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f33ee973e514612891897534df4bd41c') in 0.003525 seconds 
+  Import took 0.025242 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000476 seconds.
+  path: Assets/Scripts/GraphView/StateViewStyle.uss
+  artifactKey: Guid(e73a3e80f735cb14ba1bced6dcc80213) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/GraphView/StateViewStyle.uss using Guid(e73a3e80f735cb14ba1bced6dcc80213) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b18c4a6cf753af1b43b87f8f3bc2057f') in 0.003990 seconds 
+  Import took 0.057084 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 44.422356 seconds.
+  path: Assets/Scripts/GraphView/StateView.uxml
+  artifactKey: Guid(ad605333d95eb484aa0345bf0f73a592) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/GraphView/StateView.uxml using Guid(ad605333d95eb484aa0345bf0f73a592) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '52106fa8384a4349df4bf7cd530ba95b') in 0.009533 seconds 
+  Import took 0.182464 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000255 seconds.
+  path: Assets/Scripts/GraphView/StateViewStyle.uss
+  artifactKey: Guid(e73a3e80f735cb14ba1bced6dcc80213) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/GraphView/StateViewStyle.uss using Guid(e73a3e80f735cb14ba1bced6dcc80213) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '59076990dce4c26f14634c27030af2b1') in 0.004041 seconds 
+  Import took 0.053278 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 55.895774 seconds.
+  path: Assets/Scripts/GraphView/StateView.uxml
+  artifactKey: Guid(ad605333d95eb484aa0345bf0f73a592) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/GraphView/StateView.uxml using Guid(ad605333d95eb484aa0345bf0f73a592) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b00df04c10fb616ae2107c35fc0191e9') in 0.005508 seconds 
+  Import took 0.034195 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000313 seconds.
+  path: Assets/Scripts/GraphView/StateViewStyle.uss
+  artifactKey: Guid(e73a3e80f735cb14ba1bced6dcc80213) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/GraphView/StateViewStyle.uss using Guid(e73a3e80f735cb14ba1bced6dcc80213) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd895b8d078e8ce7dd16416f86c8b5da6') in 0.003448 seconds 
+  Import took 0.013929 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 27.091826 seconds.
+  path: Assets/Scripts/GraphView/StateView.uxml
+  artifactKey: Guid(ad605333d95eb484aa0345bf0f73a592) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/GraphView/StateView.uxml using Guid(ad605333d95eb484aa0345bf0f73a592) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e611579452ab24ef790ac884767817ba') in 0.005504 seconds 
+  Import took 0.045584 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000298 seconds.
+  path: Assets/Scripts/GraphView/StateViewStyle.uss
+  artifactKey: Guid(e73a3e80f735cb14ba1bced6dcc80213) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/GraphView/StateViewStyle.uss using Guid(e73a3e80f735cb14ba1bced6dcc80213) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ab08013ad928255ebb5edd1302cb1c54') in 0.003555 seconds 
+  Import took 0.033863 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 101.960993 seconds.
+  path: Assets/Scripts/GraphView/StateView.uxml
+  artifactKey: Guid(ad605333d95eb484aa0345bf0f73a592) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/GraphView/StateView.uxml using Guid(ad605333d95eb484aa0345bf0f73a592) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '417c3690cc84d8cd968c7255c822378b') in 0.003790 seconds 
+  Import took 0.027813 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 19.816957 seconds.
+  path: Assets/Scripts/GraphView/StateView.uxml
+  artifactKey: Guid(ad605333d95eb484aa0345bf0f73a592) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/GraphView/StateView.uxml using Guid(ad605333d95eb484aa0345bf0f73a592) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9992e50b530240bf7ca7c184df1afdd7') in 0.004607 seconds 
+  Import took 0.021915 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.526107 seconds.
+  path: Assets/Scripts/GraphView/StateView.uxml
+  artifactKey: Guid(ad605333d95eb484aa0345bf0f73a592) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/GraphView/StateView.uxml using Guid(ad605333d95eb484aa0345bf0f73a592) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6f9beb6c2d50c1e457fcdc3687d726bc') in 0.004637 seconds 
+  Import took 0.147546 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 22.308858 seconds.
+  path: Assets/Scripts/GraphView/StateViewStyle.uss
+  artifactKey: Guid(e73a3e80f735cb14ba1bced6dcc80213) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/GraphView/StateViewStyle.uss using Guid(e73a3e80f735cb14ba1bced6dcc80213) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '92e10d26a32a99e7cf5ea67a0dc0f4b7') in 0.004281 seconds 
+  Import took 0.051658 seconds .
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file

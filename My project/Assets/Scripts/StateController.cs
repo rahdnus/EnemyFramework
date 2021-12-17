@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class StateController : MonoBehaviour
 {
+    [SerializeField] StateTree tree;
    public State currentstate;
    public State remaininstate;
    public LayerMask targetlayer;
@@ -14,6 +15,7 @@ public class StateController : MonoBehaviour
   public int nextwaypoint=0;
    void Awake()
    {
+       currentstate=tree.states[0];
        agent=GetComponent<NavMeshAgent>();
    }
     void Update()
@@ -22,7 +24,8 @@ public class StateController : MonoBehaviour
     }
     public void ChangetoState(State newstate)
     {
-        if(newstate!=remaininstate)
+        //find solution for this ***
+        if(newstate!=null)
         {
             currentstate=newstate;
 

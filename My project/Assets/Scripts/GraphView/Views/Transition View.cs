@@ -13,6 +13,7 @@ public class TransitionView : Node
     {
         this.transition=transition;
         this.title="Transition";
+        this.elementTypeColor=Color.blue;
         viewDataKey=transition.guid;
         style.left=transition.position.x;
         style.top=transition.position.y;
@@ -23,9 +24,9 @@ public class TransitionView : Node
    {
         D_input = InstantiatePort(Orientation.Horizontal, Direction.Input, Port.Capacity.Single, typeof(bool));
         D_input.portName="Decision";
-        ST_input = InstantiatePort(Orientation.Horizontal, Direction.Input, Port.Capacity.Single, typeof(bool));
+        ST_input = InstantiatePort(Orientation.Vertical, Direction.Input, Port.Capacity.Single, typeof(bool));
         ST_input.portName="True";
-        SF_input = InstantiatePort(Orientation.Horizontal, Direction.Input, Port.Capacity.Single, typeof(bool));
+        SF_input = InstantiatePort(Orientation.Vertical, Direction.Input, Port.Capacity.Single, typeof(bool));
         SF_input.portName="False";
         
         inputContainer.Add(D_input);

@@ -1,0 +1,41 @@
+#node-border {
+    background-color: rgb(88, 25, 99);
+    border-left-color: rgb(110, 37, 156);
+    border-right-color: rgb(110, 37, 156);
+    border-top-color: rgb(110, 37, 156);
+    border-bottom-color: rgb(110, 37, 156);
+    border-left-width: 3px;
+    border-right-width: 3px;
+    border-top-width: 3px;
+    border-bottom-width: 3px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+#title-label {
+    -unity-font-style: normal;
+    color: rgba(78, 168, 255, 255);
+    font-size: 16px;
+    margin-left: 6%;
+    margin-right: 6%;
+    padding-left: 16%;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 10%;
+    border-left-color: rgba(108, 33, 99, 255);
+    border-right-color: rgba(108, 33, 99, 255);
+    border-top-color: rgba(221, 66, 173, 255);
+    border-bottom-color: rgba(221, 66, 173, 255);
+    border-left-width: 3px;
+    border-right-width: 3px;
+    border-top-width: 3px;
+    border-bottom-width: 3px;
+    margin-top: 6%;
+    margin-bottom: 6%;
+    background-color: rgba(58, 0, 55, 255);
+    align-items: center;
+    justify-content: flex-end;
+    opacity: 1;
+}

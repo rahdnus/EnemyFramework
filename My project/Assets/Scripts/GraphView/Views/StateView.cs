@@ -6,7 +6,7 @@ public class StateView : Node
      public Port A_input;
     public Port T_input;
     public Port ouput;
-   public StateView(State state)
+   public StateView(State state):base("Assets/Scripts/GraphView/StateView.uxml")
    {
        this.state=state;
        this.title=state.name;
@@ -21,7 +21,7 @@ public class StateView : Node
        A_input=InstantiatePort(Orientation.Horizontal,Direction.Input,Port.Capacity.Multi,typeof(bool));
        A_input.portName="Action";
        inputContainer.Add(A_input);
-       T_input=InstantiatePort(Orientation.Horizontal,Direction.Input,Port.Capacity.Multi,typeof(bool));
+       T_input=InstantiatePort(Orientation.Vertical,Direction.Input,Port.Capacity.Multi,typeof(bool));
        T_input.portName="Transition";
        inputContainer.Add(T_input);
    }
