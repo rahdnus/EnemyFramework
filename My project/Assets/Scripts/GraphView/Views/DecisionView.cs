@@ -3,8 +3,9 @@ using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 
-public class DecisionView : Node
+public class DecisionView : NodeView
 {
+
     public Decision decision;
     public Port output;
     public DecisionView(Decision decision)
@@ -18,7 +19,7 @@ public class DecisionView : Node
     }
      private void CreateOutputPorts()
    {
-        output = InstantiatePort(Orientation.Horizontal, Direction.Output, Port.Capacity.Single, typeof(bool));
+        output = InstantiatePort(Orientation.Horizontal, Direction.Output, Port.Capacity.Multi, typeof(bool));
         outputContainer.Add(output);
     }
     public override void SetPosition(Rect newPos)

@@ -5,11 +5,18 @@ using UnityEngine;
 [CreateAssetMenu(fileName ="State",menuName ="PlugAI/State")]
 public class State : ScriptableObject
 {
-    public Vector2 position;
-    public string guid;
-    public List<Action> actions;
-    public List<Transition> transitions;
+[HideInInspector]public Vector2 position;
+   [HideInInspector]public string guid;
+    public List<Action> actions=new List<Action>();
+    public List<Transition> transitions=new List<Transition>();
 
+    public void onEnter(StateController controller)
+    {
+        if(actions!=null)
+        {
+            actions.ForEach((action)=>action.onEnter(controller));
+        }
+    }
     public void UpdateState(StateController controller)
     {
         if(actions!=null)

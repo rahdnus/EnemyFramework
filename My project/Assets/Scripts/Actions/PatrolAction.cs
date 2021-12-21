@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class PatrolAction : Action
 {
+    public override void onEnter(StateController controller)
+    {
+        
+    }
     public override void Act(StateController controller)
     {
        

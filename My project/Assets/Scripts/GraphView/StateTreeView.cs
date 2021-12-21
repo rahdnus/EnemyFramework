@@ -7,9 +7,10 @@ using System.Collections.Generic;
 
 public class StateTreeView : GraphView
 {
+    public System.Action<NodeView> OnSelected;
     new public class UxmlFactory : UxmlFactory<StateTreeView, GraphView.UxmlTraits> { }
     StateTree tree;
-
+    
     public StateTreeView()
     {
         Insert(0, new GridBackground());
@@ -125,7 +126,9 @@ public class StateTreeView : GraphView
                     {
                         StateView stateView=edge.input.node as StateView;
                         ActionView actionview=edge.output.node as ActionView;
-                        stateView.state.actions.Add(actionview.action);
+                        // Debug.Log(stateView.name);
+                      // stateView.state.actions.ForEach((action)=>{Debug.Log(action.name);});
+                            stateView.state.actions.Add(actionview.action);
                     }
                       if(edge.output.node.GetType()==typeof(TransitionView) && edge.input.node.GetType()==typeof(StateView))
                     {
@@ -259,21 +262,25 @@ public class StateTreeView : GraphView
     void CreateStateView(State state)
     {
         StateView stateview = new StateView(state);
+        stateview.onNodeSelected=OnSelected;
         AddElement(stateview);
     }
     void CreateActionView(Action action)
     {
         ActionView actionview = new ActionView(action);
+        actionview.onNodeSelected=OnSelected;
         AddElement(actionview);
     }
      void CreateTransitionView(Transition transition)
     {
         TransitionView transitionView= new TransitionView(transition);
+        transitionView.onNodeSelected=OnSelected;
         AddElement(transitionView);
     }
     void CreateDecisionView(Decision decision)
     {
        DecisionView decisionView=new DecisionView(decision);
+       decisionView.onNodeSelected=OnSelected;
        AddElement(decisionView);
     }
     #endregion

@@ -5,8 +5,8 @@ using UnityEngine;
 [System.Serializable]
 public class Transition :ScriptableObject
 {
-    public Vector2 position;
-   public string guid;
+[HideInInspector]public Vector2 position;
+  [HideInInspector] public string guid;
    public Decision decision;
     public State truestate;
     public State falsestate;

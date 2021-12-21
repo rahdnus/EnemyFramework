@@ -20,7 +20,7 @@ public class StateController : MonoBehaviour
    }
     void Update()
     {
-        currentstate.UpdateState(this);
+    currentstate.UpdateState(this);
     }
     public void ChangetoState(State newstate)
     {
@@ -28,6 +28,7 @@ public class StateController : MonoBehaviour
         if(newstate!=null)
         {
             currentstate=newstate;
+            currentstate.onEnter(this);
 
         }
     }

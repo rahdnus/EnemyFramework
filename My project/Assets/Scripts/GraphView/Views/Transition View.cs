@@ -2,7 +2,7 @@
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
-public class TransitionView : Node
+public class TransitionView : NodeView
 {
     
     public Transition transition;
@@ -22,11 +22,11 @@ public class TransitionView : Node
     }
       private void CreateInputPorts()
    {
-        D_input = InstantiatePort(Orientation.Horizontal, Direction.Input, Port.Capacity.Single, typeof(bool));
+        D_input = InstantiatePort(Orientation.Horizontal, Direction.Input, Port.Capacity.Multi, typeof(Decision));
         D_input.portName="Decision";
-        ST_input = InstantiatePort(Orientation.Vertical, Direction.Input, Port.Capacity.Single, typeof(bool));
+        ST_input = InstantiatePort(Orientation.Horizontal, Direction.Input, Port.Capacity.Multi, typeof(bool));
         ST_input.portName="True";
-        SF_input = InstantiatePort(Orientation.Vertical, Direction.Input, Port.Capacity.Single, typeof(bool));
+        SF_input = InstantiatePort(Orientation.Horizontal, Direction.Input, Port.Capacity.Multi, typeof(bool));
         SF_input.portName="False";
         
         inputContainer.Add(D_input);

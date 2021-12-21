@@ -1,11 +1,13 @@
 using UnityEditor;
 using UnityEngine;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine.UIElements;
 
 
 public class StateTreeEditor : EditorWindow
 {
     StateTreeView treeView;
+    InsepctorView inspectorview;
     [MenuItem("StateTreeEditor/Editor..")]
     public static void OpenWindow()
     {
@@ -30,6 +32,8 @@ public class StateTreeEditor : EditorWindow
         root.styleSheets.Add(styleSheet);
 
         treeView=root.Q<StateTreeView>();
+        inspectorview=root.Q<InsepctorView>();
+        treeView.OnSelected=OnNodeSelectionChanged;
 
         OnSelectionChange();
     }
@@ -40,6 +44,10 @@ public class StateTreeEditor : EditorWindow
         {
             treeView.PopulateView(tree);
         }
+    }
+    public void OnNodeSelectionChanged(NodeView node)
+    {
+        inspectorview.updateNodeChange(node);
     }
 
 }

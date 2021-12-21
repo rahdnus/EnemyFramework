@@ -5,7 +5,8 @@ using UnityEngine;
 
 public abstract class Action : ScriptableObject
 {
-   public Vector2 position;
-   public string guid;
+   [HideInInspector]public Vector2 position;
+  [HideInInspector] public string guid;
+   public abstract void onEnter(StateController controller);
    public abstract void Act(StateController controller);
 }

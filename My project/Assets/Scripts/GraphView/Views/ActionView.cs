@@ -2,8 +2,9 @@
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
-public class ActionView : Node
+public class ActionView : NodeView
 {
+
     public Action action;
     public Port output;
     public ActionView(Action action)
@@ -17,7 +18,7 @@ public class ActionView : Node
     }
      private void CreateOutputPorts()
    {
-        output = InstantiatePort(Orientation.Horizontal, Direction.Output, Port.Capacity.Single, typeof(bool));
+        output = InstantiatePort(Orientation.Horizontal, Direction.Output, Port.Capacity.Multi, typeof(bool));
         outputContainer.Add(output);
     }
     public override void SetPosition(Rect newPos)

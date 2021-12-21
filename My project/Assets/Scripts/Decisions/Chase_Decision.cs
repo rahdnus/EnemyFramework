@@ -4,7 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName ="PlugAI/Decision/Chase_D")]
 public class Chase_Decision : Decision
 {
-    [SerializeField]float mindistance=10f;
+    [SerializeField]float mindistance=30f;
    
   public override bool decide(StateController controller)
   {
