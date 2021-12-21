@@ -31,7 +31,6 @@ public class State : ScriptableObject
     {
         for(int i=0;i<actions.Count;i++)
         {
-             Debug.Log("acting");
             actions[i].Act(controller);
         }
     }
@@ -47,6 +46,14 @@ public class State : ScriptableObject
             {
                 controller.ChangetoState(transitions[i].falsestate);
             }
+        }
+    }
+    
+    public void onExit(StateController controller)
+    {
+        if(actions!=null)
+        {
+            actions.ForEach((action)=>action.onExit(controller));
         }
     }
 }

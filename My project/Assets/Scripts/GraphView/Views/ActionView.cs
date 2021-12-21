@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class ActionView : NodeView
 {
-
     public Action action;
     public Port output;
     public ActionView(Action action)
     {
         this.action=action;
-        this.title=action.name;
+       this.title=action.name;
         viewDataKey=action.guid;
         style.left=action.position.x;
         style.top=action.position.y;

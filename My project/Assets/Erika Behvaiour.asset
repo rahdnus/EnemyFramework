@@ -1,22 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8185920253520835531
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4e03ddf7c3d9354e98969b1c6b8a5d4, type: 3}
-  m_Name: transition
-  m_EditorClassIdentifier: 
-  position: {x: -530.9983, y: 351.98752}
-  guid: 4c14da702d2610a4595b4888d7cf7449
-  decision: {fileID: -3615025084298596929}
-  truestate: {fileID: 0}
-  falsestate: {fileID: 0}
 --- !u!114 &-7647115420762230044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed4bffbfb5707f24c8cbefdecd7543cb, type: 3}
   m_Name: Observe_Decision
   m_EditorClassIdentifier: 
-  position: {x: -285.4, y: 124.40001}
+  position: {x: 888.80005, y: -494.40002}
   guid: ec7f36cdb28effa4c8062e61478f8484
---- !u!114 &-7068305112311950783
+  observeRange: 20
+--- !u!114 &-7435942102267290917
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -40,13 +24,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4a1b84205961124b9df03b52208981a, type: 3}
-  m_Name: ChaseAction
+  m_Script: {fileID: 11500000, guid: 06ec4b5b9f752924faa1d2902333a2cb, type: 3}
+  m_Name: RechargeAction
   m_EditorClassIdentifier: 
-  position: {x: -368.80295, y: 239.29968}
-  guid: 7533b7650e15c764f87c9632612865c4
-  statename: Slow_Run
-  transtitiontime: 1.2
+  position: {x: 0, y: 0}
+  guid: d0dc1f3ebeb66a845acf94e5fa36174f
+  rechargeamount: 10
+--- !u!114 &-7120508096494179376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba46bd97aa0fa384caf2331c73baaa36, type: 3}
+  m_Name: Proximity_Decision
+  m_EditorClassIdentifier: 
+  position: {x: 869.6001, y: -137.60004}
+  guid: 0c3efa3bd3f6bae49bc5fde777c7e4e2
+  mindistance: 30
 --- !u!114 &-5287930485939407915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59,9 +57,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 194b599c9b8fa864fb52098db5da0f8c, type: 3}
   m_Name: PatrolAction
   m_EditorClassIdentifier: 
-  position: {x: -65.275116, y: -19.531357}
+  position: {x: 1108.8, y: -638.4}
   guid: 1869a235764fa8d4ab23b037e7f068b6
---- !u!114 &-3615025084298596929
+--- !u!114 &-5237063252694113837
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -70,12 +68,90 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed4bffbfb5707f24c8cbefdecd7543cb, type: 3}
-  m_Name: Observe_Decision
+  m_Script: {fileID: 11500000, guid: ba46bd97aa0fa384caf2331c73baaa36, type: 3}
+  m_Name: Proximity_Decision
   m_EditorClassIdentifier: 
-  position: {x: -795.693, y: 363.15057}
-  guid: a3b9205279282ce4e9f7303b1cc01d1b
---- !u!114 &-68094142921806111
+  position: {x: -488.03812, y: 2315.024}
+  guid: 02beb6f81aff089409995676a1d737a5
+  mindistance: 30
+--- !u!114 &-5175082655310849085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba46bd97aa0fa384caf2331c73baaa36, type: 3}
+  m_Name: Proximity_Decision
+  m_EditorClassIdentifier: 
+  position: {x: -358.5462, y: 411.40823}
+  guid: 6642bfb5b0c23af4286d99ba2265f26f
+  mindistance: 30
+--- !u!114 &-3414038032833137448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba46bd97aa0fa384caf2331c73baaa36, type: 3}
+  m_Name: Chase_Decision
+  m_EditorClassIdentifier: 
+  position: {x: -712.0203, y: 377.59998}
+  guid: 2c5f79d4a935a0c4fb5cd8a4aeb4a006
+  mindistance: 7
+--- !u!114 &-2598579364921027187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba46bd97aa0fa384caf2331c73baaa36, type: 3}
+  m_Name: Proximity_Decision
+  m_EditorClassIdentifier: 
+  position: {x: 87.19995, y: -40.799988}
+  guid: b79e2f4e3c43c0641a3d1a326b3a693c
+  mindistance: 2
+--- !u!114 &-2325059449993943291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba46bd97aa0fa384caf2331c73baaa36, type: 3}
+  m_Name: Proximity_Decision
+  m_EditorClassIdentifier: 
+  position: {x: 484, y: -288.8}
+  guid: abe425b345811704cb7030d07e29b0e8
+  mindistance: 7
+--- !u!114 &-2118367337038361229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4a1b84205961124b9df03b52208981a, type: 3}
+  m_Name: ChaseAction
+  m_EditorClassIdentifier: 
+  position: {x: 707.09326, y: -379.93063}
+  guid: b284669980a394c4090adb5cd59fbf26
+  statename: Slow_Run
+  transtitiontime: 1.2
+  ChaseSpeed: 4
+--- !u!114 &-1383342621828679688
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -87,11 +163,59 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4e03ddf7c3d9354e98969b1c6b8a5d4, type: 3}
   m_Name: transition
   m_EditorClassIdentifier: 
-  position: {x: -108.094025, y: 468.33844}
-  guid: 1c10b665a1717e240a9985d4b0eae143
-  decision: {fileID: 8435931543627399168}
-  truestate: {fileID: 3149810575125250039}
-  falsestate: {fileID: 0}
+  position: {x: 660, y: -240.79999}
+  guid: 9194aa51ff01e534c9db5d3f033b14d7
+  decision: {fileID: -2325059449993943291}
+  truestate: {fileID: 0}
+  falsestate: {fileID: 3952154186483293544}
+--- !u!114 &-950409505018565299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ecbc42c532aa2940a15535c82bb8c2c, type: 3}
+  m_Name: State2
+  m_EditorClassIdentifier: 
+  position: {x: -348.80005, y: 279.2}
+  guid: 1ba168da0aaa9474caa2cf299e560e76
+  actions:
+  - {fileID: 406208487791470070}
+  transitions:
+  - {fileID: 6188205179399445769}
+--- !u!114 &-100765745108047157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba46bd97aa0fa384caf2331c73baaa36, type: 3}
+  m_Name: Proximity_Decision
+  m_EditorClassIdentifier: 
+  position: {x: -705.47144, y: 305.7263}
+  guid: fb8906aa4b6b9e44690362bdd892253f
+  mindistance: 30
+--- !u!114 &-53436356229025586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba46bd97aa0fa384caf2331c73baaa36, type: 3}
+  m_Name: Proximity_Decision
+  m_EditorClassIdentifier: 
+  position: {x: 112, y: 387.5841}
+  guid: 7b84dfdbe67dddb4a9d55613c462689a
+  mindistance: 30
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107,17 +231,97 @@ MonoBehaviour:
   states:
   - {fileID: 3149810575125250039}
   - {fileID: 5682412942563235944}
+  - {fileID: 3952154186483293544}
+  - {fileID: 5552300743521552580}
+  - {fileID: -950409505018565299}
   actions:
   - {fileID: -5287930485939407915}
-  - {fileID: -7068305112311950783}
+  - {fileID: 4808435511374593848}
+  - {fileID: 6839130792039960981}
+  - {fileID: -2118367337038361229}
+  - {fileID: 406208487791470070}
+  - {fileID: -7435942102267290917}
   transitions:
   - {fileID: 7927499910711778854}
-  - {fileID: -68094142921806111}
-  - {fileID: -8185920253520835531}
+  - {fileID: -1383342621828679688}
+  - {fileID: 5247466223857373907}
+  - {fileID: 105196122770691513}
+  - {fileID: 6188205179399445769}
+  - {fileID: 3123538854820985612}
   decisions:
   - {fileID: -7647115420762230044}
-  - {fileID: 8435931543627399168}
-  - {fileID: -3615025084298596929}
+  - {fileID: -7120508096494179376}
+  - {fileID: -2325059449993943291}
+  - {fileID: -2598579364921027187}
+  - {fileID: 8257165470988377024}
+  - {fileID: 2555830786219364235}
+--- !u!114 &105196122770691513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4e03ddf7c3d9354e98969b1c6b8a5d4, type: 3}
+  m_Name: transition
+  m_EditorClassIdentifier: 
+  position: {x: -128.80005, y: 138.39996}
+  guid: 2619f2704b843054fa53167c5b138565
+  decision: {fileID: 8257165470988377024}
+  truestate: {fileID: 0}
+  falsestate: {fileID: -950409505018565299}
+--- !u!114 &406208487791470070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bd565f1828ed44489b7a9367fce9844, type: 3}
+  m_Name: MoveAction
+  m_EditorClassIdentifier: 
+  position: {x: -491.69305, y: 221.86499}
+  guid: 35fe8770dcb4a3944bb8d1bbc0974345
+  statename: Back_Step
+  transtitiontime: 0
+  Speed: 4
+--- !u!114 &2555830786219364235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9784af09d928b2041b16fc574a293edd, type: 3}
+  m_Name: NoAnimation_Decision
+  m_EditorClassIdentifier: 
+  position: {x: -342.40002, y: 461.59998}
+  guid: 544a7598fec4a164eb71c0c57a11409e
+  animationlayer: 0
+  animationname: Back_Step
+--- !u!114 &3123538854820985612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4e03ddf7c3d9354e98969b1c6b8a5d4, type: 3}
+  m_Name: transition
+  m_EditorClassIdentifier: 
+  position: {x: 1108.8, y: -178.40002}
+  guid: 02083938b3947734487305e6f0f4a054
+  decision: {fileID: -7120508096494179376}
+  truestate: {fileID: 3149810575125250039}
+  falsestate: {fileID: 0}
 --- !u!114 &3149810575125250039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,12 +334,83 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ecbc42c532aa2940a15535c82bb8c2c, type: 3}
   m_Name: State
   m_EditorClassIdentifier: 
-  position: {x: 133.59988, y: -5.900978}
+  position: {x: 1253.6001, y: -561.6}
   guid: fe6ad4c78af3a8a4d808a108282a3897
   actions:
   - {fileID: -5287930485939407915}
   transitions:
   - {fileID: 7927499910711778854}
+--- !u!114 &3952154186483293544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ecbc42c532aa2940a15535c82bb8c2c, type: 3}
+  m_Name: State1
+  m_EditorClassIdentifier: 
+  position: {x: 445.6001, y: -129.60004}
+  guid: 3b83de3299cb4e748862d21c831aafe4
+  actions:
+  - {fileID: 6839130792039960981}
+  transitions:
+  - {fileID: 5247466223857373907}
+--- !u!114 &4808435511374593848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6f2b1283bae6f749b7c4c7f3e453a64, type: 3}
+  m_Name: CombatAction
+  m_EditorClassIdentifier: 
+  position: {x: -114.56423, y: 31.798965}
+  guid: faad0a838139b8e43a8fa1526c24b2b9
+  animationname: Melee_Attack
+  energycost: 20
+  animationlayer: 0
+  transitiontime: 0.3
+--- !u!114 &5247466223857373907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4e03ddf7c3d9354e98969b1c6b8a5d4, type: 3}
+  m_Name: transition
+  m_EditorClassIdentifier: 
+  position: {x: 253.6001, y: -36.799988}
+  guid: 05b4d69117f3a9b44b4ab367f404efba
+  decision: {fileID: -2598579364921027187}
+  truestate: {fileID: 0}
+  falsestate: {fileID: 5552300743521552580}
+--- !u!114 &5552300743521552580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ecbc42c532aa2940a15535c82bb8c2c, type: 3}
+  m_Name: State0
+  m_EditorClassIdentifier: 
+  position: {x: 52.80005, y: 77.60004}
+  guid: 6fad8e85c0d3871469c33a30a3d23315
+  actions:
+  - {fileID: 4808435511374593848}
+  transitions:
+  - {fileID: 105196122770691513}
 --- !u!114 &5682412942563235944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,12 +423,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ecbc42c532aa2940a15535c82bb8c2c, type: 3}
   m_Name: State2
   m_EditorClassIdentifier: 
-  position: {x: -259.46503, y: 305.74237}
+  position: {x: 914.3999, y: -312.8}
   guid: af901258ec570484c9ac15633ec407f8
   actions:
-  - {fileID: -7068305112311950783}
+  - {fileID: -2118367337038361229}
   transitions:
-  - {fileID: -8185920253520835531}
+  - {fileID: 3123538854820985612}
+  - {fileID: -1383342621828679688}
+--- !u!114 &6188205179399445769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4e03ddf7c3d9354e98969b1c6b8a5d4, type: 3}
+  m_Name: transition
+  m_EditorClassIdentifier: 
+  position: {x: -121.6001, y: 439.072}
+  guid: 8ce078446aa829f418f9ccfd8a33c426
+  decision: {fileID: 2555830786219364235}
+  truestate: {fileID: 0}
+  falsestate: {fileID: 3952154186483293544}
+--- !u!114 &6839130792039960981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4a1b84205961124b9df03b52208981a, type: 3}
+  m_Name: ChaseAction
+  m_EditorClassIdentifier: 
+  position: {x: 281.30096, y: -170.48824}
+  guid: 79cc08488cc12f24398eb562ac59b53e
+  statename: Crouch_Walk
+  transtitiontime: 1.2
+  ChaseSpeed: 1
 --- !u!114 &7927499910711778854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,11 +476,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4e03ddf7c3d9354e98969b1c6b8a5d4, type: 3}
   m_Name: transition
   m_EditorClassIdentifier: 
-  position: {x: -108.80005, y: 157.6}
+  position: {x: 1064.8, y: -460.8}
   guid: 4f0238c9a9a1857479b05b6359aab8b5
   decision: {fileID: -7647115420762230044}
   truestate: {fileID: 5682412942563235944}
   falsestate: {fileID: 0}
+--- !u!114 &8257165470988377024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0f6770da32a1234f9726e280df9d9e6, type: 3}
+  m_Name: Energy_Decision
+  m_EditorClassIdentifier: 
+  position: {x: -302.40002, y: 87.99994}
+  guid: fb6136e2ed0f22b47821ab100b5913c1
+  minEnergy: 25
 --- !u!114 &8435931543627399168
 MonoBehaviour:
   m_ObjectHideFlags: 0

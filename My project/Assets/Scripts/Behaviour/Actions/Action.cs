@@ -9,4 +9,5 @@ public abstract class Action : ScriptableObject
   [HideInInspector] public string guid;
    public abstract void onEnter(StateController controller);
    public abstract void Act(StateController controller);
+   public abstract void onExit(StateController controller);
 }

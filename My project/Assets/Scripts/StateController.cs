@@ -5,6 +5,9 @@ using UnityEngine.AI;
 
 public class StateController : MonoBehaviour
 {
+    public float maxenergy=100;
+    public float energy=100;//temporary;will be substituted by entity stats 
+    public Transform backjump;
     [SerializeField] StateTree tree;
    public State currentstate;
    public State remaininstate;
@@ -27,6 +30,8 @@ public class StateController : MonoBehaviour
         //find solution for this ***
         if(newstate!=null)
         {
+            Debug.Log(newstate.name);
+            currentstate.onExit(this);
             currentstate=newstate;
             currentstate.onEnter(this);
 

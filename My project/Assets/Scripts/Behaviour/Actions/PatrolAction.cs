@@ -6,7 +6,7 @@ public class PatrolAction : Action
 {
     public override void onEnter(StateController controller)
     {
-        
+        controller.nextwaypoint=0;
     }
     public override void Act(StateController controller)
     {
@@ -17,5 +17,8 @@ public class PatrolAction : Action
             Debug.Log("set destination");
             controller.nextwaypoint=(controller.nextwaypoint+1)%controller.waypoints.Count;
         }
+    }
+    public override void onExit(StateController controller)
+    {
     }
 }

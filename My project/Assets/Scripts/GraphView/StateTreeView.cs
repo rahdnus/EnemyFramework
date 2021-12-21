@@ -239,11 +239,14 @@ public class StateTreeView : GraphView
         if(type==typeof(State))
         {
             State state = tree.CreateState();
+            // state.position=Input.mousePosition;
+            
             CreateStateView(state);
         }
         else if(type==typeof(Transition))
         {
             Transition transition=tree.CreateTransition(type);
+            // transition.position=Input.mousePosition;
             CreateTransitionView(transition);
         }
         else if(type.BaseType==typeof(Decision))
@@ -254,6 +257,7 @@ public class StateTreeView : GraphView
          else if(type.BaseType==typeof(Action))
         {
             Action action=tree.CreateAction(type);
+            // action.position=Input.mousePosition;
             CreateActionView(action);
         }
         #endregion
