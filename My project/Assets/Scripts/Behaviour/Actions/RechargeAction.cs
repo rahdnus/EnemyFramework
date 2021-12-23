@@ -4,13 +4,15 @@ using UnityEngine;
 public class RechargeAction : Action
 {
     float counter;
-    public float rechargeamount=10;
+    public int rechargeamount=10;
     public override void onEnter(StateController controller)
     {
         counter=0;
     }
     public override void Act(StateController controller)
     {
+        Debug.Log("Recovering");
+
         if( controller.energy<controller.maxenergy)
         {
             counter += Time.deltaTime;
@@ -18,6 +20,7 @@ public class RechargeAction : Action
             {
                 counter = 0;
                 controller.energy += rechargeamount;
+                Debug.Log("Recovering");
             }
             if (controller.energy > controller.maxenergy)
             {

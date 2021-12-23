@@ -6,6 +6,7 @@ public class PatrolAction : Action
 {
     public override void onEnter(StateController controller)
     {
+        controller.GetComponent<Animator>().CrossFadeInFixedTime("Walking",0.3f);
         controller.nextwaypoint=0;
     }
     public override void Act(StateController controller)

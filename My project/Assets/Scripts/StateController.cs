@@ -5,8 +5,10 @@ using UnityEngine.AI;
 
 public class StateController : MonoBehaviour
 {
-    public float maxenergy=100;
-    public float energy=100;//temporary;will be substituted by entity stats 
+    public bool isbeingattacked=false;
+    public bool isattacking=false;
+    public int maxenergy=100;
+    public int energy=100;//temporary;will be substituted by entity stats 
     public Transform backjump;
     [SerializeField] StateTree tree;
    public State currentstate;
@@ -36,5 +38,18 @@ public class StateController : MonoBehaviour
             currentstate.onEnter(this);
 
         }
+    }
+    public void Block()
+    {
+        Debug.Log("blocked");
+    }
+    public void notBeingAttacked()
+    {
+        isbeingattacked=false;
+    }
+    public void DrainEnergy(int amount)
+    {
+        isattacking=false;
+        energy-=amount;
     }
 }

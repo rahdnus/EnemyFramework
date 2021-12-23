@@ -22,11 +22,11 @@ public class TransitionView : NodeView
     }
       private void CreateInputPorts()
    {
-        D_input = InstantiatePort(Orientation.Horizontal, Direction.Input, Port.Capacity.Multi, typeof(Decision));
+        D_input = InstantiatePort(Orientation.Horizontal, Direction.Input, Port.Capacity.Single, typeof(Decision));
         D_input.portName="Decision";
-        ST_input = InstantiatePort(Orientation.Horizontal, Direction.Input, Port.Capacity.Multi, typeof(bool));
+        ST_input = InstantiatePort(Orientation.Horizontal, Direction.Input, Port.Capacity.Single, typeof(bool));
         ST_input.portName="True";
-        SF_input = InstantiatePort(Orientation.Horizontal, Direction.Input, Port.Capacity.Multi, typeof(bool));
+        SF_input = InstantiatePort(Orientation.Horizontal, Direction.Input, Port.Capacity.Single, typeof(bool));
         SF_input.portName="False";
         
         inputContainer.Add(D_input);
@@ -35,7 +35,7 @@ public class TransitionView : NodeView
     }
      private void CreateOutputPorts()
    {
-        output = InstantiatePort(Orientation.Horizontal, Direction.Output, Port.Capacity.Single, typeof(bool));
+        output = InstantiatePort(Orientation.Horizontal, Direction.Output, Port.Capacity.Multi, typeof(bool));
         outputContainer.Add(output);
     }
     public override void SetPosition(Rect newPos)

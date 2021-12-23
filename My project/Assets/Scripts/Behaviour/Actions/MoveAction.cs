@@ -12,7 +12,7 @@ public class MoveAction : Action
     public override void onEnter(StateController controller)
     {
         controller.GetComponent<Animator>().CrossFadeInFixedTime(statename,transtitiontime);
-        controller.GetComponent<UnityEngine.AI.NavMeshAgent>().speed=Speed;
+        controller.agent.speed=Speed;
         controller.agent.updateRotation=false;
         controller.agent.destination=controller.backjump.position;
     }
