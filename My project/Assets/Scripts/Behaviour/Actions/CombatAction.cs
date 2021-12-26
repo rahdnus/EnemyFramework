@@ -21,23 +21,6 @@ public class CombatAction : Action
     }
     public override void Act(StateController controller)
     {
-        // if(animationflag)
-        // {
-        //     controller.GetComponent<Animator>().CrossFadeInFixedTime(animationname, transitiontime-0.001f);//because of the counter>transitiontime
-        //     // animationflag=false;
-        // }
-        // counter+=Time.deltaTime;
-        // if(counter>transitiontime)
-        // {
-        // if(controller.GetComponent<Animator>().GetCurrentAnimatorStateInfo(animationlayer).IsName(animationname) 
-        //     && controller.GetComponent<Animator>().GetCurrentAnimatorStateInfo(animationlayer).normalizedTime>=1f)
-        //     {
-        //     animationflag=true;
-        //     Debug.Log("Depleting");
-        //      controller.energy-=energycost;
-        //      counter=0;
-        //     }
-        // }
         
     }
     public override void onExit(StateController controller)
