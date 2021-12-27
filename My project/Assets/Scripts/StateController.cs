@@ -22,6 +22,7 @@ public class StateController : MonoBehaviour
    {
        currentstate=tree.states[0];
        agent=GetComponent<NavMeshAgent>();
+       currentstate.onEnter(this);
    }
     void Update()
     {
