@@ -15,7 +15,7 @@ public class CombatAction : Action
         // counter=0;
         controller.agent.isStopped=true;
         controller.isattacking=true;
-            controller.GetComponent<Animator>().CrossFadeInFixedTime(animationname, transitiontime-0.001f);
+        controller.GetComponent<Animator>().CrossFadeInFixedTime(animationname, transitiontime);
             // animationflag=false;
             // Debug.Log("Depleting");
     }

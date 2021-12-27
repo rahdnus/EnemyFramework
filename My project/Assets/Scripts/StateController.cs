@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class StateController : MonoBehaviour
 {
     public bool isbeingattacked=false;
+    public bool reacheddestination=false;
     public bool isattacking=false;
     public int maxenergy=100;
     public int energy=100;//temporary;will be substituted by entity stats 
@@ -33,7 +34,7 @@ public class StateController : MonoBehaviour
         //find solution for this ***
         if(newstate!=null)
         {
-            Debug.Log(newstate.name);
+           // Debug.Log(newstate.name);
             currentstate.onExit(this);
             currentstate=newstate;
             currentstate.onEnter(this);

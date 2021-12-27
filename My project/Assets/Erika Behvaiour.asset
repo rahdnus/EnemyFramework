@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06ec4b5b9f752924faa1d2902333a2cb, type: 3}
   m_Name: RechargeAction
   m_EditorClassIdentifier: 
-  position: {x: -89.77498, y: -676.8675}
+  position: {x: -183.68253, y: -564.7377}
   guid: 320c8939227de874685b902c756a9447
   rechargeamount: 10
 --- !u!114 &-7867625733972017668
@@ -62,6 +62,23 @@ MonoBehaviour:
   position: {x: 682.0915, y: -458.7488}
   guid: d0dc1f3ebeb66a845acf94e5fa36174f
   rechargeamount: 10
+--- !u!114 &-7140182415762668224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ecbc42c532aa2940a15535c82bb8c2c, type: 3}
+  m_Name: 7.State
+  m_EditorClassIdentifier: 
+  position: {x: -427.97723, y: -37.211376}
+  guid: 0347d2d93012ac845a8346e3539d8f49
+  actions: []
+  transitions:
+  - {fileID: -2154837782062077481}
 --- !u!114 &-7120508096494179376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,6 +153,24 @@ MonoBehaviour:
   position: {x: -358.5462, y: 411.40823}
   guid: 6642bfb5b0c23af4286d99ba2265f26f
   mindistance: 30
+--- !u!114 &-4854247779833931473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ecbc42c532aa2940a15535c82bb8c2c, type: 3}
+  m_Name: 8.State_CircularMove
+  m_EditorClassIdentifier: 
+  position: {x: -802.42267, y: 240.34319}
+  guid: 3b37debcc3b1fc943a0029cb73066aab
+  actions:
+  - {fileID: 4461398972257706580}
+  transitions:
+  - {fileID: -2686434733321676243}
 --- !u!114 &-4564619004267720079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,7 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4e03ddf7c3d9354e98969b1c6b8a5d4, type: 3}
   m_Name: transition
   m_EditorClassIdentifier: 
-  position: {x: 188.10004, y: -44.100002}
+  position: {x: 45.00693, y: -21.163464}
   guid: fadb51d395accd0428377482de8ddd4a
   decision: {fileID: 8257165470988377024}
   truestate: {fileID: 0}
@@ -182,6 +217,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   position: {x: 778.782, y: 33.459602}
   guid: 02ee29cf9534949418ae6748ae606afc
+--- !u!114 &-2686434733321676243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4e03ddf7c3d9354e98969b1c6b8a5d4, type: 3}
+  m_Name: transition
+  m_EditorClassIdentifier: 
+  position: {x: -1026.2994, y: 319.2024}
+  guid: 1de6bce73a3373041bbb165647a25ccd
+  decision: {fileID: 7668301975284129634}
+  truestate: {fileID: 5552300743521552580}
+  falsestate: {fileID: 0}
 --- !u!114 &-2598579364921027187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,9 +246,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba46bd97aa0fa384caf2331c73baaa36, type: 3}
   m_Name: Proximity_Decision
   m_EditorClassIdentifier: 
-  position: {x: 507.70105, y: -278.99762}
+  position: {x: 305.62323, y: -448.38983}
   guid: b79e2f4e3c43c0641a3d1a326b3a693c
-  mindistance: 2
+  mindistance: 4
+--- !u!114 &-2154837782062077481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4e03ddf7c3d9354e98969b1c6b8a5d4, type: 3}
+  m_Name: transition
+  m_EditorClassIdentifier: 
+  position: {x: -603.9318, y: 79.58863}
+  guid: ebf2b2e1ec7867c4886dfb433617d682
+  decision: {fileID: -716329285999665856}
+  truestate: {fileID: 0}
+  falsestate: {fileID: -4854247779833931473}
 --- !u!114 &-2118367337038361229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,7 +316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ecbc42c532aa2940a15535c82bb8c2c, type: 3}
   m_Name: State2
   m_EditorClassIdentifier: 
-  position: {x: 2.927662, y: 177.94237}
+  position: {x: -180.0202, y: 229.43231}
   guid: 1ba168da0aaa9474caa2cf299e560e76
   actions:
   - {fileID: 406208487791470070}
@@ -272,6 +341,21 @@ MonoBehaviour:
   - {fileID: 7197217480547089062}
   transitions:
   - {fileID: -7867625733972017668}
+--- !u!114 &-716329285999665856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea09a58cb0f0c31449c65afaca493e3f, type: 3}
+  m_Name: RandomDecision
+  m_EditorClassIdentifier: 
+  position: {x: -773.6226, y: 17.188627}
+  guid: 36ff1fbc186d27947a5ac7a974f37427
+  truetofalse: 6
 --- !u!114 &-343178536248358084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -284,7 +368,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0166efd18d8fc342809a13e10acc433, type: 3}
   m_Name: CombatDecision
   m_EditorClassIdentifier: 
-  position: {x: 150.38274, y: 103.3013}
+  position: {x: 41.33914, y: 190.98064}
   guid: 2236c3ae0074e4f419f7ca89918b7e99
 --- !u!114 &-100765745108047157
 MonoBehaviour:
@@ -349,6 +433,8 @@ MonoBehaviour:
   - {fileID: -950409505018565299}
   - {fileID: -773640476345692454}
   - {fileID: 1142752379795580748}
+  - {fileID: -7140182415762668224}
+  - {fileID: -4854247779833931473}
   actions:
   - {fileID: -5287930485939407915}
   - {fileID: 4808435511374593848}
@@ -358,6 +444,7 @@ MonoBehaviour:
   - {fileID: 7197217480547089062}
   - {fileID: -47746600663744626}
   - {fileID: -8921722300264774510}
+  - {fileID: 4461398972257706580}
   transitions:
   - {fileID: 7927499910711778854}
   - {fileID: 5247466223857373907}
@@ -368,6 +455,8 @@ MonoBehaviour:
   - {fileID: -7867625733972017668}
   - {fileID: -4564619004267720079}
   - {fileID: -1537066892815794202}
+  - {fileID: -2154837782062077481}
+  - {fileID: -2686434733321676243}
   decisions:
   - {fileID: -7647115420762230044}
   - {fileID: -7120508096494179376}
@@ -378,6 +467,8 @@ MonoBehaviour:
   - {fileID: -343178536248358084}
   - {fileID: 1961591189419611215}
   - {fileID: -5975135083591841726}
+  - {fileID: -716329285999665856}
+  - {fileID: 7668301975284129634}
 --- !u!114 &105196122770691513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -390,7 +481,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4e03ddf7c3d9354e98969b1c6b8a5d4, type: 3}
   m_Name: transition
   m_EditorClassIdentifier: 
-  position: {x: 310.30597, y: 69.25003}
+  position: {x: 201.33917, y: 156.58066}
   guid: 2619f2704b843054fa53167c5b138565
   decision: {fileID: -343178536248358084}
   truestate: {fileID: 0}
@@ -407,7 +498,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bd565f1828ed44489b7a9367fce9844, type: 3}
   m_Name: MoveAction
   m_EditorClassIdentifier: 
-  position: {x: -141.23062, y: 179.48111}
+  position: {x: -340.72253, y: 220.13878}
   guid: 35fe8770dcb4a3944bb8d1bbc0974345
   statename: Back_Step
   transtitiontime: 0
@@ -474,7 +565,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9784af09d928b2041b16fc574a293edd, type: 3}
   m_Name: NoAnimation_Decision
   m_EditorClassIdentifier: 
-  position: {x: 41.048553, y: 289.224}
+  position: {x: -119.49524, y: 386.05676}
   guid: 544a7598fec4a164eb71c0c57a11409e
   animationlayer: 0
   animationname: Back_Step
@@ -513,6 +604,23 @@ MonoBehaviour:
   - {fileID: -5287930485939407915}
   transitions:
   - {fileID: 7927499910711778854}
+--- !u!114 &4461398972257706580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e1bc80b9f6669c419fe5b7d0af045a0, type: 3}
+  m_Name: CircularMoveAction
+  m_EditorClassIdentifier: 
+  position: {x: -1008.41125, y: 179.65929}
+  guid: 160b157871509b442816b9291cd14335
+  statename: Right_SideStep
+  transtitiontime: 1.2
+  speed: 2
 --- !u!114 &4808435511374593848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -525,7 +633,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6f2b1283bae6f749b7c4c7f3e453a64, type: 3}
   m_Name: CombatAction
   m_EditorClassIdentifier: 
-  position: {x: 282.99997, y: -149.59999}
+  position: {x: 119.49081, y: -232.39203}
   guid: faad0a838139b8e43a8fa1526c24b2b9
   animationname: Melee_Attack
   energycost: 10
@@ -543,11 +651,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4e03ddf7c3d9354e98969b1c6b8a5d4, type: 3}
   m_Name: transition
   m_EditorClassIdentifier: 
-  position: {x: 672.58014, y: -241.53838}
+  position: {x: 486.58807, y: -374.4}
   guid: 05b4d69117f3a9b44b4ab367f404efba
   decision: {fileID: -2598579364921027187}
   truestate: {fileID: 0}
-  falsestate: {fileID: 5552300743521552580}
+  falsestate: {fileID: -7140182415762668224}
 --- !u!114 &5552300743521552580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -560,7 +668,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ecbc42c532aa2940a15535c82bb8c2c, type: 3}
   m_Name: State0
   m_EditorClassIdentifier: 
-  position: {x: 436.2485, y: -94.77592}
+  position: {x: 281.92297, y: -121.32488}
   guid: 6fad8e85c0d3871469c33a30a3d23315
   actions:
   - {fileID: 4808435511374593848}
@@ -601,7 +709,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4e03ddf7c3d9354e98969b1c6b8a5d4, type: 3}
   m_Name: transition
   m_EditorClassIdentifier: 
-  position: {x: 261.84866, y: 266.82404}
+  position: {x: 89.23658, y: 391.8158}
   guid: 8ce078446aa829f418f9ccfd8a33c426
   decision: {fileID: 2555830786219364235}
   truestate: {fileID: 0}
@@ -620,6 +728,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   position: {x: 670.6069, y: 223.61137}
   guid: ba141d03f33efd24ca894dba676f4321
+--- !u!114 &7668301975284129634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23e1336253f911f4fb61007c5055be21, type: 3}
+  m_Name: ReachedDestinationDecision
+  m_EditorClassIdentifier: 
+  position: {x: -1281.7504, y: 247.49751}
+  guid: 3c55a06893359434ca5f7930b0815ccd
 --- !u!114 &7927499910711778854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -649,7 +771,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0f6770da32a1234f9726e280df9d9e6, type: 3}
   m_Name: Energy_Decision
   m_EditorClassIdentifier: 
-  position: {x: 20.940315, y: -72.93199}
+  position: {x: -121.804436, y: -21.96593}
   guid: fb6136e2ed0f22b47821ab100b5913c1
   minEnergy: 25
 --- !u!114 &8435931543627399168

@@ -15,7 +15,7 @@ public class CircularMoveAction : Action
     float agentstoppingdistance;
     public override void onEnter(StateController controller)
     {
-        
+        controller.reacheddestination=false;
         controller.GetComponent<Animator>().CrossFadeInFixedTime(statename,transtitiontime);
         calculatePointsOnCircle(controller);
 
@@ -24,12 +24,13 @@ public class CircularMoveAction : Action
         agentstoppingdistance=controller.agent.stoppingDistance;
         controller.agent.stoppingDistance=0;
         controller.agent.autoBraking=false;
+        controller.agent.ResetPath();
 
         nextpoint=0;
     }
     public override void Act(StateController controller)
     {
-       if(!(nextpoint>=circlePoints.Length))
+       if(!(nextpoint==circlePoints.Length))
        {
         if(!controller.agent.pathPending && controller.agent.remainingDistance<0.1f || !controller.agent.hasPath)
         {
@@ -37,15 +38,26 @@ public class CircularMoveAction : Action
             Debug.Log("set destination");
             nextpoint++;
         } 
+        
        }
+     
        Quaternion rotation=Quaternion.LookRotation(controller.Target.position-controller.transform.position,controller.transform.up);
        controller.transform.rotation=rotation;
+       if(nextpoint==circlePoints.Length)
+       {
+           controller.reacheddestination=true;
+       }
     }
     public override void onExit(StateController controller)
-    {
+    {  
+
+        controller.agent.SetDestination(controller.Target.position);
         controller.agent.updateRotation=true;
+        controller.agent.ResetPath();
         controller.agent.autoBraking=true;
         controller.agent.stoppingDistance=agentstoppingdistance;
+        controller.reacheddestination=false;
+        nextpoint=0;
     }
     private void calculatePointsOnCircle(StateController controller)
     {
@@ -55,10 +67,17 @@ public class CircularMoveAction : Action
         Vector3 target = controller.Target.position;
         float radius = Mathf.Abs(Vector3.Distance(target, controller.transform.position));
         float xoffset = controller.transform.position.x - target.x;
+        float zoffset = controller.transform.position.z- target.z;
+
+        float offset=xoffset;
 
         float angleoffset = 15;
-        float angle = Mathf.Acos(xoffset / radius) * 180 / Mathf.PI;
-        GameObject pointparent=new GameObject();
+        
+        float angle = Mathf.Atan2(zoffset ,xoffset) * 180 / Mathf.PI;
+
+        // Debug.Log(angle+" "+xoffset);
+
+        // GameObject pointparent=new GameObject();
         for (int i = 0; i < circlePoints.Length; i++)
         {
             // Debug.Log("point");
@@ -67,10 +86,11 @@ public class CircularMoveAction : Action
             circlePoints[i].z = radius * Mathf.Sin(radians) + target.z;
             circlePoints[i].y = controller.transform.position.y;
 
-            GameObject pointobject = new GameObject(i.ToString());
+       /*     GameObject pointobject = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+            pointobject.name=i.ToString();
             pointobject.transform.parent = pointparent.transform;
-            pointobject.transform.position = circlePoints[i];
-
+            pointobject.transform.position = circlePoints[i];*/
+            
             // Debug.Log(angle);
             angle += angleoffset;
         }

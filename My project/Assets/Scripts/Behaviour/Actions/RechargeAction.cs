@@ -11,7 +11,7 @@ public class RechargeAction : Action
     }
     public override void Act(StateController controller)
     {
-        Debug.Log("Recovering");
+ 
 
         if( controller.energy<controller.maxenergy)
         {
@@ -20,7 +20,7 @@ public class RechargeAction : Action
             {
                 counter = 0;
                 controller.energy += rechargeamount;
-                Debug.Log("Recovering");
+         
             }
             if (controller.energy > controller.maxenergy)
             {
