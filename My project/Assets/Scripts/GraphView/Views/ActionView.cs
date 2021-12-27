@@ -17,7 +17,7 @@ public class ActionView : NodeView
     }
      private void CreateOutputPorts()
    {
-        output = InstantiatePort(Orientation.Horizontal, Direction.Output, Port.Capacity.Multi, typeof(bool));
+        output = InstantiatePort(Orientation.Horizontal, Direction.Output, Port.Capacity.Single, typeof(bool));
         outputContainer.Add(output);
     }
     public override void SetPosition(Rect newPos)

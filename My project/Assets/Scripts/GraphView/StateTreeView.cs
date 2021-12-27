@@ -59,6 +59,9 @@ public class StateTreeView : GraphView
            {
                ActionView actionView=GetNodeByGuid(a.guid) as ActionView;
                Edge edge=actionView.output.ConnectTo(stateView.A_input);
+
+               
+
                AddElement(edge);
            });
        });
@@ -125,10 +128,12 @@ public class StateTreeView : GraphView
                     if(edge.output.node.GetType()==typeof(ActionView) && edge.input.node.GetType()==typeof(StateView))
                     {
                         StateView stateView=edge.input.node as StateView;
-                        ActionView actionview=edge.output.node as ActionView;
+                        ActionView actionView=edge.output.node as ActionView;
                         // Debug.Log(stateView.name);
-                      // stateView.state.actions.ForEach((action)=>{Debug.Log(action.name);});
-                            stateView.state.actions.Add(actionview.action);
+                            // stateView.state.actions.ForEach((action)=>{Debug.Log(action.name);});
+                        stateView.state.actions.Add(actionView.action);
+                        if(!stateView.state.name.Contains(actionView.title.Substring(0,actionView.title.Length-6)))
+                            stateView.state.name+="_"+actionView.title.Remove(actionView.title.Length-6);
                     }
                       if(edge.output.node.GetType()==typeof(TransitionView) && edge.input.node.GetType()==typeof(StateView))
                     {
@@ -193,6 +198,7 @@ public class StateTreeView : GraphView
                         ActionView actionview=edge.output.node as ActionView;
                         Debug.Log("Action Removed");
                         stateView.state.actions.Remove(actionview.action);
+                        stateView.state.name=stateView.state.name.Remove(stateView.state.name.Length-(actionview.action.name.Length-5));
                     } 
                      if(edge.output.node.GetType()==typeof(TransitionView) && edge.input.node.GetType()==typeof(StateView))
                     {
@@ -225,6 +231,7 @@ public class StateTreeView : GraphView
                 
             }
         }
+        PopulateView(this.tree);
         
         return graphViewChange;
     }

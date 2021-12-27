@@ -15,9 +15,9 @@ public class StateTree : ScriptableObject
    public State CreateState()
    {
        State state=CreateInstance<State>();
-       state.name="State"+Random.Range(0,3).ToString();
        state.guid=GUID.Generate().ToString();
         states.Add(state);
+       state.name=states.Count.ToString()+".State";
        AssetDatabase.AddObjectToAsset(state,this);
        AssetDatabase.SaveAssets();
        return state;

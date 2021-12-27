@@ -8,7 +8,7 @@ public class ChaseAction : Action
     [SerializeField] float ChaseSpeed=4;
     public override void onEnter(StateController controller)
     {
-        controller.GetComponent<Animator>().Play(blendname,0);
+        controller.GetComponent<Animator>().CrossFadeInFixedTime(blendname,0.5f);
     }
     public override void Act(StateController controller)
     {
