@@ -48,6 +48,10 @@ public class CircularMoveAction : Action
            controller.reacheddestination=true;
        }
     }
+     public override void FixedAct(StateController controller)
+    {
+
+    }
     public override void onExit(StateController controller)
     {  
 

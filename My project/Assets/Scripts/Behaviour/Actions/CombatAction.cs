@@ -13,7 +13,8 @@ public class CombatAction : Action
     {
         // animationflag=true;
         // counter=0;
-        controller.agent.isStopped=true;
+        if(controller.agent.enabled==true)
+            controller.agent.isStopped=true;
         controller.isattacking=true;
         controller.GetComponent<Animator>().CrossFadeInFixedTime(animationname, transitiontime);
             // animationflag=false;
@@ -23,9 +24,14 @@ public class CombatAction : Action
     {
         
     }
+     public override void FixedAct(StateController controller)
+    {
+
+    }
     public override void onExit(StateController controller)
     {
-       controller.agent.isStopped=false;
+        if(controller.agent.enabled==true)
+            controller.agent.isStopped=false;
     }
 
 }

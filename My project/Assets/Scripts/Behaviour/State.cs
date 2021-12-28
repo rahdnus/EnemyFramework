@@ -27,6 +27,13 @@ public class State : ScriptableObject
         }
 
     }
+    public void DoFixedAction(StateController controller)
+    {
+         for(int i=0;i<actions.Count;i++)
+        {
+            actions[i].FixedAct(controller);
+        }
+    }
     public void DoAction(StateController controller)
     {
         for(int i=0;i<actions.Count;i++)

@@ -15,6 +15,10 @@ public class WaitAction : Action
     {
         
     }
+     public override void FixedAct(StateController controller)
+    {
+
+    }
     public override void onExit(StateController controller)
     {
        controller.agent.isStopped=false;

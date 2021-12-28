@@ -20,6 +20,10 @@ public class MoveAction : Action
     {
         
     }
+     public override void FixedAct(StateController controller)
+    {
+
+    }
     public override void onExit(StateController controller)
     {
         controller.agent.updateRotation=true;

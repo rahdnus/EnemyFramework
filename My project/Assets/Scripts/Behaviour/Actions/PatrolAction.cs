@@ -19,6 +19,10 @@ public class PatrolAction : Action
             controller.nextwaypoint=(controller.nextwaypoint+1)%controller.waypoints.Count;
         }
     }
+     public override void FixedAct(StateController controller)
+    {
+
+    }
     public override void onExit(StateController controller)
     {
     }

@@ -23,6 +23,10 @@ public class ChaseAction : Action
           controller.GetComponent<Animator>().SetFloat("Vel",controller.agent.speed);
         controller.agent.destination=controller.Target.position;
     }
+     public override void FixedAct(StateController controller)
+    {
+
+    }
     public override void onExit(StateController controller)
     {
 

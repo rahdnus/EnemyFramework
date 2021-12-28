@@ -74,7 +74,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ecbc42c532aa2940a15535c82bb8c2c, type: 3}
   m_Name: 7.State
   m_EditorClassIdentifier: 
-  position: {x: -427.97723, y: -37.211376}
+  position: {x: 270.2676, y: -220.41837}
   guid: 0347d2d93012ac845a8346e3539d8f49
   actions: []
   transitions:
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ecbc42c532aa2940a15535c82bb8c2c, type: 3}
   m_Name: 8.State_CircularMove
   m_EditorClassIdentifier: 
-  position: {x: -802.42267, y: 240.34319}
+  position: {x: -124.817444, y: 38.295498}
   guid: 3b37debcc3b1fc943a0029cb73066aab
   actions:
   - {fileID: 4461398972257706580}
@@ -183,11 +183,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4e03ddf7c3d9354e98969b1c6b8a5d4, type: 3}
   m_Name: transition
   m_EditorClassIdentifier: 
-  position: {x: 45.00693, y: -21.163464}
+  position: {x: -337.57874, y: 455.86758}
   guid: fadb51d395accd0428377482de8ddd4a
   decision: {fileID: 8257165470988377024}
   truestate: {fileID: 0}
   falsestate: {fileID: -950409505018565299}
+--- !u!114 &-4535700574270281801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4e03ddf7c3d9354e98969b1c6b8a5d4, type: 3}
+  m_Name: transition
+  m_EditorClassIdentifier: 
+  position: {x: 613.4639, y: -209.18115}
+  guid: 8d5a069143382d242b7af00455273d54
+  decision: {fileID: 4431243455383400533}
+  truestate: {fileID: 0}
+  falsestate: {fileID: 1142752379795580748}
 --- !u!114 &-3414038032833137448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,7 +246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4e03ddf7c3d9354e98969b1c6b8a5d4, type: 3}
   m_Name: transition
   m_EditorClassIdentifier: 
-  position: {x: -1026.2994, y: 319.2024}
+  position: {x: -311.80853, y: 122.12165}
   guid: 1de6bce73a3373041bbb165647a25ccd
   decision: {fileID: 7668301975284129634}
   truestate: {fileID: 5552300743521552580}
@@ -261,10 +278,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4e03ddf7c3d9354e98969b1c6b8a5d4, type: 3}
   m_Name: transition
   m_EditorClassIdentifier: 
-  position: {x: -603.9318, y: 79.58863}
+  position: {x: 94.26772, y: -103.61839}
   guid: ebf2b2e1ec7867c4886dfb433617d682
   decision: {fileID: -716329285999665856}
-  truestate: {fileID: 0}
+  truestate: {fileID: 1142752379795580748}
   falsestate: {fileID: -4854247779833931473}
 --- !u!114 &-2118367337038361229
 MonoBehaviour:
@@ -316,7 +333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ecbc42c532aa2940a15535c82bb8c2c, type: 3}
   m_Name: State2
   m_EditorClassIdentifier: 
-  position: {x: -180.0202, y: 229.43231}
+  position: {x: -468.15356, y: 742.1033}
   guid: 1ba168da0aaa9474caa2cf299e560e76
   actions:
   - {fileID: 406208487791470070}
@@ -353,9 +370,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea09a58cb0f0c31449c65afaca493e3f, type: 3}
   m_Name: RandomDecision
   m_EditorClassIdentifier: 
-  position: {x: -773.6226, y: 17.188627}
+  position: {x: -75.33229, y: -166.0184}
   guid: 36ff1fbc186d27947a5ac7a974f37427
-  truetofalse: 6
+  truetofalse: 4
 --- !u!114 &-343178536248358084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -368,7 +385,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0166efd18d8fc342809a13e10acc433, type: 3}
   m_Name: CombatDecision
   m_EditorClassIdentifier: 
-  position: {x: 41.33914, y: 190.98064}
+  position: {x: -285.2502, y: 576.2597}
   guid: 2236c3ae0074e4f419f7ca89918b7e99
 --- !u!114 &-100765745108047157
 MonoBehaviour:
@@ -457,6 +474,7 @@ MonoBehaviour:
   - {fileID: -1537066892815794202}
   - {fileID: -2154837782062077481}
   - {fileID: -2686434733321676243}
+  - {fileID: -4535700574270281801}
   decisions:
   - {fileID: -7647115420762230044}
   - {fileID: -7120508096494179376}
@@ -469,6 +487,7 @@ MonoBehaviour:
   - {fileID: -5975135083591841726}
   - {fileID: -716329285999665856}
   - {fileID: 7668301975284129634}
+  - {fileID: 4431243455383400533}
 --- !u!114 &105196122770691513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -481,7 +500,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4e03ddf7c3d9354e98969b1c6b8a5d4, type: 3}
   m_Name: transition
   m_EditorClassIdentifier: 
-  position: {x: 201.33917, y: 156.58066}
+  position: {x: -121.73241, y: 552.4133}
   guid: 2619f2704b843054fa53167c5b138565
   decision: {fileID: -343178536248358084}
   truestate: {fileID: 0}
@@ -498,7 +517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bd565f1828ed44489b7a9367fce9844, type: 3}
   m_Name: MoveAction
   m_EditorClassIdentifier: 
-  position: {x: -340.72253, y: 220.13878}
+  position: {x: -597.23596, y: 682.06085}
   guid: 35fe8770dcb4a3944bb8d1bbc0974345
   statename: Back_Step
   transtitiontime: 0
@@ -565,7 +584,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9784af09d928b2041b16fc574a293edd, type: 3}
   m_Name: NoAnimation_Decision
   m_EditorClassIdentifier: 
-  position: {x: -119.49524, y: 386.05676}
+  position: {x: -438.55365, y: 908.12164}
   guid: 544a7598fec4a164eb71c0c57a11409e
   animationlayer: 0
   animationname: Back_Step
@@ -604,6 +623,21 @@ MonoBehaviour:
   - {fileID: -5287930485939407915}
   transitions:
   - {fileID: 7927499910711778854}
+--- !u!114 &4431243455383400533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0f6770da32a1234f9726e280df9d9e6, type: 3}
+  m_Name: Energy_Decision
+  m_EditorClassIdentifier: 
+  position: {x: 455.1621, y: -201.13568}
+  guid: b6d9f0f5d85ab2b4e9639b8038f3a916
+  minEnergy: 25
 --- !u!114 &4461398972257706580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -616,7 +650,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e1bc80b9f6669c419fe5b7d0af045a0, type: 3}
   m_Name: CircularMoveAction
   m_EditorClassIdentifier: 
-  position: {x: -1008.41125, y: 179.65929}
+  position: {x: -339.6698, y: -17.878365}
   guid: 160b157871509b442816b9291cd14335
   statename: Right_SideStep
   transtitiontime: 1.2
@@ -633,7 +667,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6f2b1283bae6f749b7c4c7f3e453a64, type: 3}
   m_Name: CombatAction
   m_EditorClassIdentifier: 
-  position: {x: 119.49081, y: -232.39203}
+  position: {x: -320.11108, y: 309.51004}
   guid: faad0a838139b8e43a8fa1526c24b2b9
   animationname: Melee_Attack
   energycost: 10
@@ -666,9 +700,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ecbc42c532aa2940a15535c82bb8c2c, type: 3}
-  m_Name: State0
+  m_Name: State0_Combat
   m_EditorClassIdentifier: 
-  position: {x: 281.92297, y: -121.32488}
+  position: {x: -115.34294, y: 319.84634}
   guid: 6fad8e85c0d3871469c33a30a3d23315
   actions:
   - {fileID: 4808435511374593848}
@@ -697,6 +731,7 @@ MonoBehaviour:
   - {fileID: 3123538854820985612}
   - {fileID: 5247466223857373907}
   - {fileID: 438859756647131140}
+  - {fileID: -4535700574270281801}
 --- !u!114 &6188205179399445769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -709,7 +744,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4e03ddf7c3d9354e98969b1c6b8a5d4, type: 3}
   m_Name: transition
   m_EditorClassIdentifier: 
-  position: {x: 89.23658, y: 391.8158}
+  position: {x: -219.2, y: 907.682}
   guid: 8ce078446aa829f418f9ccfd8a33c426
   decision: {fileID: 2555830786219364235}
   truestate: {fileID: 0}
@@ -740,7 +775,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23e1336253f911f4fb61007c5055be21, type: 3}
   m_Name: ReachedDestinationDecision
   m_EditorClassIdentifier: 
-  position: {x: -1281.7504, y: 247.49751}
+  position: {x: -555.44324, y: 114.88733}
   guid: 3c55a06893359434ca5f7930b0815ccd
 --- !u!114 &7927499910711778854
 MonoBehaviour:
@@ -771,7 +806,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0f6770da32a1234f9726e280df9d9e6, type: 3}
   m_Name: Energy_Decision
   m_EditorClassIdentifier: 
-  position: {x: -121.804436, y: -21.96593}
+  position: {x: -494.18262, y: 490.10327}
   guid: fb6136e2ed0f22b47821ab100b5913c1
   minEnergy: 25
 --- !u!114 &8435931543627399168

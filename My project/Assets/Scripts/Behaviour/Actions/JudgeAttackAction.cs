@@ -30,6 +30,10 @@ public class JudgeAttackAction : Action
     {
         return;
     }
+     public override void FixedAct(StateController controller)
+    {
+
+    }
     public override void onExit(StateController controller)
     {
         controller.agent.updateRotation=true;

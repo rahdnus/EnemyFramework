@@ -16,25 +16,33 @@ public class StateController : MonoBehaviour
    public State remaininstate;
    public LayerMask targetlayer;
    public Transform Target;
+   [HideInInspector] public Animator anim;
    [HideInInspector]public NavMeshAgent agent;
+   [HideInInspector]public Rigidbody rb;
    public List<Transform> waypoints;
   public int nextwaypoint=0;
    void Awake()
    {
        currentstate=tree.states[0];
+       anim=GetComponent<Animator>();
        agent=GetComponent<NavMeshAgent>();
+       rb=GetComponent<Rigidbody>();
        currentstate.onEnter(this);
    }
     void Update()
     {
     currentstate.UpdateState(this);
     }
+    void FixedUpdate()
+    {
+        currentstate.DoFixedAction(this);
+    }
     public void ChangetoState(State newstate)
     {
         //find solution for this ***
         if(newstate!=null)
         {
-           // Debug.Log(newstate.name);
+            Debug.Log(newstate.name);
             currentstate.onExit(this);
             currentstate=newstate;
             currentstate.onEnter(this);

@@ -29,6 +29,10 @@ public class RechargeAction : Action
         }
        
     }
+     public override void FixedAct(StateController controller)
+    {
+
+    }
     public override void onExit(StateController controller)
     {
     }
