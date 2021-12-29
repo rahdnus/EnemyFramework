@@ -7,8 +7,8 @@ public class CombatAction : Action
     public int energycost=20;
     public int animationlayer=0;
     public float transitiontime=0.3f;
-    bool animationflag=true; 
-    float counter=0;
+   
+    
     public override void onEnter(StateController controller)
     {
         // animationflag=true;

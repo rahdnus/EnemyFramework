@@ -1,0 +1,310 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8800641517054737989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4e03ddf7c3d9354e98969b1c6b8a5d4, type: 3}
+  m_Name: transition
+  m_EditorClassIdentifier: 
+  position: {x: 6.4379272, y: 411.8384}
+  guid: 06e43d263d34fe4459e0656de1b6d7bd
+  decision: {fileID: 0}
+  truestate: {fileID: -3205815985008714015}
+  falsestate: {fileID: 0}
+--- !u!114 &-6671806652744400861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4e03ddf7c3d9354e98969b1c6b8a5d4, type: 3}
+  m_Name: transition
+  m_EditorClassIdentifier: 
+  position: {x: 211.23787, y: 163.03847}
+  guid: 96db1493b22bc9d4c9af456d3460e4ff
+  decision: {fileID: -483146663886395532}
+  truestate: {fileID: 7731704755163052858}
+  falsestate: {fileID: 0}
+--- !u!114 &-5195447346226823267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4e03ddf7c3d9354e98969b1c6b8a5d4, type: 3}
+  m_Name: transition
+  m_EditorClassIdentifier: 
+  position: {x: -703.41064, y: 311.71857}
+  guid: f5b386762c7b74d4086c709e4fa0e87e
+  decision: {fileID: -2311188151868938883}
+  truestate: {fileID: 0}
+  falsestate: {fileID: -3205815985008714015}
+--- !u!114 &-3213992028505746763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0786d448803a60b4ca5d85efa9f6dd0d, type: 3}
+  m_Name: Player_AttackDecision
+  m_EditorClassIdentifier: 
+  position: {x: -407.33252, y: 26.677504}
+  guid: 801f5ed9c37fd6d4c8cb5c0ea807e0f7
+--- !u!114 &-3205815985008714015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ecbc42c532aa2940a15535c82bb8c2c, type: 3}
+  m_Name: 1.State_Player_Move
+  m_EditorClassIdentifier: 
+  position: {x: 55.5659, y: -17.80194}
+  guid: ab5baec00f9d3ee4797d0da39db054d6
+  actions:
+  - {fileID: 2136897330140636314}
+  transitions:
+  - {fileID: 2286182546308886003}
+  - {fileID: -6671806652744400861}
+--- !u!114 &-2311188151868938883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0166efd18d8fc342809a13e10acc433, type: 3}
+  m_Name: CombatDecision
+  m_EditorClassIdentifier: 
+  position: {x: -846.39996, y: 234.3999}
+  guid: f5c8921c36b069c4a89b894ccea377c4
+--- !u!114 &-2174946463738110607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: Player_DoneJumping
+  m_EditorClassIdentifier: Assembly-CSharp::Player_DoneJumping
+  position: {x: -193.21884, y: 403.47253}
+  guid: 4e128589e67a769419c656b2db4594b4
+--- !u!114 &-1524424507133562806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ecbc42c532aa2940a15535c82bb8c2c, type: 3}
+  m_Name: 2.State_Combat
+  m_EditorClassIdentifier: 
+  position: {x: -444.66678, y: 201.01999}
+  guid: b615afd92812ed74dbd6bd4a787ca9cc
+  actions:
+  - {fileID: 2528338788988224582}
+  transitions:
+  - {fileID: -5195447346226823267}
+--- !u!114 &-483146663886395532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5e95c1506d085348b49459b52d8b4b0, type: 3}
+  m_Name: Player_JumpDecision
+  m_EditorClassIdentifier: 
+  position: {x: 22.437943, y: 263.03848}
+  guid: add490ce47efb2643aa9ba4323675109
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ce3ca858f6c7e14a89b3809b0b9dd45, type: 3}
+  m_Name: Player
+  m_EditorClassIdentifier: 
+  states:
+  - {fileID: -3205815985008714015}
+  - {fileID: -1524424507133562806}
+  - {fileID: 7731704755163052858}
+  actions:
+  - {fileID: 2136897330140636314}
+  - {fileID: 2528338788988224582}
+  - {fileID: 9004903528016814057}
+  transitions:
+  - {fileID: 2286182546308886003}
+  - {fileID: -5195447346226823267}
+  - {fileID: -6671806652744400861}
+  - {fileID: -8800641517054737989}
+  decisions:
+  - {fileID: -3213992028505746763}
+  - {fileID: -483146663886395532}
+  - {fileID: -2311188151868938883}
+--- !u!114 &2136897330140636314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab72738fd93b05a4487750ffebfb6c7a, type: 3}
+  m_Name: Player_MoveAction
+  m_EditorClassIdentifier: 
+  position: {x: -153.91252, y: -38.478134}
+  guid: 81294c60beee87d43badd807fa7a8329
+  movementSpeed: 5
+--- !u!114 &2286182546308886003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4e03ddf7c3d9354e98969b1c6b8a5d4, type: 3}
+  m_Name: transition
+  m_EditorClassIdentifier: 
+  position: {x: -197.63771, y: 55.968212}
+  guid: 8579fe8e0543fc44a9183dfe0c439572
+  decision: {fileID: -3213992028505746763}
+  truestate: {fileID: -1524424507133562806}
+  falsestate: {fileID: 0}
+--- !u!114 &2528338788988224582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6f2b1283bae6f749b7c4c7f3e453a64, type: 3}
+  m_Name: CombatAction
+  m_EditorClassIdentifier: 
+  position: {x: -627.1189, y: 81.994995}
+  guid: 21667a2ec281b0c45ab09d14ae709af8
+  animationname: Melee_Attack
+  energycost: 20
+  animationlayer: 0
+  transitiontime: 0.3
+--- !u!114 &7731704755163052858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ecbc42c532aa2940a15535c82bb8c2c, type: 3}
+  m_Name: 3.State_Player_Jump
+  m_EditorClassIdentifier: 
+  position: {x: 228.83786, y: 332.6385}
+  guid: e504010518b281e4dad9c854896a2b87
+  actions:
+  - {fileID: 9004903528016814057}
+  transitions:
+  - {fileID: -8800641517054737989}
+--- !u!114 &9004903528016814057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbaa94b4738b54c42b1626926868ee3d, type: 3}
+  m_Name: Player_JumpAction
+  m_EditorClassIdentifier: 
+  position: {x: 8.037903, y: 333.43848}
+  guid: 06ef66268cd6ad344bf5cfdd48a6eb31
+  jumpcurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.116652295
+      value: 0.2495603
+      inSlope: 1.6711247
+      outSlope: 1.6711247
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.89622605
+    - serializedVersion: 3
+      time: 0.3156222
+      value: 0.48911673
+      inSlope: 0.64461106
+      outSlope: 0.64461106
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.190722
+      outWeight: 0.39144048
+    - serializedVersion: 3
+      time: 0.6378027
+      value: -0.509703
+      inSlope: -6.152099
+      outSlope: -6.152099
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.34453928
+      outWeight: 0.6842646
+    - serializedVersion: 3
+      time: 0.77869344
+      value: -1.959966
+      inSlope: -1.5283678
+      outSlope: -1.5283678
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.23753226
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  movementSpeed: 8.24
+  jumptime: 1

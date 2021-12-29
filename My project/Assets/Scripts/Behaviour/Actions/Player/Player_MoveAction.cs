@@ -10,7 +10,7 @@ public class Player_MoveAction : Action
     CameraInputHandler camerahandler;
     public override void onEnter(StateController controller)
     {
-        controller.GetComponent<Animator>().CrossFadeInFixedTime("Move",0.3f);
+        controller.anim.CrossFadeInFixedTime("Move",0.3f);
         controller.agent.enabled=false;
         camerahandler=controller.GetComponent<CameraInputHandler>();
         run_multiplier=0.5f;
@@ -21,14 +21,14 @@ public class Player_MoveAction : Action
         vertical=Input.GetAxis("Vertical");
         if(Input.GetKey(KeyCode.LeftShift))
         {
-         run_multiplier=1;
+         run_multiplier=2;
         }
          else
          {
-             run_multiplier=0.5f;
+             run_multiplier=1f;
          }
-       controller.anim.SetFloat("VelX",horizontal*run_multiplier);
-       controller.anim.SetFloat("VelY",vertical*run_multiplier);
+       controller.anim.SetFloat("VelX",horizontal*run_multiplier/2);
+       controller.anim.SetFloat("VelY",vertical*run_multiplier/2);
 
     }
     public override void FixedAct(StateController controller)
@@ -37,7 +37,7 @@ public class Player_MoveAction : Action
            controller.transform.rotation=Quaternion.Euler(new Vector3(controller.transform.rotation.x,camerahandler.target.eulerAngles.y,controller.transform.rotation.z));
           //  camerahandler.target.rotation=Quaternion.Euler(new Vector3(camerahandler.rotation.x,0,0));
        }
-        controller.rb.velocity=(controller.transform.right*horizontal+controller.transform.forward*vertical)*movementSpeed;
+        controller.rb.velocity=(controller.transform.right*horizontal+controller.transform.forward*vertical)*movementSpeed*run_multiplier;
 
     }
     public override void onExit(StateController controller)

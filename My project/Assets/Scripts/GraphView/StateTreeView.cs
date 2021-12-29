@@ -44,10 +44,10 @@ public class StateTreeView : GraphView
         DeleteElements(graphElements);
         graphViewChanged += GraphViewChanged;
 
-        tree.states.ForEach(s => CreateStateView(s));
-        tree.actions.ForEach(a=>CreateActionView(a));
-        tree.transitions.ForEach(t=>CreateTransitionView(t));
-        tree.decisions.ForEach(d=>CreateDecisionView(d));
+        tree.states.ForEach(s =>{if(s)CreateStateView(s);});
+        tree.actions.ForEach(a=>{if(a)CreateActionView(a);});
+        tree.transitions.ForEach(t=>{if(t)CreateTransitionView(t);});
+        tree.decisions.ForEach(d=>{if(d)CreateDecisionView(d);});
 
        #region populate_edge
        if(tree.states!=null)
@@ -87,7 +87,7 @@ public class StateTreeView : GraphView
            if(decision!=null)
            {
             DecisionView decisionView=GetNodeByGuid(decision.guid) as DecisionView;
-            Debug.Log("decisin edge");
+            // Debug.Log("decisin edge");
             Edge edge=decisionView.output.ConnectTo(transitionView.D_input);
             AddElement(edge);
            }
@@ -118,7 +118,7 @@ public class StateTreeView : GraphView
        #endregion
     
     }
-    private GraphViewChange GraphViewChanged(GraphViewChange graphViewChange)
+    private new GraphViewChange GraphViewChanged(GraphViewChange graphViewChange)
     {
         if(graphViewChange.edgesToCreate!=null)
         {

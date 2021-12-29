@@ -19,12 +19,13 @@ public class StateController : MonoBehaviour
    [HideInInspector] public Animator anim;
    [HideInInspector]public NavMeshAgent agent;
    [HideInInspector]public Rigidbody rb;
+   [SerializeField] Transform hips;
    public List<Transform> waypoints;
   public int nextwaypoint=0;
    void Awake()
    {
        currentstate=tree.states[0];
-       anim=GetComponent<Animator>();
+       anim=GetComponentInChildren<Animator>();
        agent=GetComponent<NavMeshAgent>();
        rb=GetComponent<Rigidbody>();
        currentstate.onEnter(this);
@@ -37,6 +38,7 @@ public class StateController : MonoBehaviour
     {
         currentstate.DoFixedAction(this);
     }
+    
     public void ChangetoState(State newstate)
     {
         //find solution for this ***
@@ -49,6 +51,7 @@ public class StateController : MonoBehaviour
 
         }
     }
+
     public void Block()
     {
         Debug.Log("blocked");

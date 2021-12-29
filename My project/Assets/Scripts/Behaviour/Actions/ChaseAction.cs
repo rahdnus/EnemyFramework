@@ -5,7 +5,6 @@ public class ChaseAction : Action
     [SerializeField]string blendname="Move";
 
     [SerializeField] System.Collections.Generic.List<SpeedRange> ranges=new System.Collections.Generic.List<SpeedRange>();
-    [SerializeField] float ChaseSpeed=4;
     public override void onEnter(StateController controller)
     {
         controller.GetComponent<Animator>().CrossFadeInFixedTime(blendname,0.5f);
