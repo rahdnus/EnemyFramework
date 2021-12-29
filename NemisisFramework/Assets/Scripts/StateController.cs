@@ -8,6 +8,7 @@ public class StateController : MonoBehaviour
     public bool isbeingattacked=false;
     public bool reacheddestination=false;
     public bool isattacking=false;
+    public bool animationflag=false;
     public int maxenergy=100;
     public int energy=100;//temporary;will be substituted by entity stats 
     public Transform backjump;
@@ -19,7 +20,8 @@ public class StateController : MonoBehaviour
    [HideInInspector] public Animator anim;
    [HideInInspector]public NavMeshAgent agent;
    [HideInInspector]public Rigidbody rb;
-   [SerializeField] Transform hips;
+   public Transform hips;
+   public Transform foot;
    public List<Transform> waypoints;
   public int nextwaypoint=0;
    void Awake()
@@ -51,6 +53,10 @@ public class StateController : MonoBehaviour
 
         }
     }
+    public void setAnimationFlag(bool state)
+    {
+        animationflag=state;
+    }
 
     public void Block()
     {
@@ -64,5 +70,10 @@ public class StateController : MonoBehaviour
     {
         isattacking=false;
         energy-=amount;
+    }
+    public void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawRay(foot.transform.position,-transform.up);
+
     }
 }

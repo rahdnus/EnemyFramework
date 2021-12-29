@@ -14,6 +14,8 @@ public class Player_JumpAction : Action
     public override void onEnter(StateController controller)
     {
         controller.anim.CrossFadeInFixedTime("Jump",0.3f);
+        controller.foot.gameObject.SetActive(false);
+
        // jumptime=controller.anim.GetCurrentAnimatorStateInfo(0).length;
         controller.agent.enabled=false;
         camerahandler=controller.GetComponent<CameraInputHandler>();
@@ -25,16 +27,19 @@ public class Player_JumpAction : Action
       {
           counter+=Time.deltaTime;
       }
+      if(counter>=jumptime)
+      {
+          controller.foot.gameObject.SetActive(true);
+      }
     }
     public override void FixedAct(StateController controller)
     {
-        Debug.Log((counter/jumptime));
         controller.rb.velocity=new Vector3(0f,jumpcurve.Evaluate(counter/jumptime)*movementSpeed,0)+controller.transform.forward*movementSpeed;
     }
     public override void onExit(StateController controller)
     {
-        controller.GetComponent<Player>().donejumping=false;
         counter=0;
-        
+        controller.foot.gameObject.SetActive(false);
+
     }
 }

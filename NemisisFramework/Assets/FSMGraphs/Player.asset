@@ -12,11 +12,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4e03ddf7c3d9354e98969b1c6b8a5d4, type: 3}
   m_Name: transition
   m_EditorClassIdentifier: 
-  position: {x: 6.4379272, y: 411.8384}
+  position: {x: 155.44576, y: 567.8593}
   guid: 06e43d263d34fe4459e0656de1b6d7bd
-  decision: {fileID: 0}
+  decision: {fileID: 3503997992411693484}
   truestate: {fileID: -3205815985008714015}
   falsestate: {fileID: 0}
+--- !u!114 &-8710962935018068636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22e2d134b5500ae4e947c2d28c0b32af, type: 3}
+  m_Name: Player_InputDecision
+  m_EditorClassIdentifier: 
+  position: {x: -394.98016, y: -11.129639}
+  guid: e1259293e07747c4bb868568e933f082
+  codes: 43010000
 --- !u!114 &-6671806652744400861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   position: {x: 211.23787, y: 163.03847}
   guid: 96db1493b22bc9d4c9af456d3460e4ff
-  decision: {fileID: -483146663886395532}
+  decision: {fileID: -1843087807086032652}
   truestate: {fileID: 7731704755163052858}
   falsestate: {fileID: 0}
 --- !u!114 &-5195447346226823267
@@ -51,6 +66,22 @@ MonoBehaviour:
   decision: {fileID: -2311188151868938883}
   truestate: {fileID: 0}
   falsestate: {fileID: -3205815985008714015}
+--- !u!114 &-4191405855273728727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: Player_DoneJumping
+  m_EditorClassIdentifier: Assembly-CSharp::Player_DoneJumping
+  position: {x: 0, y: 0}
+  guid: 0bd3d560493ddb64c9780875afb3d228
+  GroundLayer:
+    m_Bits: 0
 --- !u!114 &-3213992028505746763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84,6 +115,23 @@ MonoBehaviour:
   transitions:
   - {fileID: 2286182546308886003}
   - {fileID: -6671806652744400861}
+--- !u!114 &-2359887744778705089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adbc6ad7fbfed2f478bd037a287da3d4, type: 3}
+  m_Name: Player_DoneJumpingDecision
+  m_EditorClassIdentifier: 
+  position: {x: -110.81716, y: 545.7045}
+  guid: 68a9a56f27e75c440a148d67d4fba89b
+  GroundLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &-2311188151868938883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,6 +160,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Player_DoneJumping
   position: {x: -193.21884, y: 403.47253}
   guid: 4e128589e67a769419c656b2db4594b4
+  GroundLayer:
+    m_Bits: 0
+--- !u!114 &-1843087807086032652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22e2d134b5500ae4e947c2d28c0b32af, type: 3}
+  m_Name: Player_InputDecision
+  m_EditorClassIdentifier: 
+  position: {x: -76.04372, y: 195.66968}
+  guid: dfe4aa6af52962f4d9f1d68cddf0a768
+  codes: 2000000077000000
 --- !u!114 &-1524424507133562806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,20 +195,6 @@ MonoBehaviour:
   - {fileID: 2528338788988224582}
   transitions:
   - {fileID: -5195447346226823267}
---- !u!114 &-483146663886395532
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5e95c1506d085348b49459b52d8b4b0, type: 3}
-  m_Name: Player_JumpDecision
-  m_EditorClassIdentifier: 
-  position: {x: 22.437943, y: 263.03848}
-  guid: add490ce47efb2643aa9ba4323675109
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,9 +221,10 @@ MonoBehaviour:
   - {fileID: -6671806652744400861}
   - {fileID: -8800641517054737989}
   decisions:
-  - {fileID: -3213992028505746763}
-  - {fileID: -483146663886395532}
   - {fileID: -2311188151868938883}
+  - {fileID: -1843087807086032652}
+  - {fileID: -8710962935018068636}
+  - {fileID: 3503997992411693484}
 --- !u!114 &2136897330140636314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,6 +240,22 @@ MonoBehaviour:
   position: {x: -153.91252, y: -38.478134}
   guid: 81294c60beee87d43badd807fa7a8329
   movementSpeed: 5
+--- !u!114 &2244828165034352481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: Player_DoneJumping
+  m_EditorClassIdentifier: Assembly-CSharp::Player_DoneJumping
+  position: {x: -119.999886, y: 529.5999}
+  guid: f5665ee99f597d44c8bd80508f105f20
+  GroundLayer:
+    m_Bits: 0
 --- !u!114 &2286182546308886003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,7 +270,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   position: {x: -197.63771, y: 55.968212}
   guid: 8579fe8e0543fc44a9183dfe0c439572
-  decision: {fileID: -3213992028505746763}
+  decision: {fileID: -8710962935018068636}
   truestate: {fileID: -1524424507133562806}
   falsestate: {fileID: 0}
 --- !u!114 &2528338788988224582
@@ -223,6 +291,39 @@ MonoBehaviour:
   energycost: 20
   animationlayer: 0
   transitiontime: 0.3
+--- !u!114 &3503997992411693484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adbc6ad7fbfed2f478bd037a287da3d4, type: 3}
+  m_Name: Player_DoneJumpingDecision
+  m_EditorClassIdentifier: 
+  position: {x: -93.75759, y: 530.738}
+  guid: 4293cdc76650fb94ab881d03efc69b2c
+  GroundLayer:
+    serializedVersion: 2
+    m_Bits: 128
+--- !u!114 &5699270761765137086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: Player_DoneJumping
+  m_EditorClassIdentifier: Assembly-CSharp::Player_DoneJumping
+  position: {x: 0, y: 0}
+  guid: ef8deeeebbe1b2c4da60a92bf54a0648
+  GroundLayer:
+    m_Bits: 0
 --- !u!114 &7731704755163052858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,6 +342,22 @@ MonoBehaviour:
   - {fileID: 9004903528016814057}
   transitions:
   - {fileID: -8800641517054737989}
+--- !u!114 &8545056186020056991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: Player_DoneJumping
+  m_EditorClassIdentifier: Assembly-CSharp::Player_DoneJumping
+  position: {x: -119.999886, y: 529.5999}
+  guid: 4d174e2d55334ed4ca30af9b2cbf5f33
+  GroundLayer:
+    m_Bits: 0
 --- !u!114 &9004903528016814057
 MonoBehaviour:
   m_ObjectHideFlags: 0
