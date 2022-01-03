@@ -188,12 +188,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ecbc42c532aa2940a15535c82bb8c2c, type: 3}
-  m_Name: 1.State_T
+  m_Name: 1.State_T_Player_
   m_EditorClassIdentifier: 
   position: {x: 55.5659, y: -17.80194}
   guid: ab5baec00f9d3ee4797d0da39db054d6
   actions:
-  - {fileID: -2495290619108532075}
+  - {fileID: 4500798244621926854}
   transitions:
   - {fileID: 2286182546308886003}
   - {fileID: -6671806652744400861}
@@ -348,8 +348,8 @@ MonoBehaviour:
   - {fileID: 9004903528016814057}
   - {fileID: -5037746914362646722}
   - {fileID: 7096089679126130277}
-  - {fileID: -2495290619108532075}
   - {fileID: 4500798244621926854}
+  - {fileID: 7698024188117252184}
   transitions:
   - {fileID: 2286182546308886003}
   - {fileID: -5195447346226823267}
@@ -502,7 +502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab72738fd93b05a4487750ffebfb6c7a, type: 3}
   m_Name: Player_MoveAction
   m_EditorClassIdentifier: 
-  position: {x: -243.58754, y: -38.478146}
+  position: {x: -166.49501, y: -46.33501}
   guid: 32edb66631f02d64c92a392d03880582
   movementSpeed: 5
 --- !u!114 &4547699356808384851
@@ -604,6 +604,21 @@ MonoBehaviour:
   energycost: 20
   animationlayer: 0
   transitiontime: 0.3
+--- !u!114 &7698024188117252184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a52869fe0971ddd4f8ff3cc8f89cde08, type: 3}
+  m_Name: TEmpMOV
+  m_EditorClassIdentifier: 
+  position: {x: 0, y: 0}
+  guid: cfa81270467377a4b9f50c2805891910
+  movementSpeed: 0.1
 --- !u!114 &7731704755163052858
 MonoBehaviour:
   m_ObjectHideFlags: 0

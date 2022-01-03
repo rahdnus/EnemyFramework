@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations;
 public class CombatAction : Action
 {
     public string animationname;   
@@ -24,7 +25,7 @@ public class CombatAction : Action
         controller.flagHandler.isattacking=true;
         attacktime=controller.anim.GetCurrentAnimatorStateInfo(0).length;
         controller.GetComponent<Animator>().CrossFadeInFixedTime(animationname, transitiontime);
-         //controller.GetComponent<CameraInputHandler>().target.parent=null;
+
         
             // Debug.Log("Depleting");
     }
@@ -47,7 +48,6 @@ public class CombatAction : Action
                 if(controller.agent)
         controller.agent.isStopped=false;
         controller.anim.applyRootMotion=false;
-                 controller.GetComponent<CameraInputHandler>().target.parent=controller.transform;
 
         
     }
