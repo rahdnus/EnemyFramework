@@ -7,7 +7,7 @@ public class ReachedDestinationDecision : Decision
    
   public override bool decide(StateController controller)
   {
-      return controller.reacheddestination;
+      return controller.flagHandler.reacheddestination;
   }
   
   

@@ -13,13 +13,13 @@ public class Player_JumpAction : Action
     CameraInputHandler camerahandler;
     public override void onEnter(StateController controller)
     {
-        controller.anim.CrossFadeInFixedTime("Jump",0.3f);
+//        controller.anim.CrossFadeInFixedTime("Jump",0.3f);
         controller.foot.gameObject.SetActive(false);
 
-       // jumptime=controller.anim.GetCurrentAnimatorStateInfo(0).length;
-        controller.agent.enabled=false;
+       jumptime=controller.anim.GetCurrentAnimatorStateInfo(0).length;
+//        controller.agent.enabled=false;
         camerahandler=controller.GetComponent<CameraInputHandler>();
-        controller.anim.applyRootMotion=true;
+        //controller.anim.applyRootMotion=true;
     }
     public override void Act(StateController controller)
     {

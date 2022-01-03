@@ -11,7 +11,7 @@ public class Player_MoveAction : Action
     public override void onEnter(StateController controller)
     {
         controller.anim.CrossFadeInFixedTime("Move",0.3f);
-        controller.agent.enabled=false;
+//        controller.agent.enabled=false;
         camerahandler=controller.GetComponent<CameraInputHandler>();
         run_multiplier=0.5f;
     }

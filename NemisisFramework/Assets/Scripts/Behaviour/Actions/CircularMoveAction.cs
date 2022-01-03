@@ -15,7 +15,7 @@ public class CircularMoveAction : Action
     float agentstoppingdistance;
     public override void onEnter(StateController controller)
     {
-        controller.reacheddestination=false;
+        controller.flagHandler.reacheddestination=false;
         controller.GetComponent<Animator>().CrossFadeInFixedTime(statename,transtitiontime);
         calculatePointsOnCircle(controller);
 
@@ -45,7 +45,7 @@ public class CircularMoveAction : Action
        controller.transform.rotation=rotation;
        if(nextpoint==circlePoints.Length)
        {
-           controller.reacheddestination=true;
+           controller.flagHandler.reacheddestination=true;
        }
     }
      public override void FixedAct(StateController controller)
@@ -60,7 +60,7 @@ public class CircularMoveAction : Action
         controller.agent.ResetPath();
         controller.agent.autoBraking=true;
         controller.agent.stoppingDistance=agentstoppingdistance;
-        controller.reacheddestination=false;
+        controller.flagHandler.reacheddestination=false;
         nextpoint=0;
     }
     private void calculatePointsOnCircle(StateController controller)

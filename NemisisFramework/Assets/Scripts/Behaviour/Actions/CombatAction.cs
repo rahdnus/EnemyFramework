@@ -7,31 +7,49 @@ public class CombatAction : Action
     public int energycost=20;
     public int animationlayer=0;
     public float transitiontime=0.3f;
-   
+        float attacktime;
+    
+
+   float counter;
     
     public override void onEnter(StateController controller)
     {
         // animationflag=true;
         // counter=0;
-        if(controller.agent.enabled==true)
+        
+        controller.anim.applyRootMotion=true;
+       
+        if(controller.agent)
             controller.agent.isStopped=true;
-        controller.isattacking=true;
+        controller.flagHandler.isattacking=true;
+        attacktime=controller.anim.GetCurrentAnimatorStateInfo(0).length;
         controller.GetComponent<Animator>().CrossFadeInFixedTime(animationname, transitiontime);
-            // animationflag=false;
+         //controller.GetComponent<CameraInputHandler>().target.parent=null;
+        
             // Debug.Log("Depleting");
     }
     public override void Act(StateController controller)
     {
-        
+            if(counter<attacktime)
+      {
+          counter+=Time.deltaTime;
+      }
+      
+          
+
     }
      public override void FixedAct(StateController controller)
     {
-
     }
     public override void onExit(StateController controller)
     {
-        if(controller.agent.enabled==true)
-            controller.agent.isStopped=false;
+       
+                if(controller.agent)
+        controller.agent.isStopped=false;
+        controller.anim.applyRootMotion=false;
+                 controller.GetComponent<CameraInputHandler>().target.parent=controller.transform;
+
+        
     }
 
 }
