@@ -824,7 +824,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 598807653}
-  m_LocalRotation: {x: 0.2602287, y: 0.0013274148, z: -0.00035775756, w: 0.9655461}
+  m_LocalRotation: {x: 0.2602287, y: 0.0013271171, z: -0.00035767735, w: 0.9655461}
   m_LocalPosition: {x: 0.56204414, y: 3.835767, z: -0.8413305}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1043,7 +1043,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.2602287, y: 0.0013274148, z: -0.00035775756, w: 0.9655461}
+  m_LocalRotation: {x: 0.2602287, y: 0.0013271171, z: -0.00035767735, w: 0.9655461}
   m_LocalPosition: {x: 0.56204414, y: 3.835767, z: -0.8413305}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1363,6 +1363,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1226785717}
+  - component: {fileID: 1226785718}
+  - component: {fileID: 1226785719}
   m_Layer: 0
   m_Name: katana (1)
   m_TagString: Untagged
@@ -1389,6 +1391,32 @@ Transform:
   m_Father: {fileID: 7398547591369201013}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 21.353, y: 204.668, z: 182.797}
+--- !u!136 &1226785718
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226785716}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  m_Radius: 0.43
+  m_Height: 6.14
+  m_Direction: 2
+  m_Center: {x: 0, y: 0.38, z: -2.32}
+--- !u!114 &1226785719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226785716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfea2ac95d573d34ba37a2b653595127, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1253510772
 GameObject:
   m_ObjectHideFlags: 0
@@ -2020,6 +2048,7 @@ GameObject:
   - component: {fileID: 2000183961}
   - component: {fileID: 2000183960}
   - component: {fileID: 2000183959}
+  - component: {fileID: 2000183963}
   m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
@@ -2097,12 +2126,25 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2000183958}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 24.182882, y: 1, z: -13.06}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 24.182882, y: 1.56, z: -13.06}
+  m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2000183963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000183958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b7056a6c4f710d4684f6ab58f57a39b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
 --- !u!1 &2036415214
 GameObject:
   m_ObjectHideFlags: 0
@@ -2463,6 +2505,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 984253431574504700}
+  - component: {fileID: 496264484734991943}
   m_Layer: 0
   m_Name: katana
   m_TagString: Untagged
@@ -2470,6 +2513,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!136 &496264484734991943
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 496264484734991942}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  m_Radius: 0.43
+  m_Height: 6.14
+  m_Direction: 2
+  m_Center: {x: 0, y: 0.38, z: -2.32}
 --- !u!1 &509271378657574757
 GameObject:
   m_ObjectHideFlags: 0
@@ -2599,6 +2656,7 @@ GameObject:
   - component: {fileID: 919132148979529059}
   - component: {fileID: 919132148979529061}
   - component: {fileID: 919132148979529062}
+  - component: {fileID: 919132148979529063}
   m_Layer: 0
   m_Name: erika_archer
   m_TagString: Untagged
@@ -2619,7 +2677,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 3ed8d340d17ee6641ad4fe82db2caa96, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 1
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -2687,6 +2745,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &919132148979529063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148979529058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba46072ab934df048802fad14c195279, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponCollider: {fileID: 1226785718}
 --- !u!114 &919132148979529064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4003,7 +4074,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6005181086880792753}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: -0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8004296824638072710}

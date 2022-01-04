@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Target : MonoBehaviour
+public class Target : MonoBehaviour,IDamagable
 {
-    // Start is called before the first frame update
+    [SerializeField]float health=100;
     void Start()
     {
         
@@ -14,5 +14,9 @@ public class Target : MonoBehaviour
     void Update()
     {
         
+    }
+    public void TakeDamage(float damage)
+    {
+        health-=damage;
     }
 }
