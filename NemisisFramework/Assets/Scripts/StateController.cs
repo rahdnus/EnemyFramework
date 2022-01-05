@@ -24,7 +24,7 @@ public class StateController : MonoBehaviour
   Vector3 pos;
    void Awake()
    {
-       currentstate=tree.states[0];
+      // currentstate=tree.states[0];
        anim=GetComponent<Animator>();
       // agent=GetComponent<NavMeshAgent>();
        rb=GetComponent<Rigidbody>();

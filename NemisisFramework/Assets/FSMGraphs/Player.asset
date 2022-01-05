@@ -129,9 +129,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   position: {x: -413.51868, y: 546.00037}
   guid: 8cccf4ba74d86d9478dc0a6ea605ea59
-  animationname: Jump_Slash
   energycost: 20
   animationlayer: 0
+  animationname: Jump_Slash
   transitiontime: 0.3
 --- !u!114 &-4191405855273728727
 MonoBehaviour:
@@ -336,6 +336,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ce3ca858f6c7e14a89b3809b0b9dd45, type: 3}
   m_Name: Player
   m_EditorClassIdentifier: 
+  position: {x: 0, y: 0}
+  guid: 
   states:
   - {fileID: -3205815985008714015}
   - {fileID: -1524424507133562806}
@@ -349,7 +351,7 @@ MonoBehaviour:
   - {fileID: -5037746914362646722}
   - {fileID: 7096089679126130277}
   - {fileID: 4500798244621926854}
-  - {fileID: 7698024188117252184}
+  trees: []
   transitions:
   - {fileID: 2286182546308886003}
   - {fileID: -5195447346226823267}
@@ -451,9 +453,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   position: {x: -627.1189, y: 81.994995}
   guid: 21667a2ec281b0c45ab09d14ae709af8
-  animationname: Simple_Slash
   energycost: 20
   animationlayer: 0
+  animationname: Simple_Slash
   transitiontime: 0.3
 --- !u!114 &3279454407031551684
 MonoBehaviour:
@@ -600,25 +602,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   position: {x: -1596.1035, y: 605.2873}
   guid: 78e3839a071c8aa4a9d180351e600bae
-  animationname: Dual_Sword_Combo
   energycost: 20
   animationlayer: 0
+  animationname: Dual_Sword_Combo
   transitiontime: 0.3
---- !u!114 &7698024188117252184
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a52869fe0971ddd4f8ff3cc8f89cde08, type: 3}
-  m_Name: TEmpMOV
-  m_EditorClassIdentifier: 
-  position: {x: 0, y: 0}
-  guid: cfa81270467377a4b9f50c2805891910
-  movementSpeed: 0.1
 --- !u!114 &7731704755163052858
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class ActionView : NodeView
 {
@@ -14,6 +15,11 @@ public class ActionView : NodeView
         style.left=action.position.x;
         style.top=action.position.y;
         CreateOutputPorts();
+
+    }
+    public override void BuildContextualMenu(ContextualMenuPopulateEvent evt)
+    {
+       // evt.menu.MenuItems().Add()
     }
      private void CreateOutputPorts()
    {
