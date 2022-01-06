@@ -4,13 +4,35 @@ using UnityEngine;
 [CreateAssetMenu(menuName ="StateBranch")]
 public class StateBranch : StateTree
 {
-    public List<StateTree> subtrees=new List<StateTree>();
+    public List<StateTree> childgraphs=new List<StateTree>();
+    public List<StateTree> siblinggraphs=new List<StateTree>();
+    
+    //call relevant child.onEnter till eventually reaching leaf
+    //after traversing thru leafstates EXIT state must become currentstate
+    //EXIT state has ref to predecessor, has oncomplete(statecontroller) which sets currenttraversable to predecsoor(called in onENter)
+    public override void onEnter(StateController controller)
+   {
+      controller.changeCurrnetTree(childgraphs[0]);
+   }
+    public override void update(StateController controller)
+   {
+      // currentstate.Update(controller);
+   }
+   public override void fixedUpdate(StateController controller)
+   {
+      // currentstate.FixedUpdate(controller);
+   }
+    public override void onExit(StateController controller)
+   {
+     
+   }
+
     public StateBranch CreateStateBranch()
    {
        StateBranch branch=CreateInstance<StateBranch>();
        branch.guid=GUID.Generate().ToString();
-        subtrees.Add(branch);
-       branch.name=subtrees.Count.ToString()+".Branch";
+        childgraphs.Add(branch);
+       branch.name=childgraphs.Count.ToString()+".Branch";
        AssetDatabase.AddObjectToAsset(branch,this);
        AssetDatabase.SaveAssets();
        return branch;
@@ -19,8 +41,8 @@ public class StateBranch : StateTree
    {
        StateLeaf leaf=CreateInstance<StateLeaf>();
        leaf.guid=GUID.Generate().ToString();
-        subtrees.Add(leaf);
-       leaf.name=subtrees.Count.ToString()+".Leaf";
+        childgraphs.Add(leaf);
+       leaf.name=childgraphs.Count.ToString()+".Leaf";
        AssetDatabase.AddObjectToAsset(leaf,this);
        AssetDatabase.SaveAssets();
        return leaf;
@@ -28,7 +50,7 @@ public class StateBranch : StateTree
       public void RemoveBranch(StateTree tree)
    {
        
-       subtrees.Remove(tree);
+       childgraphs.Remove(tree);
        AssetDatabase.RemoveObjectFromAsset(tree);
        AssetDatabase.SaveAssets();
    }

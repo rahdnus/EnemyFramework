@@ -3,14 +3,8 @@ using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 public class StateLeafNodeView : NodeView
 {
-    public System.Action<NodeView> onTreeSelected;
-        public StateLeaf leaf;
-    public Port output;
-    public override void OnSelected()
-    {
-        base.OnSelected();
-       onTreeSelected(this);
-    }
+    public StateLeaf leaf;
+    public Port output,input;
     public StateLeafNodeView(StateLeaf newleaf)
     {
         this.leaf=newleaf;
@@ -19,11 +13,17 @@ public class StateLeafNodeView : NodeView
         style.left=newleaf.position.x;
         style.top=newleaf.position.y;
         CreateOutputPorts();
-    }
-     private void CreateOutputPorts()
+        CreateInputPorts();
+    }   private void CreateOutputPorts()
    {
-        output = InstantiatePort(Orientation.Horizontal, Direction.Output, Port.Capacity.Single, typeof(bool));
+        output = InstantiatePort(Orientation.Horizontal, Direction.Output, Port.Capacity.Multi, typeof(bool));
+        output.portName="this";
         outputContainer.Add(output);
+    }
+      private void CreateInputPorts()
+   {
+        input = InstantiatePort(Orientation.Horizontal, Direction.Input, Port.Capacity.Multi, typeof(bool));
+        inputContainer.Add(input);
     }
     public override void SetPosition(Rect newPos)
     {

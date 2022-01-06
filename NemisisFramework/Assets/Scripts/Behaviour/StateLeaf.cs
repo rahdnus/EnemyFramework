@@ -6,11 +6,39 @@ using UnityEngine;
 
 public class StateLeaf : StateTree
 {
+    State currentstate;
    public List<State> states=new List<State>();
    public List<Action> actions=new List<Action>();
 
    public List<Transition> transitions=new List<Transition>();
    public List<Decision> decisions=new List<Decision>();
+
+   public override void onEnter(StateController controller)
+   {
+       currentstate=states[0];//temporary
+       currentstate.onEnter(controller);
+   }
+    public override void update(StateController controller)
+   {
+       currentstate.update(controller);
+   }
+   public override void fixedUpdate(StateController controller)
+   {
+       currentstate.fixedUpdate(controller);
+   }
+    public override void onExit(StateController controller)
+   {
+       currentstate.onExit(controller);
+   }
+   public void changeCurrentState(State newstate,StateController controller)
+   {
+       if(newstate!=null)
+       {
+           currentstate.onExit(controller);
+           currentstate=newstate;
+           currentstate.onEnter(controller);
+       }
+   }
   public State CreateState()
    {
        State state=CreateInstance<State>();

@@ -4,12 +4,32 @@ using UnityEngine;
 using UnityEditor.Callbacks;
 
 [CreateAssetMenu(menuName ="StateTree")]
-public class StateTree : ScriptableObject
+public class StateTree : Traversable
 {
-    
-   [HideInInspector]public Vector2 position;
-   [HideInInspector] public string guid;
-
+    public StartNode startNode;
+    public EndNode endNode;
+    public override void DoTranisiton(StateController controller)
+    {
+        for(int i=0;i<mytransitions.Count;i++)
+        {
+            if(mytransitions[i].TakeDecision(controller))
+            {
+                controller.changeCurrnetTree(mytransitions[i].truetrav as StateTree);
+            }
+            else
+            {
+                controller.changeCurrnetTree(mytransitions[i].falsetrav as StateTree);
+            }
+        }
+    }
+     public void CreateStartNode()
+   {
+        startNode=CreateInstance<StartNode>();
+       startNode.guid=GUID.Generate().ToString();
+       startNode.name="Start1";
+       AssetDatabase.AddObjectToAsset(startNode,this);
+       AssetDatabase.SaveAssets();
+   }
 //    public List<State> states=new List<State>();
 //    public List<Action> actions=new List<Action>();
 //    public List<StateTree> subtrees=new List<StateTree>();

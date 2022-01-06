@@ -8,8 +8,8 @@ public class Transition :ScriptableObject
 [HideInInspector]public Vector2 position;
   [HideInInspector] public string guid;
    public Decision decision;
-    public State truestate;
-    public State falsestate;
+    public Traversable truetrav;
+    public Traversable falsetrav;
 
     public bool TakeDecision(StateController controller)
     {

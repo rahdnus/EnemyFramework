@@ -3,29 +3,33 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName ="State",menuName ="PlugAI/State")]
-public class State : ScriptableObject
+public class State : Traversable
 {
-[HideInInspector]public Vector2 position;
-   [HideInInspector]public string guid;
     public List<Action> actions=new List<Action>();
-    public List<Transition> transitions=new List<Transition>();
 
-    public void onEnter(StateController controller)
+    public override void onEnter(StateController controller)
     {
         if(actions!=null)
         {
             actions.ForEach((action)=>action.onEnter(controller));
         }
     }
-    public void UpdateState(StateController controller)
+    public override void update(StateController controller)
     {
         if(actions!=null)
          DoAction(controller);
-        if(transitions!=null)
+        if(mytransitions!=null)
         {
             DoTranisiton(controller);
         }
 
+    }
+    public override void fixedUpdate(StateController controller)
+    {
+        if(actions!=null)
+        {
+            DoFixedAction(controller);
+        }
     }
     public void DoFixedAction(StateController controller)
     {
@@ -41,22 +45,23 @@ public class State : ScriptableObject
             actions[i].Act(controller);
         }
     }
-    public void DoTranisiton(StateController controller)
+    public override void DoTranisiton(StateController controller)
     {
-        for(int i=0;i<transitions.Count;i++)
+        for(int i=0;i<mytransitions.Count;i++)
         {
-            if(transitions[i].TakeDecision(controller))
+            StateLeaf leaf=controller.tree as StateLeaf;
+            if(mytransitions[i].TakeDecision(controller))
             {
-                controller.ChangetoState(transitions[i].truestate);
+                leaf.changeCurrentState(mytransitions[i].truetrav as State,controller);
             }
             else
             {
-                controller.ChangetoState(transitions[i].falsestate);
+                leaf.changeCurrentState(mytransitions[i].falsetrav as State,controller);
             }
         }
     }
     
-    public void onExit(StateController controller)
+    public override void onExit(StateController controller)
     {
         if(actions!=null)
         {

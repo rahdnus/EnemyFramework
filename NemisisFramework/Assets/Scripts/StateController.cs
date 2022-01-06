@@ -9,8 +9,8 @@ public class StateController : MonoBehaviour
     public int maxenergy=100;
     public int energy=100;//temporary;will be substituted by entity stats 
     public Transform backjump;
-    [SerializeField] StateTree tree;
-   public State currentstate;
+    public StateTree tree;
+
 
    public LayerMask targetlayer;
    public Transform Target;
@@ -28,30 +28,34 @@ public class StateController : MonoBehaviour
        anim=GetComponent<Animator>();
       // agent=GetComponent<NavMeshAgent>();
        rb=GetComponent<Rigidbody>();
-       currentstate.onEnter(this);
-       
-      
+       tree.onEnter(this);
    }
     void Update()
     {
-    currentstate.UpdateState(this);
-    
+    tree.update(this);
     }
     void FixedUpdate()
     {
-        currentstate.DoFixedAction(this);
+    tree.fixedUpdate(this);
     }
     
     
-    public void ChangetoState(State newstate)
+    public void changeCurrnetTree(StateTree newtree)
     {
-        //find solution for this ***
-        if(newstate!=null)
+        // //find solution for this ***
+        // if(newstate!=null)
+        // {
+        //     Debug.Log(newstate.name);
+        //     currenttraversable.onExit(this);
+        //     currenttraversable=newstate;
+        //     currenttraversable.onEnter(this);
+        // }
+        Debug.Log(newtree.name);
+        if(newtree!=null)
         {
-            Debug.Log(newstate.name);
-            currentstate.onExit(this);
-            currentstate=newstate;
-            currentstate.onEnter(this);
+            tree.onExit(this);
+            tree=newtree;
+            tree.onEnter(this);
         }
     }
   
