@@ -15,6 +15,7 @@ public class StateTree : Traversable
     {
         for(int i=0;i<mytransitions.Count;i++)
         {
+            
             if(mytransitions[i].TakeDecision(controller))
             {
                 controller.changeCurrnetTree(mytransitions[i].truetrav as StateTree);

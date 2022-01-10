@@ -64,10 +64,13 @@ public class StateTreeView : GraphView
         }
         CreateStartStateView(tree.startNode);
         CreateEndStateView(tree.endNode);
+        
+
        
         if(tree.GetType()==typeof(StateBranch))
         {
             StateBranch branch=tree as StateBranch;
+            branch.currentgraph=branch.startNode;
             branch.childgraphs.ForEach(t =>
                 {
                     if(t.GetType()==typeof(StateBranch))CreateStateTreeNodeView(t as StateBranch);
@@ -79,6 +82,7 @@ public class StateTreeView : GraphView
         else if(tree.GetType()==typeof(StateLeaf))
         {
             StateLeaf leaf=tree as StateLeaf;
+            leaf.currentstate=leaf.startNode;
             leaf.states.ForEach(s =>{if(s)CreateStateView(s);});
             leaf.actions.ForEach(a=>{if(a)CreateActionView(a);});
             

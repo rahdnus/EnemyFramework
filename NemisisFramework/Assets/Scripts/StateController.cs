@@ -55,6 +55,8 @@ public class StateController : MonoBehaviour
         {
             tree.onExit(this);
             tree=newtree;
+            // if(tree.GetType()==typeof(StateBranch))
+            // tree.DoTranisiton(this);
             tree.onEnter(this);
         }
     }

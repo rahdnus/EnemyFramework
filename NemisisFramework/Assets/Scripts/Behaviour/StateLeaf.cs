@@ -6,15 +6,16 @@ using UnityEngine;
 
 public class StateLeaf : StateTree
 {
-   State currentstate;
+   public Traversable currentstate;
    public List<State> states=new List<State>();
    public List<Action> actions=new List<Action>();
    
 
    public override void onEnter(StateController controller)
    {
-       currentstate=states[0];//temporary
-       currentstate.onEnter(controller);
+      // currentstate=startNode;
+      currentstate.onEnter(controller);
+      // currentstate.onEnter(controller);
    }
     public override void update(StateController controller)
    {
@@ -26,12 +27,13 @@ public class StateLeaf : StateTree
    }
     public override void onExit(StateController controller)
    {
-       currentstate.onExit(controller);
+       currentstate=startNode;
    }
    public void changeCurrentState(State newstate,StateController controller)
    {
        if(newstate!=null)
        {
+           Debug.Log(currentstate.name+controller.tree.name);
            currentstate.onExit(controller);
            currentstate=newstate;
            currentstate.onEnter(controller);

@@ -4,7 +4,8 @@ using UnityEngine;
 [CreateAssetMenu(menuName ="StateBranch")]
 public class StateBranch : StateTree
 {
-    public StateTree currentgraph;
+    public Traversable currentgraph;
+    public bool hasbeentravelled=false;
     public List<StateTree> childgraphs=new List<StateTree>();
     public List<StateTree> siblinggraphs=new List<StateTree>();
     
@@ -13,11 +14,17 @@ public class StateBranch : StateTree
     //EXIT state has ref to predecessor, has oncomplete(statecontroller) which sets currenttraversable to predecsoor(called in onENter)
     public override void onEnter(StateController controller)
    {
-      controller.changeCurrnetTree(currentgraph);
+       if(!hasbeentravelled)
+       {
+            startNode.onEnter(controller);
+            return;
+       }
+        hasbeentravelled=false;
    }
     public override void update(StateController controller)
    {
       // currentstate.Update(controller);
+       // DoTranisiton(controller);
    }
    public override void fixedUpdate(StateController controller)
    {
@@ -25,7 +32,7 @@ public class StateBranch : StateTree
    }
     public override void onExit(StateController controller)
    {
-     
+      currentgraph=startNode;
    }
 
     public StateBranch CreateStateBranch()

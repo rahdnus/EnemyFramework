@@ -20,8 +20,10 @@ public class State : Traversable
          DoAction(controller);
         if(mytransitions!=null)
         {
-            DoTranisiton(controller);
+               Debug.Log(this.name);
+         DoTranisiton(controller);
         }
+     
 
     }
     public override void fixedUpdate(StateController controller)
@@ -52,6 +54,7 @@ public class State : Traversable
             StateLeaf leaf=controller.tree as StateLeaf;
             if(mytransitions[i].TakeDecision(controller))
             {
+                Debug.Log("yo"+mytransitions[i].truetrav.name);
                 leaf.changeCurrentState(mytransitions[i].truetrav as State,controller);
             }
             else

@@ -15,7 +15,8 @@ MonoBehaviour:
   position: {x: -369.41803, y: 47.852417}
   guid: 57f75b6371cf82f44a935b0bd0216c60
   mytransitions: []
-  parent: {fileID: 0}
+  actions: []
+  parent: {fileID: 11400000}
 --- !u!114 &-5129182267306157852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,8 +63,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   position: {x: -206.21477, y: -90.94831}
   guid: 05bbfc3c85db4334e825f6dca11f7f15
-  decision: {fileID: 0}
-  truetrav: {fileID: -6837492283807463908}
+  decision: {fileID: 5565759461620903493}
+  truetrav: {fileID: 1218231045670957404}
   falsetrav: {fileID: 0}
 --- !u!114 &11400000
 MonoBehaviour:
@@ -82,11 +83,13 @@ MonoBehaviour:
   mytransitions: []
   childtransitions:
   - {fileID: -1795437979072533865}
-  childdecisions: []
+  childdecisions:
+  - {fileID: 5565759461620903493}
   mydecisions: []
   startNode: {fileID: 6397380478329450895}
-  endNode: {fileID: -6837492283807463908}
-  currentgraph: {fileID: 0}
+  endNode: {fileID: 1218231045670957404}
+  currentgraph: {fileID: 6397380478329450895}
+  hasbeentravelled: 0
   childgraphs:
   - {fileID: 8605857649663317528}
   - {fileID: 47384656094218484}
@@ -112,8 +115,24 @@ MonoBehaviour:
   mydecisions: []
   startNode: {fileID: 0}
   endNode: {fileID: 0}
+  currentstate: {fileID: 0}
   states: []
   actions: []
+--- !u!114 &159301881392675649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c8db043487f1af43978706920647e9b, type: 3}
+  m_Name: AbsoluteDecision
+  m_EditorClassIdentifier: 
+  position: {x: -518.6184, y: -33.459244}
+  guid: bc118c20da976684cbb8b1571537a1d2
+  absolutebool: 1
 --- !u!114 &386351891817548731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,6 +153,7 @@ MonoBehaviour:
   mydecisions: []
   startNode: {fileID: -5129182267306157852}
   endNode: {fileID: 1218231045670957404}
+  currentstate: {fileID: 0}
   states: []
   actions: []
 --- !u!114 &1218231045670957404
@@ -148,9 +168,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a22ed110de2f218458d889aa152a46ab, type: 3}
   m_Name: END
   m_EditorClassIdentifier: 
-  position: {x: 0, y: 0}
+  position: {x: -337.30002, y: 24.499985}
   guid: 69b22712cda697f4ca07d952b9d73214
   mytransitions: []
+  actions: []
   parent: {fileID: 0}
 --- !u!114 &1804708036208602690
 MonoBehaviour:
@@ -166,7 +187,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   position: {x: -34.980114, y: 97.336}
   guid: 6468997a59ad3964094dac959184058c
-  mytransitions: []
+  mytransitions:
+  - {fileID: 4098396070188460848}
   actions: []
 --- !u!114 &4098396070188460848
 MonoBehaviour:
@@ -180,10 +202,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4e03ddf7c3d9354e98969b1c6b8a5d4, type: 3}
   m_Name: transition
   m_EditorClassIdentifier: 
-  position: {x: 0, y: 0}
+  position: {x: -303.56326, y: -2.3000035}
   guid: 95f874b2f8ad0ae43a08690790694cc7
-  decision: {fileID: 0}
-  truetrav: {fileID: 0}
+  decision: {fileID: 159301881392675649}
+  truetrav: {fileID: 4850283717302923760}
   falsetrav: {fileID: 0}
 --- !u!114 &4850283717302923760
 MonoBehaviour:
@@ -197,10 +219,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a22ed110de2f218458d889aa152a46ab, type: 3}
   m_Name: END
   m_EditorClassIdentifier: 
-  position: {x: 273.768, y: 128}
+  position: {x: -415.3451, y: 173.75237}
   guid: 808850322fa04e949aa8c0fddbaec7ec
   mytransitions: []
-  parent: {fileID: 0}
+  actions: []
+  parent: {fileID: 11400000}
+--- !u!114 &5565759461620903493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c8db043487f1af43978706920647e9b, type: 3}
+  m_Name: AbsoluteDecision
+  m_EditorClassIdentifier: 
+  position: {x: -374.38162, y: -136.8}
+  guid: da05e6dc7d9b5b544bfaee5491a340b8
+  absolutebool: 1
 --- !u!114 &6397380478329450895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235,10 +273,12 @@ MonoBehaviour:
   - {fileID: -1795437979072533865}
   childtransitions:
   - {fileID: 4098396070188460848}
-  childdecisions: []
+  childdecisions:
+  - {fileID: 159301881392675649}
   mydecisions: []
   startNode: {fileID: -2662180814193668324}
   endNode: {fileID: 4850283717302923760}
+  currentstate: {fileID: -2662180814193668324}
   states:
   - {fileID: 1804708036208602690}
   actions: []
