@@ -7,7 +7,7 @@ public class NodeView : UnityEditor.Experimental.GraphView.Node
         base.OnSelected();
         if(onNodeSelected!=null)
         {
-            onNodeSelected(this);
+           // onNodeSelected(this);
         }
     }
 }

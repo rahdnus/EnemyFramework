@@ -33,16 +33,17 @@ public class StateTreeView : GraphView
         if(tree.GetType()==typeof(StateLeaf))
         {
             evt.menu.AppendAction("State", (a) => createObject(typeof(State)));
-            evt.menu.AppendAction("Transition", (a) => createObject(typeof(Transition)));
-
+            
             evt.menu.AppendSeparator("---ACTIONS----");
             TypeCache.TypeCollection actiontypes = TypeCache.GetTypesDerivedFrom<Action>();
             actiontypes.ToList().ForEach((t) => evt.menu.AppendAction(t.Name, (b) => createObject(t)));
-
-            evt.menu.AppendSeparator("---DECISIONS---");
-            TypeCache.TypeCollection decisiontypes = TypeCache.GetTypesDerivedFrom<Decision>();
-            decisiontypes.ToList().ForEach((t) => evt.menu.AppendAction(t.Name, (b) => createObject(t)));
         }
+           evt.menu.AppendAction("Transition", (a) => createObject(typeof(Transition)));
+           
+           evt.menu.AppendSeparator("---DECISIONS---");
+
+           TypeCache.TypeCollection decisiontypes = TypeCache.GetTypesDerivedFrom<Decision>();
+           decisiontypes.ToList().ForEach((t) => evt.menu.AppendAction(t.Name, (b) => createObject(t)));
         
     }
     public void PopulateView(StateTree newtree)
@@ -51,17 +52,19 @@ public class StateTreeView : GraphView
        
         graphViewChanged -= GraphViewChanged;
         DeleteElements(graphElements.ToList());
-
         graphViewChanged += GraphViewChanged;
+
         if(!tree.startNode)
         {
             tree.CreateStartNode();
         }
-
+        if(!tree.endNode)
+        {
+            tree.CreateEndNode();
+        }
         CreateStartStateView(tree.startNode);
-      //  CreateEndStateView(tree.endNode);
-        
-
+        CreateEndStateView(tree.endNode);
+       
         if(tree.GetType()==typeof(StateBranch))
         {
             StateBranch branch=tree as StateBranch;
@@ -78,38 +81,89 @@ public class StateTreeView : GraphView
             StateLeaf leaf=tree as StateLeaf;
             leaf.states.ForEach(s =>{if(s)CreateStateView(s);});
             leaf.actions.ForEach(a=>{if(a)CreateActionView(a);});
-            leaf.transitions.ForEach(t=>{if(t)CreateTransitionView(t);});
-            leaf.decisions.ForEach(d=>{if(d)CreateDecisionView(d);});
+            
         }
+            tree.childtransitions.ForEach(t=>{if(t)CreateTransitionView(t);});
+            tree.childdecisions.ForEach(d=>{if(d)CreateDecisionView(d);});
+
 
         #region populate_edge
         if(tree.startNode.first!=null)
         {
             StartStateView startview= GetNodeByGuid(tree.startNode.guid) as StartStateView;
             Debug.Log(startview.start.first.GetType());
-        if(startview.start.first.GetType()==typeof(StateLeaf))
-        {
-             StateLeafNodeView stateView=GetNodeByGuid(tree.startNode.first.guid) as StateLeafNodeView;
+              if(startview.start.first.GetType()==typeof(State))
+            {
+                StateView stateView=GetNodeByGuid(tree.startNode.first.guid) as StateView;
                 Edge edge=stateView.output.ConnectTo(startview.input);
-                
+                    
                 AddElement(edge);
-        }
-        if(startview.start.first.GetType()==typeof(StateBranch))
-        {
-             StateTreeNodeView stateView=GetNodeByGuid(tree.startNode.first.guid) as StateTreeNodeView;
+            }
+            if(startview.start.first.GetType()==typeof(StateLeaf))
+            {
+                StateLeafNodeView stateView=GetNodeByGuid(tree.startNode.first.guid) as StateLeafNodeView;
                 Edge edge=stateView.output.ConnectTo(startview.input);
-               
+                    
                 AddElement(edge);
-        }
-         Debug.Log(tree.startNode.first.name);
-        }
+            }
+            if(startview.start.first.GetType()==typeof(StateBranch))
+            {
+                StateTreeNodeView stateView=GetNodeByGuid(tree.startNode.first.guid) as StateTreeNodeView;
+                Edge edge=stateView.output.ConnectTo(startview.input);
+                   
+                AddElement(edge);
+            }
         
-       
+        }
 
-        // EndStateView endview= GetNodeByGuid(tree.endNode.guid) as EndStateView;
-        // stateView=GetNodeByGuid(tree.startNode.first.guid) as StateView;
-        // edge=stateView.ouput.ConnectTo(endview.input);
-        // AddElement(edge);
+        if (tree.childtransitions != null)
+            tree.childtransitions.ForEach(t =>
+            {
+                TransitionView transitionView = GetNodeByGuid(t.guid) as TransitionView;
+                var decision = transitionView.transition.decision;
+                if (decision != null)
+                {
+                    DecisionView decisionView = GetNodeByGuid(decision.guid) as DecisionView;
+                    // Debug.Log("decisin edge");
+                    Edge edge = decisionView.output.ConnectTo(transitionView.D_input);
+                    AddElement(edge);
+                }
+
+            });
+        if (tree.childtransitions != null)
+            tree.childtransitions.ForEach(t =>
+            {
+                TransitionView transitionView = GetNodeByGuid(t.guid) as TransitionView;
+
+                var truestate = transitionView.transition.truetrav;
+                if (truestate != null)
+                {   
+                    if(truestate.GetType()==typeof(State))
+                    {
+                         StateView stateView = GetNodeByGuid(truestate.guid) as StateView;
+                        Edge edge = stateView.output.ConnectTo(transitionView.ST_input);
+                        AddElement(edge);
+                    }
+                    else if(truestate.GetType()==typeof(StateBranch))
+                    {
+
+                    }
+                    else if(truestate.GetType()==typeof(EndNode))
+                    {
+                       EndStateView stateView = GetNodeByGuid(truestate.guid) as EndStateView;
+                        Edge edge = stateView.output.ConnectTo(transitionView.ST_input);
+                        AddElement(edge);
+                    }
+                   
+                }
+                var falsestate = transitionView.transition.falsetrav;
+                if (falsestate != null)
+                {
+                    StateView stateView = GetNodeByGuid(falsestate.guid) as StateView;
+                    Edge edge = stateView.output.ConnectTo(transitionView.SF_input);
+                    AddElement(edge);
+                }
+            });
 
         if (tree.GetType() == typeof(StateLeaf))
         {
@@ -141,61 +195,28 @@ public class StateTreeView : GraphView
                     });
                });
 
-            if (leaf.transitions != null)
-                leaf.transitions.ForEach(t =>
-                {
-                    TransitionView transitionView = GetNodeByGuid(t.guid) as TransitionView;
-                    var decision = transitionView.transition.decision;
-                    if (decision != null)
-                    {
-                        DecisionView decisionView = GetNodeByGuid(decision.guid) as DecisionView;
-                        // Debug.Log("decisin edge");
-                        Edge edge = decisionView.output.ConnectTo(transitionView.D_input);
-                        AddElement(edge);
-                    }
-
-                });
-            if (leaf.transitions != null)
-                leaf.transitions.ForEach(t =>
-                {
-                    TransitionView transitionView = GetNodeByGuid(t.guid) as TransitionView;
-
-                    var truestate = transitionView.transition.truetrav;
-                    if (truestate != null)
-                    {
-                        StateView stateView = GetNodeByGuid(truestate.guid) as StateView;
-                        Edge edge = stateView.ouput.ConnectTo(transitionView.ST_input);
-                        AddElement(edge);
-                    }
-                    var falsestate = transitionView.transition.falsetrav;
-                    if (falsestate != null)
-                    {
-                        StateView stateView = GetNodeByGuid(falsestate.guid) as StateView;
-                        Edge edge = stateView.ouput.ConnectTo(transitionView.SF_input);
-                        AddElement(edge);
-                    }
-                });
+        
         }
         else if (tree.GetType() == typeof(StateBranch))
         {
             StateBranch branch = tree as StateBranch;
             branch.childgraphs.ForEach(cg =>
             {
-           if (cg.GetType() == typeof(StateBranch))
+           if (cg.GetType() == typeof(StateLeaf))
            {
-               StateTreeNodeView stateView = GetNodeByGuid(cg.guid) as StateTreeNodeView;
-               StateBranch childbranch = cg as StateBranch;
-               if (childbranch.siblinggraphs != null)
-                   childbranch.siblinggraphs.ForEach(sib =>
+               StateLeafNodeView stateView = GetNodeByGuid(cg.guid) as StateLeafNodeView;
+               StateLeaf childleaf = cg as StateLeaf;
+               if (childleaf.mytransitions != null)
+                   childleaf.mytransitions.ForEach(tran =>
                    {
-                       StateTreeNodeView nodeview = GetNodeByGuid(sib.guid) as StateTreeNodeView;
-                       Edge edge = nodeview.input.ConnectTo(stateView.output);
+                       TransitionView transitionView = GetNodeByGuid(tran.guid) as TransitionView;
+                       Edge edge = transitionView.output.ConnectTo(stateView.input);
 
                        AddElement(edge);
                    });
            }
 
-       });
+        });
         }
        #endregion
     
@@ -207,6 +228,28 @@ public class StateTreeView : GraphView
             foreach(Edge edge in graphViewChange.edgesToCreate)
             {
                 #region create_edge
+                if (edge.input.node.GetType() == typeof(StateLeafNodeView) &&  edge.output.node.GetType() == typeof(TransitionView))
+                {
+                    StateLeafNodeView nodeView=edge.input.node as StateLeafNodeView;
+                    TransitionView transitionView=edge.output.node as TransitionView;
+                    nodeView.leaf.mytransitions.Add(transitionView.transition);
+                }
+                else if (edge.input.node.GetType() == typeof(StateTreeNodeView) && edge.output.node.GetType() == typeof(TransitionView))
+                {
+                    StateTreeNodeView nodeView=edge.input.node as StateTreeNodeView;
+                    TransitionView transitionView=edge.output.node as TransitionView;
+                    nodeView.branch.mytransitions.Add(transitionView.transition);
+                }
+                if (edge.output.node.GetType() == typeof(EndStateView) && edge.input.node.GetType() == typeof(TransitionView))
+                {
+                    EndStateView stateView = edge.output.node as EndStateView;
+                    TransitionView transitionview = edge.input.node as TransitionView;
+
+                    if (edge.input.portName == "True")
+                        transitionview.transition.truetrav = stateView.end;
+                    else
+                        transitionview.transition.falsetrav = stateView.end;
+                }
 
                     if(edge.input.node.GetType()==typeof(StartStateView))
                     {
@@ -227,6 +270,7 @@ public class StateTreeView : GraphView
                             startView.start.first=treeview.branch;
                         }
                     }
+                   
                     if(edge.output.node.GetType()==typeof(StateTreeNodeView) && edge.input.node.GetType()==typeof(StateTreeNodeView))
                     {
                         StateTreeNodeView branchview=edge.output.node as StateTreeNodeView;
@@ -371,14 +415,17 @@ public class StateTreeView : GraphView
     void createObject(System.Type type)
     {
          #region create SO(type)
-        if(type.GetType()==typeof(StartNode))
-        {
-            CreateStartStateView(tree.startNode);
-        }
-          if(type.GetType()==typeof(EndNode))
-        {
-            CreateEndStateView(tree.endNode);
-        }
+            if (type == typeof(Transition))
+            {
+                Transition transition = tree.CreateTransition(type);
+                // transition.position=Input.mousePosition;
+                CreateTransitionView(transition);
+            }
+            else if (type.BaseType == typeof(Decision))
+            {
+                Decision decision = tree.CreateDecision(type);
+                CreateDecisionView(decision);
+            }
        
         if (tree.GetType() == typeof(StateLeaf))
         {
@@ -392,17 +439,7 @@ public class StateTreeView : GraphView
 
                 CreateStateView(state);
             }
-            else if (type == typeof(Transition))
-            {
-                Transition transition = leaf.CreateTransition(type);
-                // transition.position=Input.mousePosition;
-                CreateTransitionView(transition);
-            }
-            else if (type.BaseType == typeof(Decision))
-            {
-                Decision decision = leaf.CreateDecision(type);
-                CreateDecisionView(decision);
-            }
+           
             else if (type.BaseType == typeof(Action))
             {
                 Action action = leaf.CreateAction(type);
@@ -479,8 +516,6 @@ public class StateTreeView : GraphView
        AddElement(decisionView);
     }
     #endregion
-   
-   
     // void createState(System.Type type)
     // {
     //     State state = tree.CreateState();

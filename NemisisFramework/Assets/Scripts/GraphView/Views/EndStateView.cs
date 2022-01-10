@@ -4,7 +4,7 @@ using UnityEngine;
 public class EndStateView : NodeView
 {
     public EndNode end;
-    public Port input;
+    public Port output;
    public EndStateView(EndNode end)
    {
        this.end=end;
@@ -12,14 +12,14 @@ public class EndStateView : NodeView
        viewDataKey=end.guid;
        style.left=end.position.x;
        style.top=end.position.y;
-       CreateInputPorts();
+       CreateOutputPorts();
    }
  
-    private void CreateInputPorts()
+    private void CreateOutputPorts()
    {
-        input = InstantiatePort(Orientation.Horizontal, Direction.Input, Port.Capacity.Single, typeof(Traversable));
-        input.portName="First State";
-        inputContainer.Add(input);
+        output = InstantiatePort(Orientation.Horizontal, Direction.Output, Port.Capacity.Multi, typeof(Traversable));
+        output.portName="this";
+        outputContainer.Add(output);
 
     }
    public override void SetPosition(UnityEngine.Rect newPos)

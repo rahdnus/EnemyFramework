@@ -23,6 +23,7 @@ public class StateLeafNodeView : NodeView
       private void CreateInputPorts()
    {
         input = InstantiatePort(Orientation.Horizontal, Direction.Input, Port.Capacity.Multi, typeof(bool));
+        input.portName="transition";
         inputContainer.Add(input);
     }
     public override void SetPosition(Rect newPos)

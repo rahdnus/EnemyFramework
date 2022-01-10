@@ -4,6 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName ="StateBranch")]
 public class StateBranch : StateTree
 {
+    public StateTree currentgraph;
     public List<StateTree> childgraphs=new List<StateTree>();
     public List<StateTree> siblinggraphs=new List<StateTree>();
     
@@ -12,7 +13,7 @@ public class StateBranch : StateTree
     //EXIT state has ref to predecessor, has oncomplete(statecontroller) which sets currenttraversable to predecsoor(called in onENter)
     public override void onEnter(StateController controller)
    {
-      controller.changeCurrnetTree(childgraphs[0]);
+      controller.changeCurrnetTree(currentgraph);
    }
     public override void update(StateController controller)
    {

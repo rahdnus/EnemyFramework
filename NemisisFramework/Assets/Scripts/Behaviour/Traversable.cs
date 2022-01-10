@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Traversable : ScriptableObject
 {
-     [HideInInspector]public Vector2 position;
-   [HideInInspector] public string guid;
+    [HideInInspector]public Vector2 position;
+    [HideInInspector] public string guid;
     public List<Transition> mytransitions=new List<Transition>();
      public virtual void onEnter(StateController controller)
     {
