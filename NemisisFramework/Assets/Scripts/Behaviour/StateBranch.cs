@@ -5,7 +5,6 @@ using UnityEngine;
 public class StateBranch : StateTree
 {
     public Traversable currentgraph;
-    public bool hasbeentravelled=false;
     public List<StateTree> childgraphs=new List<StateTree>();
     
     
@@ -15,12 +14,8 @@ public class StateBranch : StateTree
     public override void onEnter(StateController controller)
    {
        //simple simple simple foreach sibling graph create an exitnode, no transitions in statetree,heck yeh
-       if(!hasbeentravelled)
-       {
-            startNode.onEnter(controller);
-            return;
-       }
-        hasbeentravelled=false;
+        startNode.onEnter(controller);
+    
    }
     public override void update(StateController controller)
    {

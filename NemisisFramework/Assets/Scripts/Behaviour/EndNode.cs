@@ -12,11 +12,6 @@ public class EndNode : State
         Debug.Log("Exit reached"+parent.name);
         if(parent!=null)
         {   
-            if(parent.GetType()==typeof(StateBranch))
-            {
-                StateBranch branch=parent as StateBranch;
-                branch.hasbeentravelled=true;
-            }
             controller.changeCurrnetTree(parent as StateTree);
         }
     }

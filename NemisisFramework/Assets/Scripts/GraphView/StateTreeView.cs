@@ -159,43 +159,30 @@ public class StateTreeView : GraphView
                     {
 
                     }
-                    // else if(truestate.GetType()==typeof(EndNode))
-                    // {
-                    //    EndStateView stateView = GetNodeByGuid(truestate.guid) as EndStateView;
-                    //     Edge edge = stateView.output.ConnectTo(transitionView.ST_input);
-                    //     AddElement(edge);
-                    // }
+                    else if(truestate.GetType()==typeof(EndNode))
+                    {
+                       EndStateView stateView = GetNodeByGuid(truestate.guid) as EndStateView;
+                        Edge edge = stateView.output.ConnectTo(transitionView.ST_input);
+                        AddElement(edge);
+                    }
                    
                 }
                 var falsestate = transitionView.transition.falsetrav;
                 if (falsestate != null)
                 {
-                    StateView stateView = GetNodeByGuid(falsestate.guid) as StateView;
+                    if(falsestate.GetType()==typeof(State))
+                    {
+                         StateView stateView = GetNodeByGuid(falsestate.guid) as StateView;
                     Edge edge = stateView.output.ConnectTo(transitionView.SF_input);
                     AddElement(edge);
+                    }
+                   
                 }
             });
        
         if (tree.GetType() == typeof(StateLeaf))
         {
             StateLeaf leaf = tree as StateLeaf;
-            /* if (tree.childendNodePointers != null)
-            {
-                StateLeafNodeView leafview = GetNodeByGuid(leaf.guid) as StateLeafNodeView;
-                tree.childendNodePointers.ForEach(end =>
-                {
-                    if (end.parent.GetType() == typeof(StateBranch))
-                    {
-                        StateTreeNodeView nodeView = GetNodeByGuid(end.parent.guid) as StateTreeNodeView;
-                        Edge edge = nodeView.output.ConnectTo(leafview.input);
-                    }
-                    else if (end.parent.GetType() == typeof(StateLeaf))
-                    {
-                        StateLeafNodeView nodeView = GetNodeByGuid(end.parent.guid) as StateLeafNodeView;
-                        Edge edge = nodeView.output.ConnectTo(leafview.input);
-                    }
-                });
-            }*/
             if (leaf.states != null)
                 leaf.states.ForEach(s =>
                 {
@@ -347,16 +334,16 @@ public class StateTreeView : GraphView
                 //     TransitionView transitionView=edge.output.node as TransitionView;
                 //     nodeView.branch.mytransitions.Add(transitionView.transition);
                 // }
-                // if (edge.output.node.GetType() == typeof(EndStateView) && edge.input.node.GetType() == typeof(TransitionView))
-                // {
-                //     EndStateView stateView = edge.output.node as EndStateView;
-                //     TransitionView transitionview = edge.input.node as TransitionView;
+                if (edge.output.node.GetType() == typeof(EndStateView) && edge.input.node.GetType() == typeof(TransitionView))
+                {
+                    EndStateView stateView = edge.output.node as EndStateView;
+                    TransitionView transitionview = edge.input.node as TransitionView;
 
-                //     if (edge.input.portName == "True")
-                //         transitionview.transition.truetrav = stateView.end;
-                //     else
-                //         transitionview.transition.falsetrav = stateView.end;
-                // }
+                    if (edge.input.portName == "True")
+                        transitionview.transition.truetrav = stateView.end;
+                    else
+                        transitionview.transition.falsetrav = stateView.end;
+                }
 
                     if(edge.input.node.GetType()==typeof(StartStateView))
                     {
@@ -427,10 +414,19 @@ public class StateTreeView : GraphView
             foreach(GraphElement elem in graphViewChange.elementsToRemove)
             {
                 #region remove_SO_data
+                  if (elem.GetType() == typeof(TransitionView))
+                    {
+                        TransitionView view = elem as TransitionView;
+                        tree.RemoveTransition(view.transition);
+                    }
+                    if (elem.GetType() == typeof(DecisionView))
+                    {
+                        DecisionView view = elem as DecisionView;
+                        tree.RemoveDecision(view.decision);
+                    }
                 if (tree.GetType() == typeof(StateLeaf))
                 {
                     StateLeaf leaf = tree as StateLeaf;
-                    
 
                     if (elem.GetType() == typeof(StateView))
                     {
@@ -442,16 +438,7 @@ public class StateTreeView : GraphView
                         ActionView view = elem as ActionView;
                         leaf.RemoveAction(view.action);
                     }
-                    if (elem.GetType() == typeof(TransitionView))
-                    {
-                        TransitionView view = elem as TransitionView;
-                        leaf.RemoveTransition(view.transition);
-                    }
-                    if (elem.GetType() == typeof(DecisionView))
-                    {
-                        DecisionView view = elem as DecisionView;
-                        leaf.RemoveDecision(view.decision);
-                    }
+                  
                 }
                 else if (tree.GetType() == typeof(StateBranch))
                 {
@@ -593,13 +580,13 @@ public class StateTreeView : GraphView
     void CreateStateTreeNodeView(StateBranch branch)
     {
         StateTreeNodeView statetreenodeview = new StateTreeNodeView(branch);
-        statetreenodeview.onNodeSelected=OnTreeSelected;
+        statetreenodeview.onNodeSelected=OnSelected;//find a way so that double clicking calls ontreeselected
         AddElement(statetreenodeview);
     }
      void CreateStateLeafNodeView(StateLeaf leaf)
     {
         StateLeafNodeView statetreenodeview = new StateLeafNodeView(leaf);
-        statetreenodeview.onNodeSelected=OnTreeSelected;
+        statetreenodeview.onNodeSelected=OnSelected;//find a way so that double clicking calls ontreeselected
         AddElement(statetreenodeview);
     }
 
