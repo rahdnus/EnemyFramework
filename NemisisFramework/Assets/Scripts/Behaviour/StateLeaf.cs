@@ -33,7 +33,7 @@ public class StateLeaf : StateTree
    {
        if(newstate!=null)
        {
-           Debug.Log(currentstate.name+controller.tree.name);
+           Debug.Log(newstate.name+controller.tree.name);
            currentstate.onExit(controller);
            currentstate=newstate;
            currentstate.onEnter(controller);

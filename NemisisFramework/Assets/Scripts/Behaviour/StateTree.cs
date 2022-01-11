@@ -6,11 +6,12 @@ using UnityEditor.Callbacks;
 [CreateAssetMenu(menuName ="StateTree")]
 public class StateTree : Traversable
 {
+    public List<EndNode> childendNodePointers=new List<EndNode>();
     public List<Transition> childtransitions=new List<Transition>();
     public List<Decision> childdecisions=new List<Decision>();
     public List<Decision> mydecisions=new List<Decision>();
     public StartNode startNode;
-    public EndNode endNode;
+   // public EndNode endNode;
     public override void DoTranisiton(StateController controller)
     {
         for(int i=0;i<mytransitions.Count;i++)
@@ -34,13 +35,15 @@ public class StateTree : Traversable
        AssetDatabase.AddObjectToAsset(startNode,this);
        AssetDatabase.SaveAssets();
    }
-   public void CreateEndNode()
+   public EndNode CreateEndNode(Traversable _parent)
    {
-       endNode=CreateInstance<EndNode>();
+      EndNode endNode=CreateInstance<EndNode>();
        endNode.guid=GUID.Generate().ToString();
+       endNode.parent=_parent;
        endNode.name="END";
        AssetDatabase.AddObjectToAsset(endNode,this);
        AssetDatabase.SaveAssets();
+       return endNode;
    }
         public Transition CreateTransition(System.Type type)
    {

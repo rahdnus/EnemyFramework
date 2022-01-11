@@ -7,13 +7,14 @@ public class StateBranch : StateTree
     public Traversable currentgraph;
     public bool hasbeentravelled=false;
     public List<StateTree> childgraphs=new List<StateTree>();
-    public List<StateTree> siblinggraphs=new List<StateTree>();
+    
     
     //call relevant child.onEnter till eventually reaching leaf
     //after traversing thru leafstates EXIT state must become currentstate
     //EXIT state has ref to predecessor, has oncomplete(statecontroller) which sets currenttraversable to predecsoor(called in onENter)
     public override void onEnter(StateController controller)
    {
+       //simple simple simple foreach sibling graph create an exitnode, no transitions in statetree,heck yeh
        if(!hasbeentravelled)
        {
             startNode.onEnter(controller);
@@ -55,7 +56,7 @@ public class StateBranch : StateTree
        AssetDatabase.SaveAssets();
        return leaf;
    }
-      public void RemoveBranch(StateTree tree)
+      public void RemoveGraph(StateTree tree)
    {
        
        childgraphs.Remove(tree);
