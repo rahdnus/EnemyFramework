@@ -20,19 +20,7 @@ public class StateTreeNodeView : NodeView
         CreateOutputPorts();
         CreateInputPorts();
     }
-    public override void OnSelected()
-    {
-        // count+=1;
-        // if(count==2)
-        // {
-        //     base.OnSelected();
-        //     count=0;
-        // }
-        // else
-        // {
-         
-        // }
-    }
+  
      private void CreateOutputPorts()
    {
         output = InstantiatePort(Orientation.Horizontal, Direction.Output, Port.Capacity.Multi, typeof(bool));
@@ -42,6 +30,7 @@ public class StateTreeNodeView : NodeView
       private void CreateInputPorts()
    {
         input = InstantiatePort(Orientation.Horizontal, Direction.Input, Port.Capacity.Multi, typeof(bool));
+        input.portName="to";
         inputContainer.Add(input);
     }
     public override void SetPosition(Rect newPos)

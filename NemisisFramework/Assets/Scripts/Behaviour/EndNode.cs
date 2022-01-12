@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class EndNode : State
+public class EndNode : Traversable
 {
     public Traversable parent;
 
@@ -11,8 +11,10 @@ public class EndNode : State
     {
         Debug.Log("Exit reached"+parent.name);
         if(parent!=null)
-        {   
-            controller.changeCurrnetTree(parent as StateTree);
+        {   if(parent.GetType()==typeof(EndNode))
+                controller.changeCurrnetTree(parent);
+            else
+                controller.changeCurrnetTree(parent);
         }
     }
     public override void DoTranisiton(StateController controller)

@@ -7,6 +7,8 @@ using UnityEngine;
 public class StateLeaf : StateTree
 {
    public Traversable currentstate;
+      public List<Transition> childtransitions=new List<Transition>();
+    public List<Decision> childdecisions=new List<Decision>();
    public List<State> states=new List<State>();
    public List<Action> actions=new List<Action>();
    
@@ -29,7 +31,7 @@ public class StateLeaf : StateTree
    {
        currentstate=startNode;
    }
-   public void changeCurrentState(State newstate,StateController controller)
+   public void changeCurrentState(Traversable newstate,StateController controller)
    {
        if(newstate!=null)
        {
@@ -69,6 +71,38 @@ public class StateLeaf : StateTree
    {
        actions.Remove(action);
         AssetDatabase.RemoveObjectFromAsset(action);
+       AssetDatabase.SaveAssets();
+   }
+           public Transition CreateTransition(System.Type type)
+   {
+       Transition transition=CreateInstance(type) as Transition;
+       transition.name="transition";
+       transition.guid=GUID.Generate().ToString();
+       childtransitions.Add(transition);
+       AssetDatabase.AddObjectToAsset(transition,this);
+       AssetDatabase.SaveAssets();
+       return transition;
+   }
+       public Decision CreateDecision(System.Type type)
+   {
+       Decision decision=CreateInstance(type) as Decision;
+       decision.name=type.Name;
+       decision.guid=GUID.Generate().ToString();
+       childdecisions.Add(decision);
+       AssetDatabase.AddObjectToAsset(decision,this);
+       AssetDatabase.SaveAssets();
+       return decision;
+   }
+    public void RemoveTransition(Transition transition)
+   {
+       childtransitions.Remove(transition);
+        AssetDatabase.RemoveObjectFromAsset(transition);
+       AssetDatabase.SaveAssets();
+   }
+   public void RemoveDecision(Decision decision)
+   {
+       childdecisions.Remove(decision);
+        AssetDatabase.RemoveObjectFromAsset(decision);
        AssetDatabase.SaveAssets();
    }
    

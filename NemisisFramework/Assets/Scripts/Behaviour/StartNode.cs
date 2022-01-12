@@ -7,10 +7,15 @@ public class StartNode : Traversable
   public Traversable first;
   public override void onEnter(StateController controller)
   {
-     
-      if (first.GetType() == typeof(StateLeaf))
+     Debug.Log(first.GetType());
+      if (first.GetType() == typeof(StateBranch))
       {
-         Debug.Log("going to start leaf");
+         Debug.Log("going to start tree");
+        controller.changeCurrnetTree(first as StateTree);
+      }
+      else if (first.GetType() == typeof(StateLeaf))
+      {
+         Debug.Log("going to start tree");
         controller.changeCurrnetTree(first as StateTree);
       }
       else if (first.GetType() == typeof(State))

@@ -1,7 +1,6 @@
 using UnityEditor;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu(menuName ="StateBranch")]
 public class StateBranch : StateTree
 {
     public Traversable currentgraph;

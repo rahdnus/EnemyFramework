@@ -16,6 +16,15 @@ public class StateTreeEditor : EditorWindow
         StateTreeEditor wnd = GetWindow<StateTreeEditor>();
         wnd.titleContent = new GUIContent("StateTreeEditor");
     }
+    [MenuItem("StateTreeEditor/CreateBranch")]
+    public static void CreateBranch()
+    {
+        StateBranch branch=CreateInstance<StateBranch>();
+        AssetDatabase.CreateAsset(branch,"Assets/FSMGraphs/newgraph.asset");
+        AssetDatabase.SaveAssets();
+        EndNode node= branch.CreateEndNode(branch);
+        branch.childendNodePointers.Add(node);
+    }
 
     [OnOpenAsset]
     public static bool OnOpenAsset(int instanceId, int line)

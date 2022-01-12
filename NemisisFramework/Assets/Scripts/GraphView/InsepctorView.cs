@@ -24,7 +24,7 @@ public class InsepctorView : VisualElement
             var leafview=nodeview as StateLeafNodeView;
             targetobject=leafview.leaf;
         }
-        else if(nodeview.GetType()==typeof(StateTreeNodeView))
+        if(nodeview.GetType()==typeof(StateTreeNodeView))
         {
             var branchview=nodeview as StateTreeNodeView;
             targetobject=branchview.branch;

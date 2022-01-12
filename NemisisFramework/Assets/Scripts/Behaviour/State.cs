@@ -4,7 +4,8 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName ="State",menuName ="PlugAI/State")]
 public class State : Traversable
-{
+{   
+     public List<Transition> mytransitions=new List<Transition>();
     public List<Action> actions=new List<Action>();
 
     public override void onEnter(StateController controller)
@@ -54,12 +55,11 @@ public class State : Traversable
             StateLeaf leaf=controller.tree as StateLeaf;
             if(mytransitions[i].TakeDecision(controller))
             {
-                Debug.Log("yo"+mytransitions[i].truetrav.name);
-                leaf.changeCurrentState(mytransitions[i].truetrav as State,controller);
+                leaf.changeCurrentState(mytransitions[i].truetrav,controller);
             }
             else
             {
-                leaf.changeCurrentState(mytransitions[i].falsetrav as State,controller);
+                leaf.changeCurrentState(mytransitions[i].falsetrav,controller);
             }
         }
     }

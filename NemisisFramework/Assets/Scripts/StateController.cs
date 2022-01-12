@@ -9,7 +9,7 @@ public class StateController : MonoBehaviour
     public int maxenergy=100;
     public int energy=100;//temporary;will be substituted by entity stats 
     public Transform backjump;
-    public StateTree tree;
+    public Traversable tree;
 
 
    public LayerMask targetlayer;
@@ -40,7 +40,7 @@ public class StateController : MonoBehaviour
     }
     
     
-    public void changeCurrnetTree(StateTree newtree)
+    public void changeCurrnetTree(Traversable newtree)
     {
         // //find solution for this ***
         // if(newstate!=null)
@@ -50,13 +50,13 @@ public class StateController : MonoBehaviour
         //     currenttraversable=newstate;
         //     currenttraversable.onEnter(this);
         // }
-        Debug.Log(newtree.name);
+       
         if(newtree!=null)
         {
+           //  Debug.Log(newtree.name);
             tree.onExit(this);
             tree=newtree;
-            // if(tree.GetType()==typeof(StateBranch))
-            // tree.DoTranisiton(this);
+            Debug.Log(tree.name);
             tree.onEnter(this);
         }
     }
