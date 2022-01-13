@@ -8,7 +8,7 @@ using System.Collections.Generic;
 public class StateTreeView : GraphView
 {
     public System.Action<NodeView> OnSelected;
-    public System.Action<NodeView> OnTreeSelected;
+    public System.Action<TreeGraphView> OnDoubleClick;
     new public class UxmlFactory : UxmlFactory<StateTreeView, GraphView.UxmlTraits> { }
     StateTree tree;
     
@@ -103,7 +103,7 @@ public class StateTreeView : GraphView
         if(tree.startNode.first!=null)
         {
             StartStateView startview= GetNodeByGuid(tree.startNode.guid) as StartStateView;
-            Debug.Log(startview.start.first.GetType());
+            // Debug.Log(startview.start.first.GetType());
               if(startview.start.first.GetType()==typeof(State))
             {
                 StateView stateView=GetNodeByGuid(tree.startNode.first.guid) as StateView;
@@ -615,13 +615,16 @@ public class StateTreeView : GraphView
     void CreateStateTreeNodeView(StateBranch branch)
     {
         StateTreeNodeView statetreenodeview = new StateTreeNodeView(branch);
-        statetreenodeview.onNodeSelected=OnSelected;//find a way so that double clicking calls ontreeselected
+        statetreenodeview.onNodeSelected=OnSelected;
+        statetreenodeview.onDoubleClick=OnDoubleClick;//find a way so that double clicking calls ontreeselected
         AddElement(statetreenodeview);
     }
      void CreateStateLeafNodeView(StateLeaf leaf)
     {
         StateLeafNodeView statetreenodeview = new StateLeafNodeView(leaf);
-        statetreenodeview.onNodeSelected=OnSelected;//find a way so that double clicking calls ontreeselected
+        statetreenodeview.onNodeSelected=OnSelected;
+        statetreenodeview.onDoubleClick=OnDoubleClick;//find a way so that double clicking calls ontreeselected
+//find a way so that double clicking calls ontreeselected
         AddElement(statetreenodeview);
     }
 

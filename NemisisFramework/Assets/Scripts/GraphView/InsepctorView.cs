@@ -13,7 +13,7 @@ public class InsepctorView : VisualElement
         Clear();
         UnityEngine.Object.DestroyImmediate(editor);
         UnityEngine.Object targetobject=new UnityEngine.Object();
-        Debug.Log(nodeview.GetType());
+        // Debug.Log(nodeview.GetType());
         if(nodeview.GetType()==typeof(StateView))
         {
         var stateview=nodeview as StateView;

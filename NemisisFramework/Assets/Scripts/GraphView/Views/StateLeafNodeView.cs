@@ -1,7 +1,7 @@
 
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-public class StateLeafNodeView : NodeView
+public class StateLeafNodeView : TreeGraphView
 {
     public StateLeaf leaf;
     public Port output,input;

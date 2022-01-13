@@ -57,7 +57,7 @@ public class StateTreeEditor : EditorWindow
         treeView=root.Q<StateTreeView>();
 
         treeView.OnSelected=OnNodeSelectionChanged;
-        treeView.OnTreeSelected=OnTreeSelectionChanged;
+        treeView.OnDoubleClick=OnTreeSelectionChanged;
 
         OnSelectionChange();
     }
@@ -69,7 +69,7 @@ public class StateTreeEditor : EditorWindow
     {
         changeTree();   
     }
-    private void OnTreeSelectionChanged(NodeView node)
+    private void OnTreeSelectionChanged(TreeGraphView node)
     {
         if(node.GetType()==typeof(StateTreeNodeView))
         {
