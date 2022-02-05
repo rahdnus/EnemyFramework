@@ -6,7 +6,7 @@ public class TreeGraphView : NodeView
 {
     public System.Action<TreeGraphView> onDoubleClick;
     float clicktime=0;
-    bool hasbeensleected=false;
+    //bool hasbeensleected=false;
    public override void OnSelected()
    {
     base.OnSelected();

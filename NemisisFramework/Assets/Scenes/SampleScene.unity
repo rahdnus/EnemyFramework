@@ -781,7 +781,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &598807654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1417,6 +1417,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfea2ac95d573d34ba37a2b653595127, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 10
 --- !u!1 &1253510772
 GameObject:
   m_ObjectHideFlags: 0
@@ -2650,13 +2651,10 @@ GameObject:
   m_Component:
   - component: {fileID: 543450652699832280}
   - component: {fileID: 919132148979529060}
-  - component: {fileID: 919132148979529064}
-  - component: {fileID: 919132148979529066}
   - component: {fileID: 919132148979529065}
   - component: {fileID: 919132148979529059}
   - component: {fileID: 919132148979529061}
   - component: {fileID: 919132148979529062}
-  - component: {fileID: 919132148979529063}
   m_Layer: 0
   m_Name: erika_archer
   m_TagString: Untagged
@@ -2695,25 +2693,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84a6ee063d762c245bad932d8d9025cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flagHandler: {fileID: 919132148979529066}
+  flagHandler: {fileID: 0}
   maxenergy: 100
   energy: 100
   backjump: {fileID: 0}
   tree: {fileID: 11400000, guid: ac69d418ebdbcf64680aa2d3da7746a8, type: 2}
-  targetlayer:
-    serializedVersion: 2
-    m_Bits: 64
-  Target: {fileID: 0}
+  entity: {fileID: 0}
   anim: {fileID: 0}
-  agent: {fileID: 0}
-  rb: {fileID: 0}
-  foot: {fileID: 1909224951}
-  waypoints:
-  - {fileID: 651733097}
-  - {fileID: 1135442488}
-  - {fileID: 651735960}
-  - {fileID: 1528832688}
-  nextwaypoint: 0
 --- !u!136 &919132148979529061
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2744,34 +2730,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &919132148979529063
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919132148979529058}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba46072ab934df048802fad14c195279, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponCollider: {fileID: 1226785718}
---- !u!114 &919132148979529064
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919132148979529058}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2be59af3a1bc4bc438365c227345a176, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sensitivity: 2.01
-  rotation: {x: 0, y: 0, z: 0}
-  target: {fileID: 2036415215}
 --- !u!114 &919132148979529065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2784,22 +2742,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b189c3f2c9c7044d9ad1aee2b6f8a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &919132148979529066
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919132148979529058}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5dab224585ee4654cabb21f8f6cedef8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isbeingattacked: 0
-  reacheddestination: 0
-  isattacking: 0
-  animationflag: 0
+  movementSpeed: 1.5
+  inventory: {fileID: 0}
+  weapon: {fileID: 0}
+  anim: {fileID: 0}
+  flaghandler: {fileID: 0}
+  eyes: {fileID: 0}
+  foot: {fileID: 0}
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!4 &936440892503887991
 Transform:
   m_ObjectHideFlags: 0

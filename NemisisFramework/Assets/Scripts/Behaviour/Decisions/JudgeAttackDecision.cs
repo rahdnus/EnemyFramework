@@ -6,6 +6,6 @@ public class JudgeAttackDecision : Decision
 {
     public override bool decide(StateController controller)
     {
-        return controller.flagHandler.isbeingattacked;
+        return controller.flagHandler.takingdamage;
     }
 }

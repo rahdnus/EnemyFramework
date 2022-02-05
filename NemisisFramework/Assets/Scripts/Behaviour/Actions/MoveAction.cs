@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class MoveAction : Action
 {
- 
+    Enemy me;
     [SerializeField]string statename="Slow_Run";
     [SerializeField]float transtitiontime=1.2f;
 
     [SerializeField] float Speed=4;
     public override void onEnter(StateController controller)
     {
+        me=controller.entity as Enemy;
         controller.GetComponent<Animator>().CrossFadeInFixedTime(statename,transtitiontime);
-        controller.agent.speed=Speed;
-        controller.agent.updateRotation=false;
-        controller.agent.destination=controller.backjump.position;
+        me.agent.speed=Speed;
+        me.agent.updateRotation=false;
+        me.agent.destination=controller.backjump.position;
     }
     public override void Act(StateController controller)
     {
@@ -26,6 +27,6 @@ public class MoveAction : Action
     }
     public override void onExit(StateController controller)
     {
-        controller.agent.updateRotation=true;
+        me.agent.updateRotation=true;
     }
 }

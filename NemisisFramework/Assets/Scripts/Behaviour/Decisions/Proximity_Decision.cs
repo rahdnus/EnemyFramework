@@ -4,10 +4,11 @@ using UnityEngine;
 public class Proximity_Decision : Decision
 {
     [SerializeField]float mindistance=30f;
-   
+   Enemy enemy;
   public override bool decide(StateController controller)
   {
-      if(Mathf.Abs((controller.Target.position-controller.transform.position).magnitude)>mindistance )
+      enemy=controller.entity as Enemy;
+      if(Mathf.Abs((enemy.target.position-controller.transform.position).magnitude)>mindistance)
       {
           return true;
       }

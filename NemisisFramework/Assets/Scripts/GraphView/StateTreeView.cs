@@ -30,6 +30,7 @@ public class StateTreeView : GraphView
             evt.menu.AppendAction("StateBranch",(a) => createObject(typeof(StateBranch)));
             evt.menu.AppendAction("StateLeaf", (a) => createObject(typeof(StateLeaf)));
         }
+         evt.menu.AppendAction("Transition", (a) => createObject(typeof(Transition)));
         if(tree.GetType()==typeof(StateLeaf))
         {
             evt.menu.AppendAction("State", (a) => createObject(typeof(State)));
@@ -38,7 +39,6 @@ public class StateTreeView : GraphView
             TypeCache.TypeCollection actiontypes = TypeCache.GetTypesDerivedFrom<Action>();
             actiontypes.ToList().ForEach((t) => evt.menu.AppendAction(t.Name, (b) => createObject(t)));
         }
-           evt.menu.AppendAction("Transition", (a) => createObject(typeof(Transition)));
            
            evt.menu.AppendSeparator("---DECISIONS---");
 
@@ -63,12 +63,12 @@ public class StateTreeView : GraphView
         //     tree.CreateEndNode();
         // }
         CreateStartStateView(tree.startNode);
-       // CreateEndStateView(tree.endNode);
+        //CreateEndStateView(tree.endNode);
         
         if(tree.childendNodePointers!=null)
         {
             tree.childendNodePointers.ForEach(sib=>
-            {
+            {   
                 CreateEndStateView(sib);
             }
             );
@@ -606,7 +606,7 @@ public class StateTreeView : GraphView
         startstateview.onNodeSelected=OnSelected;
         AddElement(startstateview);
     }
-     void CreateEndStateView(EndNode end)
+    public void CreateEndStateView(EndNode end)
     {
         EndStateView endstateview = new EndStateView(end);
         endstateview.onNodeSelected=OnSelected;

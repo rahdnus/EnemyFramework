@@ -4,24 +4,25 @@ using UnityEngine;
 
 public class JudgeAttackAction : Action
 {
+    Enemy me;
     public override void onEnter(StateController controller)
     {
         if(controller.energy>60)
         {
             //defend
-            controller.agent.isStopped=true;
+            me.agent.isStopped=true;
             controller.GetComponent<Animator>().CrossFadeInFixedTime("Center_Block",0.1f);
         }
         else if(controller.energy>10)
         {
-            controller.agent.updateRotation=false;
-            controller.agent.destination=controller.backjump.position;
-            controller.GetComponent<Animator>().CrossFadeInFixedTime("Back_Step",0.2f);
+            me.agent.updateRotation=false;
+            me.agent.destination=controller.backjump.position;
+            controller.anim.CrossFadeInFixedTime("Back_Step",0.2f);
 
         }
         else
         {
-            controller.agent.isStopped=true;
+            me.agent.isStopped=true;
             controller.GetComponent<Animator>().CrossFadeInFixedTime("Got_Hit",1f);
 
         }
@@ -36,7 +37,7 @@ public class JudgeAttackAction : Action
     }
     public override void onExit(StateController controller)
     {
-        controller.agent.updateRotation=true;
-        controller.agent.isStopped=false;
+        me.agent.updateRotation=true;
+        me.agent.isStopped=false;
     }
 }

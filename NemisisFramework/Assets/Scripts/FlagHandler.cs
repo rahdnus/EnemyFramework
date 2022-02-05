@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FlagHandler : MonoBehaviour
 {
-    public bool isbeingattacked=false;
+    public bool takingdamage=false;
     public bool reacheddestination=false;
     public bool isattacking=false;
     public bool animationflag=false;
@@ -14,7 +14,7 @@ public class FlagHandler : MonoBehaviour
     }
      public void setisBeingAttacked()
     {
-        isbeingattacked=false;
+        takingdamage=false;
     }
     public void setIsAttacking()
     {

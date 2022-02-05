@@ -6,10 +6,11 @@ public class CircularMoveAction : Action
 {
     Vector3[] circlePoints;
     int nextpoint;
-
+    
     [SerializeField]string statename="Slow_Run";
     [SerializeField]float transtitiontime=1.2f; 
 
+    Enemy me;
     [SerializeField] float speed=2;
 
     float agentstoppingdistance;
@@ -19,12 +20,13 @@ public class CircularMoveAction : Action
         controller.GetComponent<Animator>().CrossFadeInFixedTime(statename,transtitiontime);
         calculatePointsOnCircle(controller);
 
-        controller.agent.speed=speed;
-        controller.agent.updateRotation=false;
-        agentstoppingdistance=controller.agent.stoppingDistance;
-        controller.agent.stoppingDistance=0;
-        controller.agent.autoBraking=false;
-        controller.agent.ResetPath();
+        me=controller.entity as Enemy;
+        me.agent.speed=speed;
+        me.agent.updateRotation=false;
+        agentstoppingdistance=me.agent.stoppingDistance;
+        me.agent.stoppingDistance=0;
+        me.agent.autoBraking=false;
+        me.agent.ResetPath();
 
         nextpoint=0;
     }
@@ -32,16 +34,16 @@ public class CircularMoveAction : Action
     {
        if(!(nextpoint==circlePoints.Length))
        {
-        if(!controller.agent.pathPending && controller.agent.remainingDistance<0.1f || !controller.agent.hasPath)
+        if(!me.agent.pathPending && me.agent.remainingDistance<0.1f || !me.agent.hasPath)
         {
-            controller.agent.SetDestination(circlePoints[nextpoint]);
+            me.agent.SetDestination(circlePoints[nextpoint]);
             Debug.Log("set destination");
             nextpoint++;
         } 
         
        }
      
-       Quaternion rotation=Quaternion.LookRotation(controller.Target.position-controller.transform.position,controller.transform.up);
+       Quaternion rotation=Quaternion.LookRotation(me.target.position-controller.transform.position,controller.transform.up);
        controller.transform.rotation=rotation;
        if(nextpoint==circlePoints.Length)
        {
@@ -55,11 +57,11 @@ public class CircularMoveAction : Action
     public override void onExit(StateController controller)
     {  
 
-        controller.agent.SetDestination(controller.Target.position);
-        controller.agent.updateRotation=true;
-        controller.agent.ResetPath();
-        controller.agent.autoBraking=true;
-        controller.agent.stoppingDistance=agentstoppingdistance;
+        me.agent.SetDestination(me.target.position);
+        me.agent.updateRotation=true;
+        me.agent.ResetPath();
+        me.agent.autoBraking=true;
+        me.agent.stoppingDistance=agentstoppingdistance;
         controller.flagHandler.reacheddestination=false;
         nextpoint=0;
     }
@@ -68,7 +70,7 @@ public class CircularMoveAction : Action
         Random.InitState(System.DateTime.Now.Millisecond);
         circlePoints = new Vector3[Random.Range(3, 7)];
 
-        Vector3 target = controller.Target.position;
+        Vector3 target = me.target.position;
         float radius = Mathf.Abs(Vector3.Distance(target, controller.transform.position));
         float xoffset = controller.transform.position.x - target.x;
         float zoffset = controller.transform.position.z- target.z;

@@ -4,19 +4,26 @@ using UnityEngine;
 
 public class PatrolAction : Action
 {
+    Enemy me;
+    public float movementSpeed;
+    List<Vector3> waypoints;
     public override void onEnter(StateController controller)
     {
-        controller.GetComponent<Animator>().CrossFadeInFixedTime("Walking",0.3f);
-        controller.nextwaypoint=0;
+        controller.GetComponent<Animator>().CrossFadeInFixedTime("Patrol",0.3f);
+        me=controller.entity as Enemy;
+        me.movementSpeed=movementSpeed;
+        me.nextwaypoint=0;
+        foreach(Transform child in me.waypoint)
+            waypoints.Add(child.position);
+        
     }
     public override void Act(StateController controller)
     {
        
-        if(!controller.agent.pathPending && controller.agent.remainingDistance<0.1f || !controller.agent.hasPath)
+        if(!me.agent.pathPending && me.agent.remainingDistance<0.1f || !me.agent.hasPath)
         {
-            controller.agent.SetDestination(controller.waypoints[controller.nextwaypoint].position);
-            Debug.Log("set destination");
-            controller.nextwaypoint=(controller.nextwaypoint+1)%controller.waypoints.Count;
+            me.agent.SetDestination(waypoints[me.nextwaypoint]);
+            me.nextwaypoint=(me.nextwaypoint+1)%waypoints.Count;
         }
     }
      public override void FixedAct(StateController controller)

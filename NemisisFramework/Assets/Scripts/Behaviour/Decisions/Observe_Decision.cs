@@ -5,12 +5,14 @@ using UnityEngine;
 public class Observe_Decision : Decision
 {
     public float observeRange=20f;
+    Enemy enemy;
  public override bool decide(StateController controller)
  {
      RaycastHit hit;
-    if(Physics.SphereCast(controller.transform.position,5,controller.transform.forward,out hit,observeRange,controller.targetlayer))
+    if(Physics.SphereCast(controller.entity.eyes.transform.position,5,controller.entity.eyes.transform.forward,out hit,observeRange,controller.entity.targetLayer))
     {
-        controller.Target=hit.collider.transform;
+        enemy=controller.entity as Enemy;
+        enemy.target=hit.collider.transform;
         return true;    
     }
     return false;
